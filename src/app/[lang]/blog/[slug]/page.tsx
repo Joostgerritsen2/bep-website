@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bep.expert'
 
-export const revalidate = 60
+export const revalidate = 300
 
 function findPost(slug: string, sanityPost: any) {
   if (sanityPost) return sanityPost

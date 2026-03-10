@@ -1,12 +1,21 @@
 'use client'
 import { useLang } from '@/lib/language'
 import { FadeUp, FadeUpContainer } from '@/components/FadeUp'
-import { FAQ } from '@/components/FAQ'
 import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
 import { Shield, CheckCircle, FileText, MessageSquare, Zap, ArrowRight, Lock, Code } from 'lucide-react'
 import Image from 'next/image'
-import { IntegrationShowcase } from '@/components/IntegrationShowcase'
 import { HeroDemo } from '@/components/HeroDemo'
+import dynamic from 'next/dynamic'
+
+const IntegrationShowcase = dynamic(
+  () => import('@/components/IntegrationShowcase').then(m => ({ default: m.IntegrationShowcase })),
+  { loading: () => <div style={{ minHeight: 400 }} /> }
+)
+
+const FAQ = dynamic(
+  () => import('@/components/FAQ').then(m => ({ default: m.FAQ })),
+  { loading: () => <div style={{ minHeight: 300 }} /> }
+)
 
 export function HomeContent() {
   const { t } = useLang()
@@ -55,6 +64,7 @@ export function HomeContent() {
                           width={56}
                           height={56}
                           className="hero-team-photo"
+                          {...(idx < 3 ? { priority: true } : {})}
                         />
                         <div className="hero-team-info">
                           <span className="hero-team-name">{member.name}</span>

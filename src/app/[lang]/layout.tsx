@@ -4,7 +4,12 @@ import { LangProvider } from '@/lib/language'
 import { SetHtmlLang } from '@/components/SetHtmlLang'
 import { GoogleTagManager, GTMNoScript } from '@/components/GoogleTagManager'
 import { CookieConsent } from '@/components/CookieConsent'
-import { ChatWidget } from '@/components/ChatWidget'
+import dynamic from 'next/dynamic'
+
+const ChatWidget = dynamic(
+  () => import('@/components/ChatWidget').then(m => ({ default: m.ChatWidget })),
+  { ssr: false }
+)
 import { locales } from '@/lib/i18n/config'
 import type { Locale } from '@/lib/i18n/config'
 import type { Metadata } from 'next'
