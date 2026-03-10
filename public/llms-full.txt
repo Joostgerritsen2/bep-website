@@ -1,0 +1,255 @@
+# BEP — De Nieuwe Bedrijfsexpert — Volledige Documentatie
+
+> BEP is een AI-platform dat alle bedrijfsdata verbindt, doorzoekbaar maakt en taken autonoom uitvoert. 100% in je eigen cloud, open-source AI.
+
+---
+
+## 1. Product Overzicht
+
+BEP (Business Expert Platform) is een AI-bedrijfsexpert ontworpen voor middelgrote en grote organisaties. Het platform verbindt alle bedrijfssystemen — ERP, CRM, e-mail, documenten, databases — in één intelligente kennisbank. Medewerkers stellen vragen in natuurlijke taal en krijgen directe antwoorden uit alle gekoppelde bronnen. Uniek aan BEP is dat het niet alleen informatie vindt, maar ook taken uitvoert: e-mails versturen, records bijwerken, rapportages genereren.
+
+### Drie kernpijlers:
+
+**1. Kennisbank**
+Alle bedrijfsdata wordt automatisch geïndexeerd en doorzoekbaar gemaakt. Van documenten en e-mails tot ERP-data en CRM-records. Real-time synchronisatie zorgt dat de kennisbank altijd actueel is. Versiebeheer houdt wijzigingen bij.
+
+**2. Slim Bevragen**
+Medewerkers stellen vragen in gewone taal: "Wat is de status van order 4829?" of "Welke compliance-eisen gelden voor zorg-tenders?". BEP doorzoekt alle gekoppelde systemen en geeft direct antwoord met bronverwijzing. Cross-systeem zoeken en contextbewustheid zijn standaard.
+
+**3. Taken Uitvoeren**
+BEP voert ook acties uit. Denk aan: het versturen van statusupdates naar klanten, het bijwerken van CRM-records, het genereren van rapportages, of het aanmaken van taken in projectmanagement tools. Medewerkers geven de opdracht, BEP voert het uit.
+
+---
+
+## 2. Technologie & Architectuur
+
+### RAG-architectuur (Retrieval-Augmented Generation)
+BEP gebruikt een RAG-architectuur waarbij antwoorden gebaseerd zijn op actuele bedrijfsdata. In tegenstelling tot standaard AI-chatbots die vertrouwen op trainingsdata, haalt BEP real-time informatie op uit de gekoppelde systemen. Dit garandeert nauwkeurige, actuele antwoorden.
+
+### Open-source AI
+BEP gebruikt open-source AI-modellen die volledig in de cloud-omgeving van de klant draaien. Er is geen afhankelijkheid van externe AI-providers zoals OpenAI of Google. Dit biedt volledige transparantie over welke modellen worden gebruikt en hoe data wordt verwerkt.
+
+### 100% Eigen Cloud
+Alle data blijft in de eigen infrastructuur van de klant. Niets verlaat de omgeving. Dit is geen optie maar standaard. BEP draait op de eigen cloud van de klant (Azure, AWS, GCP of on-premise).
+
+### Compliance
+- **GDPR/AVG compliant**: Alle dataverwerking binnen de EU
+- **EU AI Act ready**: Voldoet aan de vereisten van de EU AI Act
+- **Geen vendor lock-in**: Open-source modellen, data blijft eigendom van de klant
+- **SOC 2 Type II**: Security best practices
+
+---
+
+## 3. Integraties
+
+BEP koppelt met alle gangbare bedrijfssystemen:
+
+### ERP Systemen
+- SAP (S/4HANA, Business One)
+- Exact Online
+- AFAS
+- Microsoft Dynamics 365
+- Oracle NetSuite
+
+### CRM Systemen
+- Salesforce
+- HubSpot
+- Microsoft Dynamics CRM
+- Pipedrive
+
+### Document Management
+- SharePoint / OneDrive
+- Google Drive / Google Workspace
+- Dropbox Business
+- Confluence
+
+### E-mail & Communicatie
+- Microsoft Outlook / Exchange
+- Gmail / Google Workspace
+- Slack
+- Microsoft Teams
+
+### Databases
+- SQL Server
+- PostgreSQL
+- MySQL
+- MongoDB
+
+### Overig
+- Jira / Asana (projectmanagement)
+- ServiceNow (ITSM)
+- Custom REST APIs
+- SFTP / bestandsservers
+
+Nieuwe koppelingen worden continu toegevoegd. Custom integraties zijn mogelijk voor Enterprise klanten.
+
+---
+
+## 4. Use Cases per Afdeling
+
+### Sales
+- Klantkennis direct beschikbaar: offertehistorie, eerdere correspondentie, CRM-inzichten
+- "Geef me een samenvatting van alle interacties met klant X in de afgelopen 3 maanden"
+- Automatisch CRM bijwerken na klantgesprekken
+
+### Operations
+- Procedures en handleidingen doorzoekbaar
+- "Wat is het onderhoudsschema voor machine Y?"
+- Operationele data snel opvragen zonder door meerdere systemen te zoeken
+
+### HR
+- Beleidsdocumenten, onboarding materiaal en regelgeving op één plek
+- "Wat is het thuiswerkbeleid voor nieuwe medewerkers?"
+- Snellere onboarding van nieuwe medewerkers
+
+### Finance
+- Rapportages, facturatie en compliance informatie doorzoekbaar
+- "Hoeveel hebben we uitgegeven aan leverancier Z dit kwartaal?"
+- Direct inzicht zonder handmatig te zoeken
+
+### Management
+- KPI's, strategische documenten en bedrijfsbrede inzichten
+- "Wat is onze huidige omzetgroei ten opzichte van vorig jaar?"
+- Data-gedreven beslissingen op basis van actuele informatie
+
+### IT
+- Documentatie, troubleshooting guides en systeemkennis
+- "Hoe reset ik het wachtwoord voor systeem X?"
+- Minder helpdesk tickets, snellere probleemoplossing
+
+---
+
+## 5. Cases & Resultaten
+
+### Tender Strateeg (Consultancy)
+- **Uitdaging**: 500+ tenderdocumenten verspreid over SharePoint, e-mail en interne systemen
+- **Oplossing**: Alle documenten geïndexeerd en doorzoekbaar in natuurlijke taal
+- **Resultaten**: 60% snellere voorbereiding, 500+ documenten ontsloten, 15 consultants gebruiken BEP
+- **Quote**: "BEP heeft de manier waarop wij tenders voorbereiden fundamenteel veranderd."
+
+### Groningen Seaports (Havenbeheer)
+- **Uitdaging**: 24/7 operatie maar kennis alleen beschikbaar tijdens kantooruren
+- **Oplossing**: Alle systemen verbonden, operationele kennis 24/7 doorzoekbaar
+- **Resultaten**: 80% minder zoektijd, 3.5x ROI in jaar 1, 200+ gebruikers
+- **Quote**: "We opereren 24/7 en nu is onze kennis dat ook."
+
+### SJB Advies (Financieel Advies)
+- **Uitdaging**: Adviseurs besteedden 30-45 minuten voorbereiding per klantgesprek
+- **Oplossing**: CRM, dossiers en kennisbank verbonden, 10.000+ dossiers doorzoekbaar
+- **Resultaten**: 4.2x ROI, 150+ dagelijkse gebruikers, 40% snellere dienstverlening
+- **Quote**: "Onze adviseurs hebben nu het gevoel dat ze een persoonlijke assistent hebben."
+
+### BPZ (Productie)
+- **Uitdaging**: Senior medewerkers met 80+ jaar gecombineerde ervaring gingen met pensioen
+- **Oplossing**: Kennissessies met experts, output direct in BEP opgenomen
+- **Resultaten**: 100% kennisbehoud, 50% minder inwerktijd, 0 kennisincidenten
+- **Quote**: "BEP heeft volledig voorkomen dat we onze beste kennis verloren."
+
+---
+
+## 6. Pricing
+
+Alle pakketten draaien 100% in de eigen cloud van de klant.
+
+### Starter — €499/maand
+- Tot 1.000 documenten
+- 5 gebruikers
+- 3 systeemkoppelingen
+- Kennisbank + Zoeken
+- E-mail support
+
+### Professional — €1.099/maand
+- Tot 10.000 documenten
+- 20 gebruikers
+- Onbeperkt koppelingen
+- Kennisbank + Zoeken + Taken
+- Taakuitvoering (CRM, e-mail, ERP)
+- Prioriteit support
+
+### Enterprise — €3.900+/maand
+- 500.000+ documenten
+- Onbeperkt gebruikers
+- Onbeperkt koppelingen
+- Alle functionaliteit
+- Custom workflows
+- Dedicated support & SLA
+- On-premise optie
+- SSO / SAML
+
+---
+
+## 7. Implementatie
+
+De basisopzet van BEP duurt doorgaans 2-4 weken:
+
+1. **Week 1**: Systemen koppelen en data indexeren
+2. **Week 2**: Configuratie, testen en finetuning
+3. **Week 3-4**: Uitrol naar gebruikers en training
+
+Na de initiële setup leert BEP continu bij door gebruik en feedback.
+
+---
+
+## 8. Vergelijking met Alternatieven
+
+### BEP vs. Microsoft Copilot
+- BEP: 100% eigen cloud | Copilot: Microsoft cloud
+- BEP: Verbindt ALLE systemen | Copilot: Primair M365
+- BEP: Voert taken uit in elk systeem | Copilot: Primair Office-taken
+- BEP: Vaste prijs | Copilot: €21/gebruiker/maand
+- BEP: Open-source AI | Copilot: Closed-source
+
+### BEP vs. Glean
+- BEP: 100% eigen cloud | Glean: Glean cloud
+- BEP: Vindt én doet | Glean: Alleen zoeken
+- BEP: Transparante prijs | Glean: Op offerte
+- BEP: EU AI Act compliant | Glean: Gedeeltelijk
+
+### BEP vs. traditionele chatbots (Watermelon, etc.)
+- BEP: Verbindt alle bedrijfsdata | Chatbots: Eigen kennisbank
+- BEP: RAG op eigen data | Chatbots: Voorgedefinieerde antwoorden
+- BEP: Voert taken uit | Chatbots: Alleen antwoorden
+- BEP: EU AI Act compliant | Chatbots: Wisselend
+
+---
+
+## 9. Team
+
+BEP is gebouwd vanuit Groningen door een team met jarenlange ervaring in data-engineering, AI en business consulting.
+
+- **Berco Beute** — AI Whisperer: Specialist in AI-architectuur en machine learning
+- **Sven Vintges** — Knowledge Magician: Expert in kennismanagement en data-integratie
+- **Sietse van der Laan** — Making Things Work: Full-stack development en systeemintegratie
+- **Jeroen Broekema** — Partner Intelligence Lead: Business development en partnerships
+- **Jelle Klaver** — Product Enchanter: Product design en gebruikerservaring
+
+---
+
+## 10. Veelgestelde Vragen (FAQ)
+
+**Wat is BEP precies?**
+BEP is een AI-bedrijfsexpert die al je bedrijfsdata verbindt, doorzoekbaar maakt en taken uitvoert. Het is geen chatbot en geen copilot — het is een volledig platform dat alle systemen verbindt.
+
+**Waar draait BEP? Is mijn data veilig?**
+BEP draait 100% in je eigen cloud. Data verlaat nooit je infrastructuur. Open-source AI, geen externe afhankelijkheden. GDPR-compliant en EU AI Act-ready.
+
+**Welke systemen kan BEP koppelen?**
+ERP (SAP, Exact, AFAS), CRM (Salesforce, HubSpot), SharePoint, Google Drive, Outlook, Gmail, databases en meer. Nieuwe koppelingen worden continu toegevoegd.
+
+**Hoe snel is BEP operationeel?**
+2-4 weken, afhankelijk van het aantal systemen en datacomplexiteit.
+
+**Wat kost BEP?**
+Vanaf €499/maand (Starter). Professional €1.099/maand. Enterprise vanaf €3.900/maand.
+
+**Kan BEP ook taken uitvoeren?**
+Ja, dat is uniek aan BEP. Naast informatie zoeken voert BEP ook acties uit: CRM bijwerken, e-mails versturen, rapportages genereren, taken aanmaken.
+
+---
+
+## 11. Contact
+
+- **Website**: https://bep.expert
+- **Email**: info@bep.expert
+- **WhatsApp**: +31 6 22557546
+- **Locatie**: Groningen, Nederland

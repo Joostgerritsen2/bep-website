@@ -1,0 +1,38 @@
+export default {
+  name: 'caseStudy',
+  title: 'Case Study',
+  type: 'document',
+  fields: [
+    { name: 'client', title: 'Client Name', type: 'string' },
+    { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'client' } },
+    { name: 'sector', title: 'Sector', type: 'string' },
+    { name: 'order', title: 'Order', type: 'number' },
+    { name: 'tagline', title: 'Tagline (NL)', type: 'string' },
+    { name: 'taglineEn', title: 'Tagline (EN)', type: 'string' },
+    { name: 'description', title: 'Description (NL)', type: 'text' },
+    { name: 'descriptionEn', title: 'Description (EN)', type: 'text' },
+    { name: 'challenge', title: 'Challenge (NL)', type: 'text' },
+    { name: 'challengeEn', title: 'Challenge (EN)', type: 'text' },
+    { name: 'solutionNl', title: 'Solution (NL)', type: 'text' },
+    { name: 'solutionEn', title: 'Solution (EN)', type: 'text' },
+    { name: 'quoteNl', title: 'Quote (NL)', type: 'text' },
+    { name: 'quoteEn', title: 'Quote (EN)', type: 'text' },
+    { name: 'quotePerson', title: 'Quote Person', type: 'string' },
+    {
+      name: 'stats',
+      title: 'Stats',
+      type: 'array',
+      of: [{
+        type: 'object',
+        fields: [
+          { name: 'value', title: 'Value', type: 'string' },
+          { name: 'labelNl', title: 'Label (NL)', type: 'string' },
+          { name: 'labelEn', title: 'Label (EN)', type: 'string' },
+        ],
+      }],
+    },
+    { name: 'logo', title: 'Logo', type: 'image' },
+    { name: 'coverImage', title: 'Cover Image', type: 'image' },
+    { name: 'externalCoverUrl', title: 'External Cover URL', type: 'url' },
+  ],
+}

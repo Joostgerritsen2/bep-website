@@ -1,0 +1,51 @@
+# BEP — De Nieuwe Bedrijfsexpert
+
+> BEP is een AI-platform dat alle bedrijfsdata verbindt, doorzoekbaar maakt en taken autonoom uitvoert. 100% in je eigen cloud.
+
+## Wat is BEP?
+
+BEP (Business Expert Platform) is een AI-bedrijfsexpert die alle bedrijfsdata van een organisatie verbindt — van ERP en CRM tot e-mail en documenten. Medewerkers kunnen in natuurlijke taal vragen stellen en BEP voert ook daadwerkelijk taken uit, zoals het opzoeken van orderstatus, het versturen van e-mails of het bijwerken van CRM-records.
+
+## Kernfunctionaliteit
+
+1. **Kennisbank**: Alle bedrijfsdata geïndexeerd en doorzoekbaar. Documenten, e-mails, ERP-data, CRM-records — alles op één plek met real-time synchronisatie.
+2. **Slim Bevragen**: Vragen stellen in natuurlijke taal en directe antwoorden krijgen uit alle gekoppelde systemen. Cross-systeem, contextbewust.
+3. **Taken Uitvoeren**: BEP vindt niet alleen het antwoord, maar voert ook de actie uit. Van e-mail versturen tot CRM bijwerken — automatisch.
+
+## Technologie
+
+- **RAG-architectuur**: Antwoorden gebaseerd op actuele bedrijfsdata, niet op verouderde trainingsdata.
+- **Open-source AI**: Geen afhankelijkheid van OpenAI of Google. Modellen draaien in de eigen omgeving van de klant.
+- **100% eigen cloud**: Data verlaat nooit de infrastructuur van de klant. Volledig GDPR-compliant en EU AI Act-ready.
+
+## Integraties
+
+BEP koppelt met alle gangbare bedrijfssystemen: ERP (SAP, Exact, AFAS), CRM (Salesforce, HubSpot), documentmanagement (SharePoint, Google Drive), e-mail (Outlook, Gmail), databases en meer.
+
+## Pricing
+
+- **Starter**: €499/maand — tot 1.000 documenten, 5 gebruikers, 3 koppelingen
+- **Professional**: €1.099/maand — tot 10.000 documenten, 20 gebruikers, onbeperkt koppelingen, taakuitvoering
+- **Enterprise**: €3.900+/maand — 500.000+ documenten, onbeperkt gebruikers, custom workflows, dedicated support
+
+## Team
+
+BEP is gebouwd vanuit Groningen door een team van data-engineers, AI-specialisten en business consultants:
+- Berco Beute — AI Whisperer
+- Sven Vintges — Knowledge Magician
+- Sietse van der Laan — Making Things Work
+- Jeroen Broekema — Partner Intelligence Lead
+- Jelle Klaver — Product Enchanter
+
+## Contact
+
+- Website: https://bep.expert
+- Email: info@bep.expert
+- WhatsApp: +31 6 22557546
+
+## Meer informatie
+
+- Uitgebreide documentatie: https://bep.expert/llms-full.txt
+- Cases: https://bep.expert/nl/cases
+- Pricing: https://bep.expert/nl/pricing
+- Blog: https://bep.expert/nl/blog
