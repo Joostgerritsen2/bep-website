@@ -91,7 +91,7 @@ export function TeamContent() {
                     alt={member.name}
                     width={200}
                     height={200}
-                    style={{ objectFit: 'cover', borderRadius: '50%' }}
+                    style={{ objectFit: 'cover', borderRadius: 0 }}
                   />
                   <h3>{member.name}</h3>
                   <div className="role">{member.role}</div>

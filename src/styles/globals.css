@@ -1132,7 +1132,7 @@ h4 { font-size: var(--fs-xl); }
 .team-card-photo {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  border-radius: 0;
   object-fit: cover;
   margin: 0 auto 20px;
 }
@@ -2478,7 +2478,7 @@ h4 { font-size: var(--fs-xl); }
 .integration-card-indicator {
   width: 18px;
   height: 18px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 1.5px solid var(--color-card-border);
   flex-shrink: 0;
   display: flex;
@@ -2516,7 +2516,7 @@ h4 { font-size: var(--fs-xl); }
 .showcase-step-num {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--blue-dark);
   color: var(--white);
   display: flex;
@@ -2689,7 +2689,7 @@ h4 { font-size: var(--fs-xl); }
 .integrations-analysis-avatar {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--orange);
   display: flex;
   align-items: center;
@@ -2776,7 +2776,7 @@ h4 { font-size: var(--fs-xl); }
   justify-content: center;
   width: 22px;
   height: 22px;
-  border-radius: 50%;
+  border-radius: 0;
   margin-right: 6px;
   vertical-align: middle;
   position: relative;
@@ -3462,7 +3462,7 @@ h4 { font-size: var(--fs-xl); }
 .assessment-option-indicator {
   width: 18px;
   height: 18px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 1.5px solid var(--color-card-border);
   flex-shrink: 0;
   display: flex;
@@ -3481,7 +3481,7 @@ h4 { font-size: var(--fs-xl); }
 .assessment-progress {
   height: 4px;
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
+  border-radius: 0;
   overflow: hidden;
   margin-top: 8px;
 }
@@ -3489,7 +3489,7 @@ h4 { font-size: var(--fs-xl); }
 .assessment-progress-bar {
   height: 100%;
   background: var(--orange);
-  border-radius: 2px;
+  border-radius: 0;
   transition: width 0.4s ease;
 }
 
@@ -3511,7 +3511,7 @@ h4 { font-size: var(--fs-xl); }
 .score-gauge {
   width: 180px;
   height: 180px;
-  border-radius: 50%;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3527,7 +3527,7 @@ h4 { font-size: var(--fs-xl); }
 .score-gauge-inner {
   width: 140px;
   height: 140px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--color-card-bg);
   display: flex;
   flex-direction: column;
@@ -3584,7 +3584,7 @@ h4 { font-size: var(--fs-xl); }
 .score-insight-icon {
   width: 28px;
   height: 28px;
-  border-radius: 50%;
+  border-radius: 0;
   background: rgba(245, 134, 29, 0.12);
   color: var(--orange);
   display: flex;
@@ -3747,7 +3747,7 @@ h4 { font-size: var(--fs-xl); }
   z-index: 140;
   width: 56px;
   height: 56px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--orange);
   color: var(--white);
   border: none;
@@ -3779,7 +3779,7 @@ h4 { font-size: var(--fs-xl); }
 .chat-bubble-pulse {
   position: absolute;
   inset: -4px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 2px solid var(--orange);
   animation: chat-pulse 2.5s ease-in-out infinite;
   pointer-events: none;
@@ -3800,7 +3800,7 @@ h4 { font-size: var(--fs-xl); }
   max-height: 560px;
   background: var(--color-bg-primary);
   border: 1px solid var(--color-card-border);
-  border-radius: 16px;
+  border-radius: 0;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
@@ -3832,7 +3832,7 @@ h4 { font-size: var(--fs-xl); }
 .chat-header-avatar {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--orange);
   color: var(--white);
   display: flex;
@@ -3859,7 +3859,7 @@ h4 { font-size: var(--fs-xl); }
 .chat-online-dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--green);
   flex-shrink: 0;
 }
@@ -3896,7 +3896,7 @@ h4 { font-size: var(--fs-xl); }
 
 .chat-welcome-msg {
   background: rgba(255, 255, 255, 0.06);
-  border-radius: 12px 12px 12px 2px;
+  border-radius: 0;
   padding: 16px;
 }
 
@@ -3917,7 +3917,7 @@ h4 { font-size: var(--fs-xl); }
   background: #25D366;
   color: var(--white);
   border: none;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: var(--fs-base);
   font-weight: 700;
   font-family: inherit;
@@ -3950,7 +3950,7 @@ h4 { font-size: var(--fs-xl); }
   padding: 10px 14px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--color-card-border);
-  border-radius: 8px;
+  border-radius: 0;
   font-size: var(--fs-sm);
   font-family: inherit;
   color: var(--color-text-secondary);
@@ -3994,7 +3994,7 @@ h4 { font-size: var(--fs-xl); }
   padding: 11px;
   background: transparent;
   border: 1px solid var(--color-card-border);
-  border-radius: 8px;
+  border-radius: 0;
   font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--color-text-secondary);
@@ -4016,7 +4016,7 @@ h4 { font-size: var(--fs-xl); }
     width: 100%;
     max-height: 100vh;
     max-height: 100dvh;
-    border-radius: 16px 16px 0 0;
+    border-radius: 0;
   }
   .chat-bubble {
     bottom: 16px;

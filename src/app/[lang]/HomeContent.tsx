@@ -257,7 +257,7 @@ export function HomeContent() {
                     )}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '12px' }}>
-                    <Image src="/images/team-member-4.png" alt="" width={40} height={40} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+                    <Image src="/images/team-member-4.png" alt="" width={40} height={40} style={{ borderRadius: 0, objectFit: 'cover' }} />
                     <cite>— Operations Manager</cite>
                   </div>
                 </div>
