@@ -17,7 +17,7 @@ const FAQ = dynamic(
   { loading: () => <div style={{ minHeight: 300 }} /> }
 )
 
-export function HomeContent() {
+export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
   const { t } = useLang()
 
   return (
@@ -286,6 +286,46 @@ export function HomeContent() {
           </div>
         </div>
       </section>
+
+      {/* ===== BLOG / INZICHTEN ===== */}
+      {latestPosts.length > 0 && (
+        <section className="section section-white">
+          <div className="container">
+            <FadeUp>
+              <div className="section-header">
+                <span className="section-label">{t('Inzichten', 'Insights')}</span>
+                <h2>{t('Thought leadership', 'Thought leadership')}</h2>
+                <p>{t('Onze visie op AI, data-soevereiniteit en de toekomst van bedrijfsintelligentie.', 'Our vision on AI, data sovereignty and the future of business intelligence.')}</p>
+              </div>
+            </FadeUp>
+            <div className="home-blog-grid">
+              {latestPosts.map((post: any, i: number) => (
+                <FadeUp key={post._id || i} delay={i * 0.1}>
+                  <Link href={`/blog/${post.slug?.current}`} className="blog-card">
+                    <div className="blog-card-body">
+                      <span className="blog-category" style={{ background: 'rgba(245,134,29,0.15)', color: 'var(--orange)' }}>
+                        {post.category === 'ai' ? 'AI' : post.category === 'business' ? 'Business' : post.category || 'Insight'}
+                      </span>
+                      <h3>{t(post.title, post.titleEn)}</h3>
+                      <p>{t(post.excerpt, post.excerptEn)?.slice(0, 140)}...</p>
+                      <span className="blog-read-more">
+                        {t('Lees meer', 'Read more')} <ArrowRight size={14} />
+                      </span>
+                    </div>
+                  </Link>
+                </FadeUp>
+              ))}
+            </div>
+            <FadeUp delay={0.4}>
+              <div style={{ textAlign: 'center', marginTop: 32 }}>
+                <Link href="/blog" className="btn btn-outline">
+                  {t('Bekijk alle artikelen', 'View all articles')} <ArrowRight size={16} />
+                </Link>
+              </div>
+            </FadeUp>
+          </div>
+        </section>
+      )}
 
       {/* ===== DATA SILO SCAN ===== */}
       <section className="section section-white" id="ontdek">

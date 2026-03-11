@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { HomeContent } from './HomeContent'
+import { client } from '@/lib/sanity'
+import { allBlogPostsQuery } from '@/lib/queries'
+import { localBlogPosts } from './blog/blogData'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bep.expert'
+
+export const revalidate = 300
 
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const lang = params.lang as Locale
@@ -64,10 +69,18 @@ function getFaqJsonLd(lang: string) {
   }
 }
 
-export default function HomePage({ params }: { params: { lang: string } }) {
+export default async function HomePage({ params }: { params: { lang: string } }) {
+  const sanityPosts = await client.fetch(allBlogPostsQuery).catch(() => [])
+  const sanityIds = new Set(sanityPosts.map((p: any) => p._id))
+  const allPosts = [
+    ...sanityPosts,
+    ...localBlogPosts.filter(p => !sanityIds.has(p._id)),
+  ].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+  const latestPosts = allPosts.slice(0, 3)
+
   return (
     <>
-      <HomeContent />
+      <HomeContent latestPosts={latestPosts} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getFaqJsonLd(params.lang)) }} />
     </>
   )

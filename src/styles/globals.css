@@ -3196,6 +3196,20 @@ h4 { font-size: var(--fs-xl); }
   overflow: hidden;
 }
 
+/* Homepage Blog Grid */
+.home-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+@media (max-width: 1024px) {
+  .home-blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .home-blog-grid { grid-template-columns: 1fr; }
+}
+
 /* Blog Detail */
 .blog-detail-hero {
   position: relative;

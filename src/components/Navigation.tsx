@@ -44,6 +44,7 @@ export function Navigation() {
 
           <nav className="header-nav">
             <Link href="/waarom-bep">{t('Waarom BEP', 'Why BEP')}</Link>
+            <Link href="/filosofie">{t('Filosofie', 'Philosophy')}</Link>
             <Link href="/cases">Cases</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/team">Team</Link>
@@ -71,6 +72,7 @@ export function Navigation() {
           <nav className="menu-main">
             <Link href="/" onClick={close}>Home</Link>
             <Link href="/waarom-bep" onClick={close}>{t('Waarom BEP', 'Why BEP')}</Link>
+            <Link href="/filosofie" onClick={close}>{t('Filosofie', 'Philosophy')}</Link>
             <Link href="/cases" onClick={close}>Cases</Link>
             <Link href="/blog" onClick={close}>Blog</Link>
             <Link href="/team" onClick={close}>Team</Link>
