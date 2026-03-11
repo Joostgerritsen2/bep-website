@@ -12,8 +12,8 @@ export const revalidate = 300
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const lang = params.lang as Locale
   const title = lang === 'en'
-    ? 'BEP — The New Business Expert | AI that finds and acts'
-    : 'BEP — De Nieuwe Bedrijfsexpert | AI die vindt én doet'
+    ? 'BEP — Your New Business Expert | One question, instant answers'
+    : 'BEP — Jouw Nieuwe Bedrijfsexpert | Eén vraag, direct antwoord'
   const description = lang === 'en'
     ? 'BEP connects all your business data, makes it queryable and executes tasks autonomously. 100% in your own cloud, open-source AI.'
     : 'BEP verbindt al je bedrijfsdata, maakt het doorzoekbaar en voert taken autonoom uit. 100% in je eigen cloud, open-source AI.'

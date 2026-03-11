@@ -29,15 +29,14 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
           <div className="hero-split">
             <div className="hero-text">
               <FadeUp>
-                <span className="section-label">{t('De Nieuwe Bedrijfsexpert', 'The New Business Expert')}</span>
                 <h1>
-                  {t('AI die vindt,', 'AI that finds,')}<br />
-                  {t('begrijpt ', 'understands ')}<span className="highlight gradient-text">{t('én doet.', 'and acts.')}</span>
+                  BEP — {t('Jouw nieuwe', 'Your new')}<br />
+                  <span className="highlight gradient-text">{t('bedrijfsexpert.', 'business expert.')}</span>
                 </h1>
                 <p className="subtitle">
                   {t(
-                    'BEP doorzoekt al je systemen, combineert de context en voert taken uit — automatisch. Hoe meer je verbindt, hoe slimmer BEP wordt.',
-                    'BEP searches all your systems, combines the context and executes tasks — automatically. The more you connect, the smarter BEP gets.'
+                    'Doorzoek al je systemen, combineer de context en voer taken uit — automatisch. Eén vraag, direct antwoord uit ERP, CRM, e-mail en documenten.',
+                    'Search all your systems, combine context and execute tasks — automatically. One question, instant answers from ERP, CRM, email and documents.'
                   )}
                 </p>
                 <div className="hero-buttons">
@@ -365,8 +364,8 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <h2>{t('Klaar om je bedrijfsdata te ontsluiten?', 'Ready to unlock your business data?')}</h2>
             <p>
               {t(
-                'Doe de Data Silo Scan en ontdek wat BEP voor jouw organisatie kan betekenen.',
-                'Take the Data Silo Scan and discover what BEP can do for your organization.'
+                'Ontdek wat BEP voor jouw organisatie kan betekenen. Plan een demo en zie het zelf.',
+                'Discover what BEP can do for your organization. Schedule a demo and see for yourself.'
               )}
             </p>
             <div className="hero-buttons">
