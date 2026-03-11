@@ -244,8 +244,8 @@ export function FilosofieContent() {
               )}
             </p>
             <div className="hero-buttons">
-              <a href="/#ontdek" className="btn btn-white">
-                {t('Start de Data Silo Scan', 'Start the Data Silo Scan')} <ArrowRight size={18} />
+              <a href="/contact" className="btn btn-white">
+                {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
               </a>
               <Link href="/contact" className="btn btn-ghost">
                 {t('Neem contact op', 'Get in touch')}

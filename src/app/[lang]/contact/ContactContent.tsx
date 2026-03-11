@@ -126,8 +126,8 @@ export function ContactContent() {
                       'Build your personal BEP plan in 2 minutes.'
                     )}
                   </p>
-                  <a href="/#ontdek" className="btn btn-primary" style={{ fontSize: '0.875rem', padding: '10px 20px' }}>
-                    {t('Ontdek BEP', 'Discover BEP')} <ArrowRight size={14} />
+                  <a href="/contact" className="btn btn-primary" style={{ fontSize: '0.875rem', padding: '10px 20px' }}>
+                    {t('Demo aanvragen', 'Request demo')} <ArrowRight size={14} />
                   </a>
                 </div>
               </div>

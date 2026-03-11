@@ -95,10 +95,10 @@ export function PricingContent() {
                     ))}
                   </ul>
                   <a
-                    href="/#ontdek"
+                    href="/contact"
                     className={`btn ${tier.featured ? 'btn-primary' : 'btn-outline'}`}
                   >
-                    {t('Ontdek BEP', 'Discover BEP')} <ArrowRight size={16} />
+                    {t('Demo aanvragen', 'Request demo')} <ArrowRight size={16} />
                   </a>
                 </div>
               </FadeUp>
@@ -118,8 +118,8 @@ export function PricingContent() {
                 'Discover in 2 minutes what BEP can do for your organization.'
               )}
             </p>
-            <a href="/#ontdek" className="btn btn-white">
-              {t('Bouw je plan', 'Build your plan')} <ArrowRight size={18} />
+            <a href="/contact" className="btn btn-white">
+              {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
             </a>
           </FadeUp>
         </div>

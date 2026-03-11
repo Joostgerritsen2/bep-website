@@ -218,8 +218,8 @@ export function WhyBepContent() {
             <h2>{t('Ontdek wat BEP voor jou kan betekenen', 'Discover what BEP can do for you')}</h2>
             <p>{t('Bouw je persoonlijke plan in 2 minuten', 'Build your personal plan in 2 minutes')}</p>
             <div className="hero-buttons">
-              <a href="/#ontdek" className="btn btn-white">
-                {t('Ontdek BEP', 'Discover BEP')} <ArrowRight size={18} />
+              <a href="/contact" className="btn btn-white">
+                {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
               </a>
               <Link href="/contact" className="btn btn-ghost">
                 {t('Neem contact op', 'Get in touch')}

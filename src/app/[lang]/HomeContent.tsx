@@ -41,8 +41,8 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                   )}
                 </p>
                 <div className="hero-buttons">
-                  <a href="#ontdek" className="btn btn-primary">
-                    {t('Start de Data Silo Scan', 'Start the Data Silo Scan')} <ArrowRight size={18} />
+                  <a href="/contact" className="btn btn-primary">
+                    {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
                   </a>
                   <Link href="/cases" className="btn btn-ghost">
                     {t('Bekijk resultaten', 'View results')}
@@ -370,8 +370,8 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               )}
             </p>
             <div className="hero-buttons">
-              <a href="#ontdek" className="btn btn-white">
-                {t('Start de scan', 'Start the scan')} <ArrowRight size={18} />
+              <a href="/contact" className="btn btn-white">
+                {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
               </a>
               <Link href="/contact" className="btn btn-ghost">
                 {t('Neem contact op', 'Get in touch')}
