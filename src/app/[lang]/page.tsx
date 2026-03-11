@@ -71,10 +71,10 @@ function getFaqJsonLd(lang: string) {
 
 export default async function HomePage({ params }: { params: { lang: string } }) {
   const sanityPosts = await client.fetch(allBlogPostsQuery).catch(() => [])
-  const sanityIds = new Set(sanityPosts.map((p: any) => p._id))
+  const sanitySlugs = new Set(sanityPosts.map((p: any) => p.slug?.current))
   const allPosts = [
     ...sanityPosts,
-    ...localBlogPosts.filter(p => !sanityIds.has(p._id)),
+    ...localBlogPosts.filter(p => !sanitySlugs.has(p.slug.current)),
   ].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   const latestPosts = allPosts.slice(0, 3)
 

@@ -39,8 +39,8 @@ export async function generateMetadata({ params }: { params: { lang: string } })
 }
 
 function mergePosts(sanityPosts: any[], local: any[]) {
-  const sanityIds = new Set(sanityPosts.map((p: any) => p._id))
-  const unique = local.filter(p => !sanityIds.has(p._id))
+  const sanitySlugs = new Set(sanityPosts.map((p: any) => p.slug?.current))
+  const unique = local.filter(p => !sanitySlugs.has(p.slug.current))
   return [...sanityPosts, ...unique].sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   )

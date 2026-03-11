@@ -26,10 +26,10 @@ export default async function sitemap() {
   // Fetch blog posts from Sanity (with fallback)
   const blogPosts = await client.fetch(allBlogPostsQuery).catch(() => [])
 
-  const sanityIds = new Set(blogPosts.map((p: any) => p._id))
+  const sanitySlugs = new Set(blogPosts.map((p: any) => p.slug?.current))
   const allPosts = [
     ...blogPosts,
-    ...localBlogPosts.filter(p => !sanityIds.has(p._id)),
+    ...localBlogPosts.filter(p => !sanitySlugs.has(p.slug.current)),
   ]
 
   const blogEntries = allPosts.flatMap((post: any) => {
