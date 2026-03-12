@@ -49,7 +49,7 @@ export function ContactContent() {
               {status === 'done' ? (
                 <div style={{ textAlign: 'center', padding: '60px 0' }}>
                   <h3>{t('Bedankt voor je bericht!', 'Thanks for your message!')}</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.7)', marginTop: 12 }}>
+                  <p style={{ color: '#A1AAB8', marginTop: 12 }}>
                     {t(
                       'We nemen zo snel mogelijk contact met je op.',
                       'We will get back to you as soon as possible.'
@@ -118,16 +118,16 @@ export function ContactContent() {
                     <a href="mailto:info@bep.expert">info@bep.expert</a>
                   </div>
                 </div>
-                <div style={{ marginTop: 40, padding: 24, background: 'rgba(245,134,29,0.12)', borderRadius: 0, border: '1px solid rgba(245,134,29,0.2)' }}>
+                <div style={{ marginTop: 40, padding: 24, background: 'rgba(245,134,29,0.12)', borderRadius: '16px', border: '1px solid rgba(245,134,29,0.2)' }}>
                   <h4 style={{ marginBottom: 8 }}>{t('Liever eerst ontdekken?', 'Prefer to explore first?')}</h4>
-                  <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', marginBottom: 16 }}>
+                  <p style={{ fontSize: '0.875rem', color: '#A1AAB8', marginBottom: 16 }}>
                     {t(
                       'Bouw je persoonlijke BEP-plan in 2 minuten.',
                       'Build your personal BEP plan in 2 minutes.'
                     )}
                   </p>
                   <a href="/contact" className="btn btn-primary" style={{ fontSize: '0.875rem', padding: '10px 20px' }}>
-                    {t('Demo aanvragen', 'Request demo')} <ArrowRight size={14} />
+                    {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={14} />
                   </a>
                 </div>
               </div>

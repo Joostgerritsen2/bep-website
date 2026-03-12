@@ -47,7 +47,7 @@ export function TeamContent() {
                 alt={t('Het BEP team', 'The BEP team')}
                 width={500}
                 height={400}
-                style={{ objectFit: 'cover', borderRadius: 0 }}
+                style={{ objectFit: 'cover', borderRadius: '24px' }}
               />
             </FadeUp>
             <FadeUp delay={0.2}>
@@ -91,7 +91,7 @@ export function TeamContent() {
                     alt={member.name}
                     width={200}
                     height={200}
-                    style={{ objectFit: 'cover', borderRadius: 0 }}
+                    style={{ objectFit: 'cover', borderRadius: '24px' }}
                   />
                   <h3>{member.name}</h3>
                   <div className="role">{member.role}</div>
@@ -118,7 +118,7 @@ export function TeamContent() {
                 {t('Neem contact op', 'Get in touch')} <ArrowRight size={18} />
               </Link>
               <a href="/contact" className="btn btn-ghost">
-                {t('Demo aanvragen', 'Request demo')}
+                {t('Plan een sessie', 'Schedule a session')}
               </a>
             </div>
           </FadeUp>

@@ -98,7 +98,7 @@ export function PricingContent() {
                     href="/contact"
                     className={`btn ${tier.featured ? 'btn-primary' : 'btn-outline'}`}
                   >
-                    {t('Demo aanvragen', 'Request demo')} <ArrowRight size={16} />
+                    {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={16} />
                   </a>
                 </div>
               </FadeUp>
@@ -119,7 +119,7 @@ export function PricingContent() {
               )}
             </p>
             <a href="/contact" className="btn btn-white">
-              {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
+              {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={18} />
             </a>
           </FadeUp>
         </div>

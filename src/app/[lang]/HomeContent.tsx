@@ -7,10 +7,6 @@ import Image from 'next/image'
 import { HeroDemo } from '@/components/HeroDemo'
 import dynamic from 'next/dynamic'
 
-const IntegrationShowcase = dynamic(
-  () => import('@/components/IntegrationShowcase').then(m => ({ default: m.IntegrationShowcase })),
-  { loading: () => <div style={{ minHeight: 400 }} /> }
-)
 
 const FAQ = dynamic(
   () => import('@/components/FAQ').then(m => ({ default: m.FAQ })),
@@ -30,21 +26,21 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <div className="hero-text">
               <FadeUp>
                 <h1>
-                  BEP — {t('Jouw nieuwe', 'Your new')}<br />
-                  <span className="highlight gradient-text">{t('bedrijfsexpert.', 'business expert.')}</span>
+                  BEP — {t('De digitale expert die', 'The digital expert that')}<br />
+                  <span className="highlight gradient-text">{t('meedraait in je team.', 'works alongside your team.')}</span>
                 </h1>
                 <p className="subtitle">
                   {t(
-                    'Doorzoek al je systemen, combineer de context en voer taken uit — automatisch. Eén vraag, direct antwoord uit ERP, CRM, e-mail en documenten.',
-                    'Search all your systems, combine context and execute tasks — automatically. One question, instant answers from ERP, CRM, email and documents.'
+                    'Stel een vraag, krijg direct antwoord uit al je systemen. BEP doorzoekt je ERP, CRM, e-mail en documenten — als een collega die alles weet.',
+                    'Ask a question, get instant answers from all your systems. BEP searches your ERP, CRM, email and documents — like a colleague who knows everything.'
                   )}
                 </p>
                 <div className="hero-buttons">
                   <a href="/contact" className="btn btn-primary">
-                    {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
+                    {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={18} />
                   </a>
                   <Link href="/cases" className="btn btn-ghost">
-                    {t('Bekijk resultaten', 'View results')}
+                    {t('Bekijk cases', 'View cases')}
                   </Link>
                 </div>
                 <div className="hero-team">
@@ -122,23 +118,23 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
           <FadeUp>
             <div className="section-header">
               <span className="section-label">{t('Wat BEP kan', 'What BEP can do')}</span>
-              <h2>{t('Drie krachten in één platform', 'Three powers in one platform')}</h2>
+              <h2>{t('Zo werkt BEP in de praktijk', 'How BEP works in practice')}</h2>
             </div>
           </FadeUp>
           <div className="capabilities-grid">
             <FadeUp delay={0.1}>
               <div className="capability-card">
                 <div className="icon"><FileText size={24} /></div>
-                <h3>{t('Kennisbank', 'Knowledge Base')}</h3>
+                <h3>{t('Alles weten', 'Know everything')}</h3>
                 <p>
                   {t(
-                    'Al je bedrijfsdata geïndexeerd en doorzoekbaar. Documenten, e-mails, ERP-data, CRM-records — alles op één plek.',
-                    'All your business data indexed and searchable. Documents, emails, ERP data, CRM records — everything in one place.'
+                    'BEP kent al je bedrijfsdata. Documenten, e-mails, ERP-data, CRM-records — automatisch geïndexeerd en altijd actueel.',
+                    'BEP knows all your business data. Documents, emails, ERP data, CRM records — automatically indexed and always up to date.'
                   )}
                 </p>
                 <ul>
                   <li>{t('Automatisch indexeren', 'Automatic indexing')}</li>
-                  <li>{t('Real-time synchronisatie', 'Real-time synchronization')}</li>
+                  <li>{t('Real-time synchronisatie', 'Real-time sync')}</li>
                   <li>{t('Versiebeheer', 'Version control')}</li>
                 </ul>
               </div>
@@ -146,11 +142,11 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <FadeUp delay={0.2}>
               <div className="capability-card">
                 <div className="icon"><MessageSquare size={24} /></div>
-                <h3>{t('Slim Bevragen', 'Smart Querying')}</h3>
+                <h3>{t('Gewoon vragen', 'Just ask')}</h3>
                 <p>
                   {t(
-                    'Stel vragen in natuurlijke taal en krijg directe antwoorden uit al je systemen. Geen SQL, geen filters — gewoon vragen.',
-                    'Ask questions in natural language and get direct answers from all your systems. No SQL, no filters — just ask.'
+                    'Stel vragen zoals je dat aan een collega doet. BEP zoekt direct in al je systemen en geeft een concreet antwoord.',
+                    'Ask questions like you would ask a colleague. BEP instantly searches all your systems and gives a concrete answer.'
                   )}
                 </p>
                 <ul>
@@ -163,11 +159,11 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <FadeUp delay={0.3}>
               <div className="capability-card">
                 <div className="icon"><Zap size={24} /></div>
-                <h3>{t('Taken Uitvoeren', 'Execute Tasks')}</h3>
+                <h3>{t('Direct regelen', 'Get it done')}</h3>
                 <p>
                   {t(
-                    'BEP vindt niet alleen het antwoord, maar voert ook de actie uit. Van e-mail versturen tot CRM bijwerken — automatisch.',
-                    'BEP doesn\'t just find the answer, it also executes the action. From sending email to updating CRM — automatically.'
+                    'BEP vindt niet alleen het antwoord, maar regelt het ook. E-mail versturen, CRM bijwerken, rapportage maken — automatisch.',
+                    'BEP doesn\'t just find the answer, it gets things done. Send email, update CRM, create reports — automatically.'
                   )}
                 </p>
                 <ul>
@@ -256,7 +252,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                     )}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '12px' }}>
-                    <Image src="/images/team-member-4.png" alt="" width={40} height={40} style={{ borderRadius: 0, objectFit: 'cover' }} />
+                    <Image src="/images/team-member-4.png" alt="" width={40} height={40} style={{ borderRadius: '50%', objectFit: 'cover' }} />
                     <cite>— Operations Manager</cite>
                   </div>
                 </div>
@@ -326,21 +322,6 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </section>
       )}
 
-      {/* ===== DATA SILO SCAN ===== */}
-      <section className="section section-white" id="ontdek">
-        <div className="container">
-          <FadeUp>
-            <div className="section-header">
-              <span className="section-label">{t('Data Silo Scan', 'Data Silo Scan')}</span>
-              <h2>{t('Hoe verbonden is jouw bedrijfsdata?', 'How connected is your business data?')}</h2>
-              <p>{t('Doe de gratis Data Silo Scan en ontdek waar je tijd verliest.', 'Take the free Data Silo Scan and discover where you\'re losing time.')}</p>
-            </div>
-          </FadeUp>
-          <FadeUp delay={0.2}>
-            <IntegrationShowcase />
-          </FadeUp>
-        </div>
-      </section>
 
       {/* ===== FAQ ===== */}
       <section className="section section-gray">
@@ -361,16 +342,16 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
       <section className="cta-section orange-glow">
         <div className="container">
           <FadeUp>
-            <h2>{t('Klaar om je bedrijfsdata te ontsluiten?', 'Ready to unlock your business data?')}</h2>
+            <h2>{t('Klaar om BEP te laten meedraaien?', 'Ready to let BEP join your team?')}</h2>
             <p>
               {t(
-                'Ontdek wat BEP voor jouw organisatie kan betekenen. Plan een demo en zie het zelf.',
-                'Discover what BEP can do for your organization. Schedule a demo and see for yourself.'
+                'Ontdek wat BEP voor jouw organisatie kan betekenen. Plan een sessie en zie het zelf.',
+                'Discover what BEP can do for your organization. Schedule a session and see for yourself.'
               )}
             </p>
             <div className="hero-buttons">
               <a href="/contact" className="btn btn-white">
-                {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
+                {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={18} />
               </a>
               <Link href="/contact" className="btn btn-ghost">
                 {t('Neem contact op', 'Get in touch')}

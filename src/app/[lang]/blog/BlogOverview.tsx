@@ -174,7 +174,7 @@ export function BlogOverview({ posts }: { posts: any[] }) {
             <FadeUp>
               <div style={{ textAlign: 'center', padding: '80px 0' }}>
                 <h3>{t('Nog geen artikelen', 'No articles yet')}</h3>
-                <p style={{ color: 'var(--color-text-muted)', marginTop: 8 }}>
+                <p style={{ color: 'var(--steel)', marginTop: 8 }}>
                   {t('We werken aan nieuwe content. Kom snel terug!', 'We\'re working on new content. Come back soon!')}
                 </p>
               </div>
@@ -191,7 +191,7 @@ export function BlogOverview({ posts }: { posts: any[] }) {
             <p>{t('Ontdek in 2 minuten wat BEP voor jouw organisatie kan betekenen.', 'Discover in 2 minutes what BEP can do for your organization.')}</p>
             <div className="hero-buttons">
               <a href="/contact" className="btn btn-white">
-                {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
+                {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={18} />
               </a>
               <Link href="/contact" className="btn btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>
                 {t('Neem contact op', 'Get in touch')}

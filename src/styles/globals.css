@@ -13,20 +13,34 @@
   --orange-dark: #D97316;
   --blue-dark: #1F334B;
   --blue-darker: #0f1d2f;
-  --green: #10b981;
-  --cyan: #06b6d4;
 
-  /* Neutrals */
+  /* Support / Functional (brand book) */
+  --signal-blue: #2F6DBA;
+  --data-teal: #2BA9A4;
+  --trust-green: #4A9F6A;
+  --alert-red: #D64545;
+
+  /* Legacy aliases */
+  --green: #4A9F6A;
+  --cyan: #2BA9A4;
+
+  /* Brand Neutrals (brand book) */
   --white: #ffffff;
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
+  --snow: #F7F6F3;
+  --cloud: #E2E5EC;
+  --steel: #A1AAB8;
+  --slate: #3A4657;
+
+  /* Legacy gray scale (for compatibility) */
+  --gray-50: #F7F6F3;
+  --gray-100: #F7F6F3;
+  --gray-200: #E2E5EC;
+  --gray-300: #E2E5EC;
+  --gray-400: #A1AAB8;
+  --gray-500: #A1AAB8;
+  --gray-600: #3A4657;
+  --gray-700: #3A4657;
+  --gray-800: #1F334B;
   --gray-900: #111827;
 
   /* Typography */
@@ -45,13 +59,13 @@
   --section-pad: 96px 0;
   --section-pad-sm: 56px 0;
 
-  /* Radius */
-  --radius-sm: 0px;
-  --radius: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
-  --radius-2xl: 0px;
-  --radius-full: 0px;
+  /* Radius (brand book: rounded, friendly) */
+  --radius-sm: 12px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 24px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
@@ -86,7 +100,7 @@ html {
 }
 
 body {
-  font-family: var(--font-main), 'DM Sans', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-main), 'Inter', system-ui, -apple-system, sans-serif;
   font-size: var(--fs-base);
   line-height: 1.6;
   overflow-x: hidden;
@@ -112,6 +126,7 @@ a { color: inherit; text-decoration: none; }
 
 /* --- Headings --- */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), 'Space Grotesk', system-ui, sans-serif;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -128,14 +143,16 @@ h4 { font-size: var(--fs-xl); }
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  font-size: var(--fs-base);
-  font-weight: 600;
-  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  border-radius: var(--radius);
   border: none;
   cursor: pointer;
   transition: all var(--transition);
   font-family: inherit;
   line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn-primary {
@@ -469,8 +486,68 @@ h4 { font-size: var(--fs-xl); }
 }
 
 .section-white {
-  background: var(--color-bg-primary);
-  color: var(--white);
+  background: var(--snow);
+  color: var(--slate);
+
+  /* Override dark-theme variables for light sections */
+  --color-text-primary: var(--blue-dark);
+  --color-text-secondary: var(--steel);
+  --color-text-muted: #8a929e;
+  --color-card-bg: var(--white);
+  --color-card-bg-hover: var(--snow);
+  --color-card-border: var(--cloud);
+  --color-card-border-hover: var(--orange);
+}
+.section-white h1, .section-white h2, .section-white h3 { color: var(--blue-dark); }
+.section-white .section-label { color: var(--orange); }
+
+/* Buttons on light background */
+.section-white .btn-outline {
+  color: var(--blue-dark);
+  border-color: var(--cloud);
+}
+.section-white .btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.section-white .btn-ghost {
+  color: var(--blue-dark);
+  border-color: var(--steel);
+}
+.section-white .btn-ghost:hover {
+  background: rgba(31, 51, 75, 0.05);
+  border-color: var(--blue-dark);
+}
+.section-white .btn-secondary {
+  color: var(--blue-dark);
+  border-color: var(--cloud);
+}
+.section-white .btn-secondary:hover {
+  background: rgba(31, 51, 75, 0.05);
+  border-color: var(--steel);
+}
+
+/* Comparison table hover on light bg */
+.section-white .comparison-table tr:hover td {
+  background: rgba(31, 51, 75, 0.04);
+}
+
+/* Contact form on light background */
+.section-white .form-group input,
+.section-white .form-group textarea,
+.section-white .form-group select {
+  background: var(--white);
+  color: var(--slate);
+}
+.section-white .form-group input::placeholder,
+.section-white .form-group textarea::placeholder {
+  color: var(--steel);
+}
+
+/* Blog & card border-radius consistency */
+.section-white .blog-card,
+.section-white .blog-featured {
+  border-radius: var(--radius-lg);
 }
 
 .section-gray {
@@ -3148,6 +3225,7 @@ h4 { font-size: var(--fs-xl); }
   flex-direction: column;
   background: var(--color-card-bg);
   border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all 0.3s ease;
   height: 100%;
@@ -3360,13 +3438,15 @@ h4 { font-size: var(--fs-xl); }
 }
 .trust-card {
   padding: 32px;
-  background: var(--color-card-bg);
-  border: 1px solid var(--color-card-border);
+  background: var(--white);
+  border: 1px solid var(--cloud);
+  border-radius: var(--radius-lg);
   transition: all 0.3s ease;
 }
 .trust-card:hover {
-  border-color: var(--color-card-border-hover);
+  border-color: var(--orange);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 .trust-icon {
   width: 56px;
@@ -3376,10 +3456,11 @@ h4 { font-size: var(--fs-xl); }
   justify-content: center;
   background: rgba(245,134,29,0.1);
   color: var(--orange);
+  border-radius: var(--radius-sm);
   margin-bottom: 20px;
 }
-.trust-card h3 { margin-bottom: 8px; }
-.trust-card p { color: var(--color-text-secondary); font-size: var(--fs-sm); line-height: 1.6; }
+.trust-card h3 { margin-bottom: 8px; color: var(--blue-dark); }
+.trust-card p { color: var(--steel); font-size: var(--fs-sm); line-height: 1.6; }
 
 /* =============================================
    DATA SILO SCORE — Assessment & Results

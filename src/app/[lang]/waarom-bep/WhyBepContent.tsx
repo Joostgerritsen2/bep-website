@@ -219,7 +219,7 @@ export function WhyBepContent() {
             <p>{t('Bouw je persoonlijke plan in 2 minuten', 'Build your personal plan in 2 minutes')}</p>
             <div className="hero-buttons">
               <a href="/contact" className="btn btn-white">
-                {t('Demo aanvragen', 'Request demo')} <ArrowRight size={18} />
+                {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={18} />
               </a>
               <Link href="/contact" className="btn btn-ghost">
                 {t('Neem contact op', 'Get in touch')}

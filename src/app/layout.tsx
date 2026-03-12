@@ -1,8 +1,15 @@
 import '@/styles/globals.css'
-import { DM_Sans } from 'next/font/google'
+import { Space_Grotesk, Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 
-const font = DM_Sans({
+const heading = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-heading',
+})
+
+const body = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
@@ -17,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${font.variable} ${font.className}`} suppressHydrationWarning>
+    <html className={`${heading.variable} ${body.variable} ${body.className}`} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   )
