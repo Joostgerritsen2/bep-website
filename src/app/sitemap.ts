@@ -52,7 +52,6 @@ export default async function sitemap() {
   return [
     // Static pages
     ...localizedEntries('', { changeFrequency: 'weekly', priority: 1 }),
-    ...localizedEntries('/pricing', { changeFrequency: 'monthly', priority: 0.9 }),
     ...localizedEntries('/waarom-bep', { changeFrequency: 'monthly', priority: 0.8 }),
     ...localizedEntries('/filosofie', { changeFrequency: 'monthly', priority: 0.8 }),
     ...localizedEntries('/cases', { changeFrequency: 'monthly', priority: 0.8 }),

@@ -62,13 +62,22 @@ export function Navigation() {
           <nav className="menu-main">
             <Link href="/" onClick={close}>Home</Link>
             <Link href="/waarom-bep" onClick={close}>{t('Waarom BEP', 'Why BEP')}</Link>
-            <Link href="/filosofie" onClick={close}>{t('Filosofie', 'Philosophy')}</Link>
             <Link href="/cases" onClick={close}>Cases</Link>
             <Link href="/blog" onClick={close}>Blog</Link>
             <Link href="/team" onClick={close}>Team</Link>
-            <Link href="/pricing" onClick={close}>Pricing</Link>
             <Link href="/contact" onClick={close}>Contact</Link>
           </nav>
+          <div className="menu-secondary">
+            <div className="menu-secondary-group">
+              <span className="menu-secondary-label">{t('Meer', 'More')}</span>
+              <Link href="/filosofie" onClick={close}>{t('Filosofie', 'Philosophy')}</Link>
+            </div>
+            <div className="menu-secondary-group">
+              <span className="menu-secondary-label">Contact</span>
+              <a href="mailto:info@bep.expert">info@bep.expert</a>
+              <a href="https://www.linkedin.com/company/bep-expert/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            </div>
+          </div>
         </div>
       </div>
 

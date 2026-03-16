@@ -409,8 +409,11 @@ h4 { font-size: var(--fs-xl); }
 
 .menu-columns {
   display: flex;
-  flex-direction: column;
-  padding: 40px;
+  gap: 80px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 40px;
 }
 
 .menu-main {
@@ -420,12 +423,16 @@ h4 { font-size: var(--fs-xl); }
 }
 .menu-main a {
   font-size: var(--fs-4xl);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--white);
-  transition: color var(--transition);
+  opacity: 0.8;
+  padding: 4px 0;
+  transition: all 0.2s;
 }
 .menu-main a:hover {
+  opacity: 1;
   color: var(--orange);
+  transform: translateX(8px);
 }
 
 .menu-footer {
@@ -445,22 +452,28 @@ h4 { font-size: var(--fs-xl); }
 .menu-secondary-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 .menu-secondary-label {
-  font-size: var(--fs-xs);
+  font-size: 12px;
   font-weight: 700;
-  color: var(--gray-400);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 4px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 8px;
+  display: block;
 }
-.menu-secondary a {
-  font-size: var(--fs-base);
-  color: var(--gray-300);
-  transition: color var(--transition);
+.menu-secondary-group a {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  opacity: 0.7;
+  padding: 4px 0;
+  transition: all 0.2s;
 }
-.menu-secondary a:hover {
+.menu-secondary-group a:hover {
+  opacity: 1;
+  transform: translateX(4px);
   color: var(--orange);
 }
 
@@ -3273,7 +3286,9 @@ h4 { font-size: var(--fs-xl); }
   .solution-content,
   .case-content,
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .menu-columns { flex-direction: column; gap: 40px; }
+  .menu-columns { flex-direction: column; gap: 36px; align-items: center; padding: 0 24px; }
+  .menu-main { align-items: center; }
+  .menu-secondary { align-items: center; text-align: center; }
   .menu-main a { font-size: var(--fs-2xl); }
   .footer-grid { grid-template-columns: 1fr; }
   .cookie-banner-inner { flex-direction: column; text-align: center; }

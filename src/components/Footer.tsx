@@ -12,7 +12,7 @@ export function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-              <Image src="/images/bep-icon.png" alt="BEP" width={28} height={28} style={{ filter: 'brightness(0) invert(1)' }} />
+              <Image src="/images/bep-icon.png" alt="BEP" width={28} height={28} style={{ }} />
               <span className="footer-logo">BEP</span>
             </div>
             <p className="footer-tagline">
@@ -28,7 +28,6 @@ export function Footer() {
               <li><Link href="/cases">Cases</Link></li>
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/team">Team</Link></li>
-              <li><Link href="/pricing">Pricing</Link></li>
             </ul>
           </div>
 
@@ -36,7 +35,6 @@ export function Footer() {
             <h4>Product</h4>
             <ul className="footer-links">
               <li><a href="/contact">{t('Plan een demo', 'Schedule a demo')}</a></li>
-              <li><Link href="/pricing">Pricing</Link></li>
               <li><Link href="/contact">Contact</Link></li>
               <li><Link href="/privacy">Privacy</Link></li>
             </ul>
