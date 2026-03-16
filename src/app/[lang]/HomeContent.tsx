@@ -26,13 +26,13 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <div className="hero-text">
               <FadeUp>
                 <h1>
-                  {t('Autonome AI-agents die', 'Autonomous AI agents that')}<br />
-                  <span className="gradient-text">{t('meedraaien in je organisatie', 'work inside your organization')}</span>
+                  BEP{' '}
+                  <span className="gradient-text">{t('je nieuwe bedrijfsexpert', 'your new business expert')}</span>
                 </h1>
                 <p className="subtitle">
                   {t(
-                    'Specialistische agents voeren werk uit, dragen taken over en escaleren alleen waar mensen nodig zijn. Niet één assistent, maar een complete digitale workforce geïntegreerd in je bedrijf.',
-                    'Specialized agents execute work, hand off tasks and escalate only when humans are needed. Not one assistant, but a complete digital workforce integrated into your business.'
+                    'BEP verbindt al je bedrijfsdata, doorzoekt alles en voert taken uit. Volledig autonoom, volledig in je eigen cloud.',
+                    'BEP connects all your business data, searches everything and executes tasks. Fully autonomous, fully in your own cloud.'
                   )}
                 </p>
                 <div className="hero-buttons">
