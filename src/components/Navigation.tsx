@@ -42,23 +42,13 @@ export function Navigation() {
             <span className="logo-text">BEP</span>
           </Link>
 
-          <nav className="header-nav">
-            <Link href="/waarom-bep">{t('Waarom BEP', 'Why BEP')}</Link>
-            <Link href="/filosofie">{t('Filosofie', 'Philosophy')}</Link>
-            <Link href="/cases">Cases</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/team">Team</Link>
-            <Link href="/pricing">Pricing</Link>
-            <Link href="/contact">Contact</Link>
-          </nav>
-
           <div className="header-right">
             <LanguageSwitcher />
             <Link href="/contact" className="header-cta">
               {t('Plan een demo', 'Schedule a demo')}
             </Link>
-            <button className="menu-btn" onClick={() => setMenuOpen(true)}>
-              <Menu size={24} />
+            <button className="menu-btn-round" onClick={() => setMenuOpen(true)} aria-label="Menu">
+              <Menu size={20} />
             </button>
           </div>
         </div>
@@ -77,7 +67,6 @@ export function Navigation() {
             <Link href="/blog" onClick={close}>Blog</Link>
             <Link href="/team" onClick={close}>Team</Link>
             <Link href="/pricing" onClick={close}>Pricing</Link>
-            <Link href="/contact" onClick={close}>{t('Plan een demo', 'Schedule a demo')}</Link>
             <Link href="/contact" onClick={close}>Contact</Link>
           </nav>
         </div>
