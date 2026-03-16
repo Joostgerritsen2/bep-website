@@ -3489,6 +3489,11 @@ h4 { font-size: var(--fs-xl); }
   gap: 8px;
   margin-bottom: 12px;
 }
+.blog-card-date {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
 .blog-card-body h3 {
   font-size: var(--fs-lg);
   margin-bottom: 8px;

@@ -314,14 +314,22 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               {latestPosts.map((post: any, i: number) => (
                 <FadeUp key={post._id || i} delay={i * 0.1}>
                   <Link href={`/blog/${post.slug?.current}`} className="blog-card">
+                    <div className="blog-card-img">
+                      {post.coverUrl ? (
+                        <Image src={post.coverUrl} alt={t(post.title, post.titleEn) || ''} width={600} height={400} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      ) : (
+                        <div className="blog-card-placeholder" />
+                      )}
+                    </div>
                     <div className="blog-card-body">
-                      <span className="blog-category" style={{ background: 'rgba(245,134,29,0.15)', color: 'var(--orange)' }}>
-                        {post.category === 'ai' ? 'AI' : post.category === 'business' ? 'Business' : post.category || 'Insight'}
-                      </span>
+                      <p className="blog-card-date">
+                        {new Date(post.publishedAt).toLocaleDateString('nl-NL', { month: 'long', year: 'numeric' })}
+                        {post.author && ` · ${post.author}`}
+                      </p>
                       <h3>{t(post.title, post.titleEn)}</h3>
-                      <p>{t(post.excerpt, post.excerptEn)?.slice(0, 140)}...</p>
+                      <p>{t(post.excerpt, post.excerptEn)?.slice(0, 120)}...</p>
                       <span className="blog-read-more">
-                        {t('Lees meer', 'Read more')} <ArrowRight size={14} />
+                        {t('Lees meer', 'Read more')} →
                       </span>
                     </div>
                   </Link>
