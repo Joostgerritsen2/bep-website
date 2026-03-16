@@ -5,7 +5,7 @@ import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
 import { Shield, CheckCircle, Database, GitBranch, Bot, Users, ArrowRight, Lock, Code } from 'lucide-react'
 import { cases } from './cases/caseData'
 import Image from 'next/image'
-import { EcosystemVisual } from '@/components/EcosystemVisual'
+import { HeroFeed } from '@/components/HeroFeed'
 import dynamic from 'next/dynamic'
 
 
@@ -76,7 +76,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               </FadeUp>
             </div>
             <FadeUp delay={0.2}>
-              <EcosystemVisual />
+              <HeroFeed />
             </FadeUp>
           </div>
           <FadeUp delay={0.4}>
