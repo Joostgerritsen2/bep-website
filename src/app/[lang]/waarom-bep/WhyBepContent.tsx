@@ -23,8 +23,8 @@ const comparisonRows = [
     watermelon: 'cross',
   },
   {
-    criteriaNl: 'Voert taken uit',
-    criteriaEn: 'Executes tasks',
+    criteriaNl: 'Proactief handelen',
+    criteriaEn: 'Proactive action',
     bep: 'check',
     copilot: 'partial',
     copilotNote: 'Office',
@@ -82,8 +82,8 @@ export function WhyBepContent() {
             </h1>
             <p className="subtitle">
               {t(
-                'Geen chatbot. Geen copilot. BEP is de nieuwe bedrijfsexpert die al je data verbindt, doorzoekt \u00e9n acties uitvoert.',
-                'Not a chatbot. Not a copilot. BEP is the new business expert that connects all your data, searches it and executes actions.'
+                'Geen chatbot. Geen copilot. BEP is de nieuwe bedrijfsexpert die proactief meekijkt, kansen signaleert en taken oppakt \u2014 voordat jij eraan denkt.',
+                'Not a chatbot. Not a copilot. BEP is the new business expert that proactively monitors, flags opportunities and handles tasks \u2014 before you even think of it.'
               )}
             </p>
           </FadeUp>
@@ -174,11 +174,11 @@ export function WhyBepContent() {
             <FadeUp delay={0.3}>
               <div className="usp-card">
                 <div className="icon"><Zap size={24} /></div>
-                <h3>{t('Vindt \u00e9n Doet', 'Finds and Acts')}</h3>
+                <h3>{t('Proactief, niet reactief', 'Proactive, not reactive')}</h3>
                 <p>
                   {t(
-                    'Andere tools zoeken alleen. BEP voert ook taken uit: e-mails versturen, records bijwerken, rapportages genereren. Volledig autonoom.',
-                    'Other tools only search. BEP also executes tasks: sending emails, updating records, generating reports. Fully autonomous.'
+                    'Andere tools wachten tot je iets vraagt. BEP kijkt proactief mee: signaleert stille klanten, pakt openstaande taken op en bereidt voorstellen voor. Zonder dat je erom hoeft te vragen.',
+                    'Other tools wait until you ask. BEP proactively monitors: flags quiet clients, picks up outstanding tasks and prepares proposals. Without you having to ask.'
                   )}
                 </p>
               </div>

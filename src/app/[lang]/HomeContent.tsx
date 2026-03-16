@@ -32,8 +32,8 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                 </h1>
                 <p className="subtitle">
                   {t(
-                    'BEP verbindt al je bedrijfsdata, doorzoekt alles en voert taken uit. Volledig autonoom, volledig in je eigen cloud.',
-                    'BEP connects all your business data, searches everything and executes tasks. Fully autonomous, fully in your own cloud.'
+                    'BEP verbindt al je bedrijfsdata, signaleert kansen en risico\'s, en pakt taken proactief op. Volledig autonoom, volledig in je eigen cloud.',
+                    'BEP connects all your business data, flags opportunities and risks, and proactively handles tasks. Fully autonomous, fully in your own cloud.'
                   )}
                 </p>
                 <div className="hero-buttons">
@@ -119,7 +119,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
           <FadeUp>
             <div className="section-header">
               <span className="section-label">{t('Hoe BEP werkt', 'How BEP works')}</span>
-              <h2>{t('Een operationele AI-laag door je hele organisatie', 'An operational AI layer across your entire organization')}</h2>
+              <h2>{t('Denkt mee, handelt zelf', 'Thinks along, acts independently')}</h2>
             </div>
           </FadeUp>
           <div className="capabilities-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
@@ -160,17 +160,17 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <FadeUp delay={0.3}>
               <div className="capability-card">
                 <div className="icon"><Bot size={24} /></div>
-                <h3>{t('AI Agents', 'AI Agents')}</h3>
+                <h3>{t('Proactieve AI Agents', 'Proactive AI Agents')}</h3>
                 <p>
                   {t(
-                    'Specialistische agents die samenwerken, taken uitvoeren, werk overdragen en mensen inschakelen waar nodig. Sales Agent, Support Agent, Finance Agent — als digitale collega\'s.',
-                    'Specialized agents that collaborate, execute tasks, hand off work and involve humans when needed. Sales Agent, Support Agent, Finance Agent — as digital colleagues.'
+                    'Agents die niet wachten op instructies. Ze signaleren dat een klant al weken stil is, pakken een openstaande factuur op, of bereiden een voorstel voor — voordat jij eraan denkt.',
+                    'Agents that don\'t wait for instructions. They flag that a client has gone quiet for weeks, pick up an overdue invoice, or prepare a proposal — before you even think of it.'
                   )}
                 </p>
                 <ul>
-                  <li>{t('Onderling samenwerken', 'Collaborate with each other')}</li>
-                  <li>{t('Zelfstandig acties uitvoeren', 'Execute actions autonomously')}</li>
-                  <li>{t('Beslissingen voorbereiden', 'Prepare decisions')}</li>
+                  <li>{t('Signaleert kansen en risico\'s', 'Flags opportunities and risks')}</li>
+                  <li>{t('Pakt taken op zonder dat je het vraagt', 'Picks up tasks without being asked')}</li>
+                  <li>{t('Houdt je team op de hoogte', 'Keeps your team informed')}</li>
                 </ul>
               </div>
             </FadeUp>
