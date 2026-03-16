@@ -127,7 +127,7 @@ export function ContactContent() {
                     )}
                   </p>
                   <a href="/contact" className="btn btn-primary" style={{ fontSize: '0.875rem', padding: '10px 20px' }}>
-                    {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={14} />
+                    {t('Plan een demo', 'Schedule a demo')} <ArrowRight size={14} />
                   </a>
                 </div>
               </div>

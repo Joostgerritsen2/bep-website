@@ -35,7 +35,7 @@ export function Footer() {
           <div>
             <h4>Product</h4>
             <ul className="footer-links">
-              <li><a href="/contact">{t('Plan een sessie', 'Schedule a session')}</a></li>
+              <li><a href="/contact">{t('Plan een demo', 'Schedule a demo')}</a></li>
               <li><Link href="/pricing">Pricing</Link></li>
               <li><Link href="/contact">Contact</Link></li>
               <li><Link href="/privacy">Privacy</Link></li>

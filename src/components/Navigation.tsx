@@ -55,7 +55,7 @@ export function Navigation() {
           <div className="header-right">
             <LanguageSwitcher />
             <Link href="/contact" className="header-cta">
-              {t('Plan een sessie', 'Schedule a session')}
+              {t('Plan een demo', 'Schedule a demo')}
             </Link>
             <button className="menu-btn" onClick={() => setMenuOpen(true)}>
               <Menu size={24} />
@@ -77,7 +77,7 @@ export function Navigation() {
             <Link href="/blog" onClick={close}>Blog</Link>
             <Link href="/team" onClick={close}>Team</Link>
             <Link href="/pricing" onClick={close}>Pricing</Link>
-            <Link href="/contact" onClick={close}>{t('Plan een sessie', 'Schedule a session')}</Link>
+            <Link href="/contact" onClick={close}>{t('Plan een demo', 'Schedule a demo')}</Link>
             <Link href="/contact" onClick={close}>Contact</Link>
           </nav>
         </div>
@@ -86,7 +86,7 @@ export function Navigation() {
       {/* Floating mobile CTA */}
       <div className={`floating-cta ${showFloating ? 'visible' : ''}`}>
         <Link href="/contact">
-          {t('Plan een sessie', 'Schedule a session')}
+          {t('Plan een demo', 'Schedule a demo')}
         </Link>
       </div>
     </>

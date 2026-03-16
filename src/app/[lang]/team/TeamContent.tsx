@@ -118,7 +118,7 @@ export function TeamContent() {
                 {t('Neem contact op', 'Get in touch')}
               </Link>
               <a href="/contact" className="btn btn-ghost btn-arrow">
-                {t('Plan een sessie', 'Schedule a session')}
+                {t('Plan een demo', 'Schedule a demo')}
               </a>
             </div>
           </FadeUp>

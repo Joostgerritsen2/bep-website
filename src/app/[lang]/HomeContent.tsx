@@ -37,7 +37,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                 </p>
                 <div className="hero-buttons">
                   <a href="/contact" className="btn btn-primary btn-arrow">
-                    {t('Plan een sessie', 'Schedule a session')}
+                    {t('Plan een demo', 'Schedule a demo')}
                   </a>
                   <Link href="/cases" className="btn btn-ghost btn-arrow">
                     {t('Bekijk cases', 'View cases')}
@@ -362,13 +362,13 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <h2>{t('Klaar om BEP te laten meedraaien?', 'Ready to let BEP join your team?')}</h2>
             <p>
               {t(
-                'Ontdek wat BEP voor jouw organisatie kan betekenen. Plan een sessie en zie het zelf.',
-                'Discover what BEP can do for your organization. Schedule a session and see for yourself.'
+                'Ontdek wat BEP voor jouw organisatie kan betekenen. Plan een demo en zie het zelf.',
+                'Discover what BEP can do for your organization. Schedule a demo and see for yourself.'
               )}
             </p>
             <div className="hero-buttons">
               <a href="/contact" className="btn btn-white btn-arrow">
-                {t('Plan een sessie', 'Schedule a session')}
+                {t('Plan een demo', 'Schedule a demo')}
               </a>
               <Link href="/contact" className="btn btn-ghost btn-arrow">
                 {t('Neem contact op', 'Get in touch')}

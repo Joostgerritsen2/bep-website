@@ -194,7 +194,7 @@ export function BlogDetail({ post }: { post: any }) {
             <p>{t('Ontdek in 2 minuten wat BEP voor jouw organisatie kan betekenen.', 'Discover in 2 minutes what BEP can do for your organization.')}</p>
             <div className="hero-buttons">
               <a href="/contact" className="btn btn-white">
-                {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={18} />
+                {t('Plan een demo', 'Schedule a demo')} <ArrowRight size={18} />
               </a>
               <Link href="/contact" className="btn btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>
                 {t('Neem contact op', 'Get in touch')}
