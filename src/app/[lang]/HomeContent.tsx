@@ -261,25 +261,13 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                       <Image src={caseItem.coverImage} alt={caseItem.client} width={600} height={400} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     ) : (
                       <div className="home-case-placeholder">
-                        <Image src={caseItem.logo} alt={caseItem.client} width={120} height={40} style={{ objectFit: 'contain', opacity: 0.8 }} />
+                        <Image src={caseItem.logo} alt={caseItem.client} width={100} height={32} style={{ objectFit: 'contain', opacity: 0.7 }} />
                       </div>
                     )}
                   </div>
                   <div className="home-case-body">
-                    <span className="home-case-sector">{t(caseItem.sector.nl, caseItem.sector.en)}</span>
                     <h3>{caseItem.client}</h3>
                     <p>{t(caseItem.tagline.nl, caseItem.tagline.en)}</p>
-                    <div className="home-case-stats">
-                      {caseItem.stats.slice(0, 2).map(stat => (
-                        <div key={stat.value} className="home-case-stat">
-                          <span className="value">{stat.value}</span>
-                          <span className="label">{t(stat.label.nl, stat.label.en)}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <span className="blog-read-more">
-                      {t('Bekijk case', 'View case')} →
-                    </span>
                   </div>
                 </Link>
               </FadeUp>

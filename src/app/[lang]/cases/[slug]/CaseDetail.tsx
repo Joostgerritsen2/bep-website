@@ -36,6 +36,23 @@ export function CaseDetail({ caseStudy }: { caseStudy: CaseStudy }) {
         </div>
       </section>
 
+      {/* ===== COVER IMAGE ===== */}
+      {caseStudy.coverImage && (
+        <section className="case-detail-cover">
+          <div className="container">
+            <FadeUp>
+              <Image
+                src={caseStudy.coverImage}
+                alt={caseStudy.client}
+                width={1200}
+                height={500}
+                style={{ width: '100%', height: 'auto', objectFit: 'cover', maxHeight: 480 }}
+              />
+            </FadeUp>
+          </div>
+        </section>
+      )}
+
       {/* ===== STATS BAR ===== */}
       <section className="case-detail-stats">
         <div className="container">
@@ -131,14 +148,10 @@ export function CaseDetail({ caseStudy }: { caseStudy: CaseStudy }) {
               )}
             </p>
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-white">
-                {t('Plan een demo', 'Schedule a demo')} <ArrowRight size={18} />
+              <a href="/contact" className="btn btn-white btn-arrow">
+                {t('Plan een demo', 'Schedule a demo')}
               </a>
-              <Link
-                href="/contact"
-                className="btn btn-secondary"
-                style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}
-              >
+              <Link href="/contact" className="btn btn-ghost btn-arrow">
                 {t('Neem contact op', 'Get in touch')}
               </Link>
             </div>
