@@ -1052,18 +1052,36 @@ h4 { font-size: var(--fs-xl); }
    CASE DETAIL PAGE
    ============================================= */
 .case-detail-hero {
-  padding: 160px 0 80px;
   position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.case-detail-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,29,47,0.3) 0%, rgba(15,29,47,0.85) 100%);
+  z-index: 1;
+}
+.case-detail-hero .container {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 80px;
+  padding-top: 160px;
 }
 
 .case-detail-back {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-text-secondary);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
   font-size: var(--fs-sm);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   transition: color var(--transition);
 }
 .case-detail-back:hover {
@@ -1072,31 +1090,43 @@ h4 { font-size: var(--fs-xl); }
 
 .case-detail-badge {
   display: inline-block;
-  font-size: var(--fs-xs);
-  font-weight: 600;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--orange);
-  margin-bottom: 16px;
+  letter-spacing: 2px;
+  background: var(--orange);
+  color: var(--white);
+  margin-bottom: 20px;
 }
 
 .case-detail-hero h1 {
-  font-size: var(--fs-5xl);
+  font-size: clamp(48px, 8vw, 80px);
   font-weight: 800;
+  color: var(--white);
+  line-height: 1.0;
   margin-bottom: 16px;
 }
 
 .case-detail-tagline {
-  font-size: var(--fs-xl);
-  color: var(--color-text-secondary);
-  max-width: 640px;
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: rgba(255,255,255,0.85);
+  max-width: 600px;
+  line-height: 1.5;
 }
 
-.case-detail-cover {
-  padding: 0 0 40px;
+.case-detail-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(255,255,255,0.4);
+  animation: caseDetailBounce 2s infinite;
 }
-.case-detail-cover img {
-  display: block;
+@keyframes caseDetailBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
 }
 
 .case-detail-stats {
@@ -1203,8 +1233,8 @@ h4 { font-size: var(--fs-xl); }
 }
 
 @media (max-width: 768px) {
-  .case-detail-hero { padding: 120px 0 56px; }
-  .case-detail-hero h1 { font-size: var(--fs-3xl); }
+  .case-detail-hero { min-height: 50vh; }
+  .case-detail-hero .container { padding-bottom: 48px; }
   .case-detail-stats-grid { gap: 32px; }
   .case-detail-stat-value { font-size: var(--fs-2xl); }
   .case-detail-quote { padding: 56px 0; }

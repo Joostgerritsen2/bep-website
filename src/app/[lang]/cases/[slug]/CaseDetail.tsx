@@ -2,7 +2,7 @@
 import { useLang } from '@/lib/language'
 import { FadeUp, FadeUpContainer } from '@/components/FadeUp'
 import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import { type CaseStudy } from '../caseData'
 
@@ -17,41 +17,36 @@ export function CaseDetail({ caseStudy }: { caseStudy: CaseStudy }) {
 
   return (
     <FadeUpContainer>
-      {/* ===== HERO ===== */}
-      <section className="case-detail-hero">
+      {/* ===== IMMERSIVE HERO ===== */}
+      <section
+        className="case-detail-hero"
+        style={caseStudy.coverImage ? { backgroundImage: `url(${caseStudy.coverImage})` } : undefined}
+      >
         <div className="container">
           <FadeUp>
             <Link href="/cases" className="case-detail-back">
               <ArrowLeft size={16} />
               {t('Alle cases', 'All cases')}
             </Link>
+          </FadeUp>
+          <FadeUp delay={0.05}>
             <span className="case-detail-badge">
               {t(caseStudy.sector.nl, caseStudy.sector.en)}
             </span>
+          </FadeUp>
+          <FadeUp delay={0.1}>
             <h1>{caseStudy.client}</h1>
+          </FadeUp>
+          <FadeUp delay={0.15}>
             <p className="case-detail-tagline">
               {t(caseStudy.tagline.nl, caseStudy.tagline.en)}
             </p>
           </FadeUp>
         </div>
+        <div className="case-detail-scroll">
+          <ChevronDown size={24} />
+        </div>
       </section>
-
-      {/* ===== COVER IMAGE ===== */}
-      {caseStudy.coverImage && (
-        <section className="case-detail-cover">
-          <div className="container">
-            <FadeUp>
-              <Image
-                src={caseStudy.coverImage}
-                alt={caseStudy.client}
-                width={1200}
-                height={500}
-                style={{ width: '100%', height: 'auto', objectFit: 'cover', maxHeight: 480 }}
-              />
-            </FadeUp>
-          </div>
-        </section>
-      )}
 
       {/* ===== STATS BAR ===== */}
       <section className="case-detail-stats">
