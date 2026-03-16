@@ -2,7 +2,7 @@
 import { useLang } from '@/lib/language'
 import { FadeUp, FadeUpContainer } from '@/components/FadeUp'
 import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
-import { Shield, CheckCircle, Database, GitBranch, Bot, Users, ArrowRight, Lock, Code } from 'lucide-react'
+import { Shield, CheckCircle, Database, GitBranch, Bot, Users, ArrowRight, Lock, Code, MessageSquare, Link2, Settings, Rocket } from 'lucide-react'
 import { cases } from './cases/caseData'
 import Image from 'next/image'
 import { HeroMockup } from '@/components/HeroMockup'
@@ -331,6 +331,53 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </section>
       )}
 
+
+      {/* ===== ZO WERKT HET ===== */}
+      <section className="section section-white">
+        <div className="container">
+          <FadeUp>
+            <div className="section-header">
+              <span className="section-label">{t('Zo werkt het', 'How it works')}</span>
+              <h2>{t('In 4 stappen live', 'Live in 4 steps')}</h2>
+              <p>{t('Van kennismaking tot volledig operationeel in gemiddeld 2 weken.', 'From first meeting to fully operational in an average of 2 weeks.')}</p>
+            </div>
+          </FadeUp>
+          <div className="steps-grid">
+            <FadeUp delay={0.1}>
+              <div className="step-card">
+                <div className="step-number">01</div>
+                <div className="step-icon"><MessageSquare size={24} /></div>
+                <h3>{t('Kennismakingsgesprek', 'Discovery call')}</h3>
+                <p>{t('We analyseren je systemen, processen en waar de meeste tijd verloren gaat. Geen verkooppraatje, maar een eerlijke scan.', 'We analyze your systems, processes and where the most time is lost. No sales pitch, just an honest scan.')}</p>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.2}>
+              <div className="step-card">
+                <div className="step-number">02</div>
+                <div className="step-icon"><Link2 size={24} /></div>
+                <h3>{t('Systemen koppelen', 'Connect systems')}</h3>
+                <p>{t('We verbinden je CRM, ERP, e-mail, documenten en andere databronnen. Alles wordt geïndexeerd en doorzoekbaar.', 'We connect your CRM, ERP, email, documents and other data sources. Everything gets indexed and searchable.')}</p>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.3}>
+              <div className="step-card">
+                <div className="step-number">03</div>
+                <div className="step-icon"><Settings size={24} /></div>
+                <h3>{t('Agents inrichten', 'Configure agents')}</h3>
+                <p>{t('We configureren specialistische agents voor jouw workflows. Sales, finance, support — afgestemd op hoe jouw organisatie werkt.', 'We configure specialized agents for your workflows. Sales, finance, support — tailored to how your organization works.')}</p>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.4}>
+              <div className="step-card">
+                <div className="step-number">04</div>
+                <div className="step-icon"><Rocket size={24} /></div>
+                <h3>{t('Live in 2 weken', 'Live in 2 weeks')}</h3>
+                <p>{t('Je team werkt direct met BEP. Wij monitoren, optimaliseren en schalen op basis van gebruik en feedback.', 'Your team works directly with BEP. We monitor, optimize and scale based on usage and feedback.')}</p>
+              </div>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
 
       {/* ===== FAQ ===== */}
       <section className="section section-gray">

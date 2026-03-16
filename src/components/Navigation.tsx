@@ -69,8 +69,9 @@ export function Navigation() {
           </nav>
           <div className="menu-secondary">
             <div className="menu-secondary-group">
-              <span className="menu-secondary-label">{t('Meer', 'More')}</span>
-              <Link href="/filosofie" onClick={close}>{t('Filosofie', 'Philosophy')}</Link>
+              <span className="menu-secondary-label">{t('Verdieping', 'Deep dive')}</span>
+              <Link href="/toepassingen" onClick={close}>{t('Toepassingen', 'Applications')}</Link>
+              <Link href="/filosofie" onClick={close}>{t('Onder de motorkap', 'Under the hood')}</Link>
             </div>
             <div className="menu-secondary-group">
               <span className="menu-secondary-label">Contact</span>
