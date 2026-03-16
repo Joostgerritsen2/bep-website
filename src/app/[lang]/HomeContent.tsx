@@ -3,6 +3,7 @@ import { useLang } from '@/lib/language'
 import { FadeUp, FadeUpContainer } from '@/components/FadeUp'
 import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
 import { Shield, CheckCircle, Database, GitBranch, Bot, Users, ArrowRight, Lock, Code } from 'lucide-react'
+import { cases } from './cases/caseData'
 import Image from 'next/image'
 import { EcosystemVisual } from '@/components/EcosystemVisual'
 import dynamic from 'next/dynamic'
@@ -242,7 +243,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </div>
       </section>
 
-      {/* ===== CASE STUDY ===== */}
+      {/* ===== CASES ===== */}
       <section className="section section-gray">
         <div className="container">
           <FadeUp>
@@ -251,51 +252,46 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               <h2>{t('BEP in de praktijk', 'BEP in practice')}</h2>
             </div>
           </FadeUp>
-          <div className="case-content">
-            <FadeUp>
-              <div className="case-text">
-                <h3>{t('Productiebedrijf — 150 medewerkers', 'Manufacturing company — 150 employees')}</h3>
-                <p>
-                  {t(
-                    'Een productiebedrijf met data verspreid over SAP, Outlook, SharePoint en Excel implementeerde BEP om alle bedrijfskennis te ontsluiten en processen te automatiseren.',
-                    'A manufacturing company with data spread across SAP, Outlook, SharePoint and Excel implemented BEP to unlock all business knowledge and automate processes.'
-                  )}
-                </p>
-                <div className="case-quote">
-                  <p>
-                    {t(
-                      '"Onze salesmedewerkers hoeven niet meer 4 systemen te raadplegen voor een klantupdate. Ze vragen het aan BEP en het is geregeld."',
-                      '"Our sales staff no longer need to consult 4 systems for a client update. They ask BEP and it\'s done."'
+          <div className="home-cases-grid">
+            {cases.map((caseItem, i) => (
+              <FadeUp key={caseItem.slug} delay={i * 0.1}>
+                <Link href={`/cases/${caseItem.slug}`} className="home-case-card">
+                  <div className="home-case-img">
+                    {caseItem.coverImage ? (
+                      <Image src={caseItem.coverImage} alt={caseItem.client} width={600} height={400} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    ) : (
+                      <div className="home-case-placeholder">
+                        <Image src={caseItem.logo} alt={caseItem.client} width={120} height={40} style={{ objectFit: 'contain', opacity: 0.8 }} />
+                      </div>
                     )}
-                  </p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '12px' }}>
-                    <Image src="/images/team-member-4.png" alt="" width={40} height={40} style={{ objectFit: 'cover' }} />
-                    <cite>— Operations Manager</cite>
                   </div>
-                </div>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.2}>
-              <div className="case-stats">
-                <div className="case-stat">
-                  <div className="value">80%</div>
-                  <div className="label">{t('Minder zoektijd', 'Less search time')}</div>
-                </div>
-                <div className="case-stat">
-                  <div className="value">4.2x</div>
-                  <div className="label">ROI</div>
-                </div>
-                <div className="case-stat">
-                  <div className="value">2</div>
-                  <div className="label">{t('Weken implementatie', 'Weeks implementation')}</div>
-                </div>
-                <div className="case-stat">
-                  <div className="value">150+</div>
-                  <div className="label">{t('Gebruikers', 'Users')}</div>
-                </div>
-              </div>
-            </FadeUp>
+                  <div className="home-case-body">
+                    <span className="home-case-sector">{t(caseItem.sector.nl, caseItem.sector.en)}</span>
+                    <h3>{caseItem.client}</h3>
+                    <p>{t(caseItem.tagline.nl, caseItem.tagline.en)}</p>
+                    <div className="home-case-stats">
+                      {caseItem.stats.slice(0, 2).map(stat => (
+                        <div key={stat.value} className="home-case-stat">
+                          <span className="value">{stat.value}</span>
+                          <span className="label">{t(stat.label.nl, stat.label.en)}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <span className="blog-read-more">
+                      {t('Bekijk case', 'View case')} →
+                    </span>
+                  </div>
+                </Link>
+              </FadeUp>
+            ))}
           </div>
+          <FadeUp delay={0.5}>
+            <div style={{ textAlign: 'center', marginTop: 32 }}>
+              <Link href="/cases" className="btn btn-outline btn-arrow">
+                {t('Bekijk alle cases', 'View all cases')}
+              </Link>
+            </div>
+          </FadeUp>
         </div>
       </section>
 

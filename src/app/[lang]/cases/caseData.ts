@@ -5,6 +5,7 @@ export interface CaseStudy {
   tagline: { nl: string; en: string }
   description: { nl: string; en: string }
   logo: string
+  coverImage?: string
   stats: { value: string; label: { nl: string; en: string } }[]
   sections: {
     title: { nl: string; en: string }
@@ -231,6 +232,7 @@ export const cases: CaseStudy[] = [
       en: 'BPZ is a manufacturing company where knowledge of the production process was largely in the heads of senior employees. With several retirements approaching, this knowledge had to be captured quickly.',
     },
     logo: '/images/client-bpz.png',
+    coverImage: '/images/case-bpz.webp',
     stats: [
       { value: '2 wk', label: { nl: 'Implementatietijd', en: 'Implementation time' } },
       { value: '100%', label: { nl: 'Kennisbehoud', en: 'Knowledge retained' } },
