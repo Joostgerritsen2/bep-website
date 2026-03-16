@@ -54,6 +54,8 @@ export default async function sitemap() {
     ...localizedEntries('', { changeFrequency: 'weekly', priority: 1 }),
     ...localizedEntries('/waarom-bep', { changeFrequency: 'monthly', priority: 0.8 }),
     ...localizedEntries('/filosofie', { changeFrequency: 'monthly', priority: 0.8 }),
+    ...localizedEntries('/technologie', { changeFrequency: 'monthly', priority: 0.8 }),
+    ...localizedEntries('/toepassingen', { changeFrequency: 'monthly', priority: 0.8 }),
     ...localizedEntries('/cases', { changeFrequency: 'monthly', priority: 0.8 }),
     ...localizedEntries('/team', { changeFrequency: 'monthly', priority: 0.6 }),
     ...localizedEntries('/blog', { changeFrequency: 'weekly', priority: 0.8 }),
