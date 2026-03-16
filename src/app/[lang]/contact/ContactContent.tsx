@@ -118,7 +118,7 @@ export function ContactContent() {
                     <a href="mailto:info@bep.expert">info@bep.expert</a>
                   </div>
                 </div>
-                <div style={{ marginTop: 40, padding: 24, background: 'rgba(245,134,29,0.12)', borderRadius: '16px', border: '1px solid rgba(245,134,29,0.2)' }}>
+                <div style={{ marginTop: 40, padding: 24, background: 'rgba(245,134,29,0.12)', borderRadius: 0, border: '1px solid rgba(245,134,29,0.2)' }}>
                   <h4 style={{ marginBottom: 8 }}>{t('Liever eerst ontdekken?', 'Prefer to explore first?')}</h4>
                   <p style={{ fontSize: '0.875rem', color: '#A1AAB8', marginBottom: 16 }}>
                     {t(

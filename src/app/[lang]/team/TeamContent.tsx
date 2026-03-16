@@ -47,7 +47,7 @@ export function TeamContent() {
                 alt={t('Het BEP team', 'The BEP team')}
                 width={500}
                 height={400}
-                style={{ objectFit: 'cover', borderRadius: '24px' }}
+                style={{ objectFit: 'cover', borderRadius: 0 }}
               />
             </FadeUp>
             <FadeUp delay={0.2}>
@@ -91,7 +91,7 @@ export function TeamContent() {
                     alt={member.name}
                     width={200}
                     height={200}
-                    style={{ objectFit: 'cover', borderRadius: '24px' }}
+                    style={{ objectFit: 'cover', borderRadius: 0 }}
                   />
                   <h3>{member.name}</h3>
                   <div className="role">{member.role}</div>
@@ -114,10 +114,10 @@ export function TeamContent() {
               )}
             </p>
             <div className="hero-buttons">
-              <Link href="/contact" className="btn btn-white">
-                {t('Neem contact op', 'Get in touch')} <ArrowRight size={18} />
+              <Link href="/contact" className="btn btn-white btn-arrow">
+                {t('Neem contact op', 'Get in touch')}
               </Link>
-              <a href="/contact" className="btn btn-ghost">
+              <a href="/contact" className="btn btn-ghost btn-arrow">
                 {t('Plan een sessie', 'Schedule a session')}
               </a>
             </div>

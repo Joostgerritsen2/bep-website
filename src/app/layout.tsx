@@ -1,15 +1,8 @@
 import '@/styles/globals.css'
-import { Space_Grotesk, Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import type { Metadata } from 'next'
 
-const heading = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-heading',
-})
-
-const body = Inter({
+const font = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
@@ -24,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${heading.variable} ${body.variable} ${body.className}`} suppressHydrationWarning>
+    <html className={`${font.variable} ${font.className}`} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   )

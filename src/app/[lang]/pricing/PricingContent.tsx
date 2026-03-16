@@ -96,9 +96,9 @@ export function PricingContent() {
                   </ul>
                   <a
                     href="/contact"
-                    className={`btn ${tier.featured ? 'btn-primary' : 'btn-outline'}`}
+                    className={`btn btn-arrow ${tier.featured ? 'btn-primary' : 'btn-outline'}`}
                   >
-                    {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={16} />
+                    {t('Plan een sessie', 'Schedule a session')}
                   </a>
                 </div>
               </FadeUp>
@@ -118,8 +118,8 @@ export function PricingContent() {
                 'Discover in 2 minutes what BEP can do for your organization.'
               )}
             </p>
-            <a href="/contact" className="btn btn-white">
-              {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={18} />
+            <a href="/contact" className="btn btn-white btn-arrow">
+              {t('Plan een sessie', 'Schedule a session')}
             </a>
           </FadeUp>
         </div>

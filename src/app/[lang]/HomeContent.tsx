@@ -2,9 +2,9 @@
 import { useLang } from '@/lib/language'
 import { FadeUp, FadeUpContainer } from '@/components/FadeUp'
 import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
-import { Shield, CheckCircle, FileText, MessageSquare, Zap, ArrowRight, Lock, Code } from 'lucide-react'
+import { Shield, CheckCircle, Database, GitBranch, Bot, Users, ArrowRight, Lock, Code } from 'lucide-react'
 import Image from 'next/image'
-import { HeroDemo } from '@/components/HeroDemo'
+import { EcosystemVisual } from '@/components/EcosystemVisual'
 import dynamic from 'next/dynamic'
 
 
@@ -26,20 +26,20 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <div className="hero-text">
               <FadeUp>
                 <h1>
-                  BEP — {t('De digitale expert die', 'The digital expert that')}<br />
-                  <span className="highlight gradient-text">{t('meedraait in je team.', 'works alongside your team.')}</span>
+                  {t('Autonome AI-agents die', 'Autonomous AI agents that')}<br />
+                  <span className="gradient-text">{t('meedraaien in je organisatie', 'work inside your organization')}</span>
                 </h1>
                 <p className="subtitle">
                   {t(
-                    'Stel een vraag, krijg direct antwoord uit al je systemen. BEP doorzoekt je ERP, CRM, e-mail en documenten — als een collega die alles weet.',
-                    'Ask a question, get instant answers from all your systems. BEP searches your ERP, CRM, email and documents — like a colleague who knows everything.'
+                    'Specialistische agents voeren werk uit, dragen taken over en escaleren alleen waar mensen nodig zijn. Niet één assistent, maar een complete digitale workforce geïntegreerd in je bedrijf.',
+                    'Specialized agents execute work, hand off tasks and escalate only when humans are needed. Not one assistant, but a complete digital workforce integrated into your business.'
                   )}
                 </p>
                 <div className="hero-buttons">
-                  <a href="/contact" className="btn btn-primary">
-                    {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={18} />
+                  <a href="/contact" className="btn btn-primary btn-arrow">
+                    {t('Plan een sessie', 'Schedule a session')}
                   </a>
-                  <Link href="/cases" className="btn btn-ghost">
+                  <Link href="/cases" className="btn btn-ghost btn-arrow">
                     {t('Bekijk cases', 'View cases')}
                   </Link>
                 </div>
@@ -75,7 +75,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               </FadeUp>
             </div>
             <FadeUp delay={0.2}>
-              <HeroDemo />
+              <EcosystemVisual />
             </FadeUp>
           </div>
           <FadeUp delay={0.4}>
@@ -112,64 +112,81 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </div>
       </section>
 
-      {/* ===== CAPABILITIES ===== */}
+      {/* ===== 4 LAYERS — Art direction concept ===== */}
       <section className="section section-gray bep-motif">
         <div className="container">
           <FadeUp>
             <div className="section-header">
-              <span className="section-label">{t('Wat BEP kan', 'What BEP can do')}</span>
-              <h2>{t('Zo werkt BEP in de praktijk', 'How BEP works in practice')}</h2>
+              <span className="section-label">{t('Hoe BEP werkt', 'How BEP works')}</span>
+              <h2>{t('Een operationele AI-laag door je hele organisatie', 'An operational AI layer across your entire organization')}</h2>
             </div>
           </FadeUp>
-          <div className="capabilities-grid">
+          <div className="capabilities-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
             <FadeUp delay={0.1}>
               <div className="capability-card">
-                <div className="icon"><FileText size={24} /></div>
-                <h3>{t('Alles weten', 'Know everything')}</h3>
+                <div className="icon"><Database size={24} /></div>
+                <h3>{t('Systemen & Data', 'Systems & Data')}</h3>
                 <p>
                   {t(
-                    'BEP kent al je bedrijfsdata. Documenten, e-mails, ERP-data, CRM-records — automatisch geïndexeerd en altijd actueel.',
-                    'BEP knows all your business data. Documents, emails, ERP data, CRM records — automatically indexed and always up to date.'
+                    'CRM, ERP, e-mail, support, documenten, agenda\'s, interne kennis en externe databronnen — alles verbonden in één laag.',
+                    'CRM, ERP, email, support, documents, calendars, internal knowledge and external data sources — all connected in one layer.'
                   )}
                 </p>
                 <ul>
-                  <li>{t('Automatisch indexeren', 'Automatic indexing')}</li>
+                  <li>{t('Automatisch geïndexeerd', 'Automatically indexed')}</li>
                   <li>{t('Real-time synchronisatie', 'Real-time sync')}</li>
-                  <li>{t('Versiebeheer', 'Version control')}</li>
+                  <li>{t('Altijd actueel', 'Always up to date')}</li>
                 </ul>
               </div>
             </FadeUp>
             <FadeUp delay={0.2}>
               <div className="capability-card">
-                <div className="icon"><MessageSquare size={24} /></div>
-                <h3>{t('Gewoon vragen', 'Just ask')}</h3>
+                <div className="icon"><GitBranch size={24} /></div>
+                <h3>{t('Operationele Processen', 'Operational Processes')}</h3>
                 <p>
                   {t(
-                    'Stel vragen zoals je dat aan een collega doet. BEP zoekt direct in al je systemen en geeft een concreet antwoord.',
-                    'Ask questions like you would ask a colleague. BEP instantly searches all your systems and gives a concrete answer.'
+                    'Sales, onboarding, finance, customer support, operations — taken bewegen door je organisatie. Dossiers veranderen van status, approvals lopen door.',
+                    'Sales, onboarding, finance, customer support, operations — tasks move through your organization. Cases change status, approvals flow through.'
                   )}
                 </p>
                 <ul>
-                  <li>{t('Natuurlijke taal', 'Natural language')}</li>
-                  <li>{t('Cross-systeem zoeken', 'Cross-system search')}</li>
-                  <li>{t('Contextbewust', 'Context-aware')}</li>
+                  <li>{t('Werkstromen geautomatiseerd', 'Workflows automated')}</li>
+                  <li>{t('Cross-afdeling zichtbaarheid', 'Cross-department visibility')}</li>
+                  <li>{t('Status tracking', 'Status tracking')}</li>
                 </ul>
               </div>
             </FadeUp>
             <FadeUp delay={0.3}>
               <div className="capability-card">
-                <div className="icon"><Zap size={24} /></div>
-                <h3>{t('Direct regelen', 'Get it done')}</h3>
+                <div className="icon"><Bot size={24} /></div>
+                <h3>{t('AI Agents', 'AI Agents')}</h3>
                 <p>
                   {t(
-                    'BEP vindt niet alleen het antwoord, maar regelt het ook. E-mail versturen, CRM bijwerken, rapportage maken — automatisch.',
-                    'BEP doesn\'t just find the answer, it gets things done. Send email, update CRM, create reports — automatically.'
+                    'Specialistische agents die samenwerken, taken uitvoeren, werk overdragen en mensen inschakelen waar nodig. Sales Agent, Support Agent, Finance Agent — als digitale collega\'s.',
+                    'Specialized agents that collaborate, execute tasks, hand off work and involve humans when needed. Sales Agent, Support Agent, Finance Agent — as digital colleagues.'
                   )}
                 </p>
                 <ul>
-                  <li>{t('E-mails versturen', 'Send emails')}</li>
-                  <li>{t('Records bijwerken', 'Update records')}</li>
-                  <li>{t('Rapportages genereren', 'Generate reports')}</li>
+                  <li>{t('Onderling samenwerken', 'Collaborate with each other')}</li>
+                  <li>{t('Zelfstandig acties uitvoeren', 'Execute actions autonomously')}</li>
+                  <li>{t('Beslissingen voorbereiden', 'Prepare decisions')}</li>
+                </ul>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.4}>
+              <div className="capability-card">
+                <div className="icon"><Users size={24} /></div>
+                <h3>{t('Mensen in controle', 'Humans in control')}</h3>
+                <p>
+                  {t(
+                    'Medewerkers reviewen, beslissen en sturen bij. Niet boven de AI als manager, maar naast de agents als collega\'s. AI vergroot je capaciteit, vervangt niet je organisatie.',
+                    'Employees review, decide and adjust. Not above AI as managers, but alongside agents as colleagues. AI amplifies your capacity, doesn\'t replace your organization.'
+                  )}
+                </p>
+                <ul>
+                  <li>{t('Escalaties en uitzonderingen', 'Escalations and exceptions')}</li>
+                  <li>{t('Voortgang en overzicht', 'Progress and oversight')}</li>
+                  <li>{t('Menselijk oordeel waar nodig', 'Human judgment where needed')}</li>
                 </ul>
               </div>
             </FadeUp>
@@ -177,7 +194,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </div>
       </section>
 
-      {/* ===== SECURITY & TECHNOLOGIE (merged) ===== */}
+      {/* ===== SECURITY & TECHNOLOGIE ===== */}
       <section className="section section-white">
         <div className="container">
           <FadeUp>
@@ -252,7 +269,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                     )}
                   </p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '12px' }}>
-                    <Image src="/images/team-member-4.png" alt="" width={40} height={40} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+                    <Image src="/images/team-member-4.png" alt="" width={40} height={40} style={{ objectFit: 'cover' }} />
                     <cite>— Operations Manager</cite>
                   </div>
                 </div>
@@ -313,8 +330,8 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             </div>
             <FadeUp delay={0.4}>
               <div style={{ textAlign: 'center', marginTop: 32 }}>
-                <Link href="/blog" className="btn btn-outline">
-                  {t('Bekijk alle artikelen', 'View all articles')} <ArrowRight size={16} />
+                <Link href="/blog" className="btn btn-outline btn-arrow">
+                  {t('Bekijk alle artikelen', 'View all articles')}
                 </Link>
               </div>
             </FadeUp>
@@ -350,10 +367,10 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               )}
             </p>
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-white">
-                {t('Plan een sessie', 'Schedule a session')} <ArrowRight size={18} />
+              <a href="/contact" className="btn btn-white btn-arrow">
+                {t('Plan een sessie', 'Schedule a session')}
               </a>
-              <Link href="/contact" className="btn btn-ghost">
+              <Link href="/contact" className="btn btn-ghost btn-arrow">
                 {t('Neem contact op', 'Get in touch')}
               </Link>
             </div>
