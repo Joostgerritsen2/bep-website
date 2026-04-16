@@ -4999,9 +4999,11 @@ h4 { font-size: var(--fs-xl); }
 }
 
 /* === CARD HOVER — oranje top-lijn (sitebreed) === */
-.capability-card,
+.capability-card {
+  position: relative;
+}
+
 .trust-card,
-.step-card,
 .blog-card,
 .home-case-card {
   position: relative;
@@ -5165,8 +5167,11 @@ h4 { font-size: var(--fs-xl); }
   z-index: 0;
 }
 
+@media (max-width: 1024px) {
+  .steps-grid::before { display: none; }
+}
+
 .step-card {
-  position: relative;
   z-index: 1;
 }
 
@@ -5856,4 +5861,9 @@ h4 { font-size: var(--fs-xl); }
 .chat-send-btn:disabled {
   background: var(--steel);
   cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .hero-stats { gap: 20px; }
+  .hero-stat-num { font-size: 22px; }
 }
