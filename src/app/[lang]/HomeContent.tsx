@@ -5,7 +5,8 @@ import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
 import { Shield, CheckCircle, Database, GitBranch, Bot, Users, ArrowRight, Lock, Code, MessageSquare, Link2, Settings, Rocket } from 'lucide-react'
 import { cases } from './cases/caseData'
 import Image from 'next/image'
-import { HeroMockup } from '@/components/HeroMockup'
+import { HeroAgent } from '@/components/HeroAgent'
+import { MarqueeLogos } from '@/components/MarqueeLogos'
 import dynamic from 'next/dynamic'
 
 
@@ -28,7 +29,10 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               <FadeUp>
                 <h1>
                   BEP{' '}
-                  <span className="gradient-text">{t('je nieuwe bedrijfsexpert', 'your new business expert')}</span>
+                  <span className="gradient-text">
+                    {t('je nieuwe', 'your new')}{' '}
+                    <span className="typed-cursor">{t('bedrijfsexpert', 'business expert')}</span>
+                  </span>
                 </h1>
                 <p className="subtitle">
                   {t(
@@ -43,6 +47,25 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                   <Link href="/cases" className="btn btn-ghost btn-arrow">
                     {t('Bekijk cases', 'View cases')}
                   </Link>
+                </div>
+                {/* Hero Stats */}
+                <div className="hero-stats">
+                  <div className="hero-stat">
+                    <span className="hero-stat-num orange">2–4</span>
+                    <span className="hero-stat-label">{t('weken live', 'weeks to live')}</span>
+                  </div>
+                  <div className="hero-stat">
+                    <span className="hero-stat-num">4</span>
+                    <span className="hero-stat-label">{t('live cases', 'live cases')}</span>
+                  </div>
+                  <div className="hero-stat">
+                    <span className="hero-stat-num orange">100%</span>
+                    <span className="hero-stat-label">{t('eigen cloud', 'your own cloud')}</span>
+                  </div>
+                  <div className="hero-stat">
+                    <span className="hero-stat-num">0</span>
+                    <span className="hero-stat-label">{t('data buiten je omgeving', 'data outside your env')}</span>
+                  </div>
                 </div>
                 <div className="hero-team">
                   <div className="hero-team-faces">
@@ -76,7 +99,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               </FadeUp>
             </div>
             <FadeUp delay={0.2}>
-              <HeroMockup />
+              <HeroAgent />
             </FadeUp>
           </div>
           <FadeUp delay={0.4}>
@@ -98,23 +121,10 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </div>
       </section>
 
-      {/* ===== CLIENT LOGOS ===== */}
-      <section className="client-logos">
-        <div className="container">
-          <div className="client-logos-label">
-            {t('Vertrouwd door', 'Trusted by')}
-          </div>
-          <div className="client-logos-grid">
-            <Image src="/images/client-tender-strateeg.png" alt="Tender Strateeg" width={140} height={40} style={{ objectFit: 'contain' }} />
-            <Image src="/images/client-groningen-seaports.png" alt="Groningen Seaports" width={140} height={40} style={{ objectFit: 'contain' }} />
-            <Image src="/images/client-sjb-advies.png" alt="SJB Advies" width={140} height={40} style={{ objectFit: 'contain' }} />
-            <Image src="/images/client-bpz.png" alt="BPZ" width={100} height={40} style={{ objectFit: 'contain' }} />
-          </div>
-        </div>
-      </section>
+      <MarqueeLogos />
 
       {/* ===== 4 LAYERS — Art direction concept ===== */}
-      <section className="section section-gray bep-motif">
+      <section className="section section-gray bep-motif dark-glow">
         <div className="container">
           <FadeUp>
             <div className="section-header">
@@ -395,7 +405,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
       </section>
 
       {/* ===== CTA ===== */}
-      <section className="cta-section orange-glow">
+      <section className="cta-section orange-glow dark-glow">
         <div className="container">
           <FadeUp>
             <h2>{t('Klaar om BEP te laten meedraaien?', 'Ready to let BEP join your team?')}</h2>
