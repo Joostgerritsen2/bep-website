@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   const lang = params.lang as Locale
   const title = lang === 'en' ? 'Pricing — Simple, Transparent Plans | BEP' : 'Pricing — Eenvoudige, Transparante Pakketten | BEP'
   const description = lang === 'en'
-    ? 'BEP pricing starts at €499/month. Choose Starter, Professional or Enterprise. Always 100% in your own cloud.'
-    : 'BEP pricing begint bij €499/maand. Kies Starter, Professional of Enterprise. Altijd 100% in je eigen cloud.'
+    ? 'BEP pricing starts at €595/month. Choose Start, Team, Growth or Platform. Always 100% in your own cloud.'
+    : 'BEP pricing begint bij €595/maand. Kies Start, Team, Growth of Platform. Altijd 100% in je eigen cloud.'
   const path = '/pricing'
 
   return {
@@ -43,42 +43,55 @@ const pricingJsonLd = {
   offers: [
     {
       '@type': 'Offer',
-      name: 'Starter',
-      price: '499',
+      name: 'Start',
+      price: '595',
       priceCurrency: 'EUR',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '499',
+        price: '595',
         priceCurrency: 'EUR',
         billingDuration: 'P1M',
       },
-      description: 'Up to 1,000 documents, 5 users, 3 integrations, knowledge base + search',
+      description: '1 domain, 1 integration, 1 standard agent, up to 10 users, onboarding, live in 2 to 4 weeks. One-time setup: €1,250.',
     },
     {
       '@type': 'Offer',
-      name: 'Professional',
-      price: '1099',
+      name: 'Team',
+      price: '1250',
       priceCurrency: 'EUR',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '1099',
+        price: '1250',
         priceCurrency: 'EUR',
         billingDuration: 'P1M',
       },
-      description: 'Up to 10,000 documents, 20 users, unlimited integrations, knowledge base + search + tasks',
+      description: '2 domains, 3 integrations, 3 standard agents, up to 25 users, extended onboarding. One-time expansion: €1,500.',
     },
     {
       '@type': 'Offer',
-      name: 'Enterprise',
-      price: '3900',
+      name: 'Growth',
+      price: '2500',
       priceCurrency: 'EUR',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '3900',
+        price: '2500',
         priceCurrency: 'EUR',
         billingDuration: 'P1M',
       },
-      description: '500,000+ documents, unlimited users, unlimited integrations, all functionality, custom workflows',
+      description: 'Multiple domains, 5 integrations, 5 standard agents, up to 50 users, analytics and optimization, priority support. One-time expansion: €2,500.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Platform',
+      price: '4500',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '4500',
+        priceCurrency: 'EUR',
+        billingDuration: 'P1M',
+      },
+      description: 'Broad rollout, governance, priority support, custom agreements, enterprise options. From €3,500 one-time.',
     },
   ],
 }

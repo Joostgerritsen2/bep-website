@@ -66,7 +66,7 @@ export function PricingContent() {
             <FadeUp delay={0.05}>
               <div className="np-card">
                 <div className="np-card-name">{t('Start', 'Start')}</div>
-                <div className="np-price">€595 <span>/maand</span></div>
+                <div className="np-price">€595 <span>/{t('maand', 'month')}</span></div>
                 <div className="np-setup">+ €1.250 {t('eenmalige setup', 'one-time setup')}</div>
                 <p className="np-desc">
                   {t(
@@ -89,7 +89,7 @@ export function PricingContent() {
                   <li>{t('eerste team', 'first team')}</li>
                   <li>{t('snelle start op eigen data', 'fast start on own data')}</li>
                 </ul>
-                <Link href="/contact" className="np-cta">{t('Plan een demo →', 'Schedule a demo →')}</Link>
+                <Link href="/contact" className="np-cta" aria-label={t('Plan een demo voor Start', 'Schedule a demo for Start')}>{t('Plan een demo →', 'Schedule a demo →')}</Link>
               </div>
             </FadeUp>
 
@@ -98,7 +98,7 @@ export function PricingContent() {
               <div className="np-card featured">
                 <div className="np-badge">{t('Meest gekozen', 'Most popular')}</div>
                 <div className="np-card-name">{t('Team', 'Team')}</div>
-                <div className="np-price">€1.250 <span>/maand</span></div>
+                <div className="np-price">€1.250 <span>/{t('maand', 'month')}</span></div>
                 <div className="np-setup">+ €1.500 {t('eenmalige uitbreiding', 'one-time expansion')}</div>
                 <p className="np-desc">
                   {t(
@@ -120,7 +120,7 @@ export function PricingContent() {
                   <li>{t('bredere kennisbasis', 'broader knowledge base')}</li>
                   <li>{t('eerste procesinrichting', 'first process setup')}</li>
                 </ul>
-                <Link href="/contact" className="np-cta">{t('Plan een demo →', 'Schedule a demo →')}</Link>
+                <Link href="/contact" className="np-cta" aria-label={t('Plan een demo voor Team', 'Schedule a demo for Team')}>{t('Plan een demo →', 'Schedule a demo →')}</Link>
               </div>
             </FadeUp>
 
@@ -128,7 +128,7 @@ export function PricingContent() {
             <FadeUp delay={0.15}>
               <div className="np-card">
                 <div className="np-card-name">{t('Growth', 'Growth')}</div>
-                <div className="np-price">€2.500 <span>/maand</span></div>
+                <div className="np-price">€2.500 <span>/{t('maand', 'month')}</span></div>
                 <div className="np-setup">+ €2.500 {t('eenmalige uitbreiding', 'one-time expansion')}</div>
                 <p className="np-desc">
                   {t(
@@ -151,7 +151,7 @@ export function PricingContent() {
                   <li>{t('structureel gebruik', 'structural use')}</li>
                   <li>{t('verdere opschaling', 'further scaling')}</li>
                 </ul>
-                <Link href="/contact" className="np-cta">{t('Plan een demo →', 'Schedule a demo →')}</Link>
+                <Link href="/contact" className="np-cta" aria-label={t('Plan een demo voor Growth', 'Schedule a demo for Growth')}>{t('Plan een demo →', 'Schedule a demo →')}</Link>
               </div>
             </FadeUp>
 
@@ -177,7 +177,13 @@ export function PricingContent() {
                   <li>{t('maatwerkafspraken', 'custom agreements')}</li>
                   <li>{t('enterprise opties', 'enterprise options')}</li>
                 </ul>
-                <Link href="/contact" className="np-cta">{t('Neem contact op →', 'Get in touch →')}</Link>
+                <p className="np-section-label">{t('Ideaal voor', 'Ideal for')}</p>
+                <ul className="np-features ideaal">
+                  <li>{t('organisatiebrede uitrol', 'organization-wide rollout')}</li>
+                  <li>{t('strategisch AI-platform', 'strategic AI platform')}</li>
+                  <li>{t('enterprise governance', 'enterprise governance')}</li>
+                </ul>
+                <Link href="/contact" className="np-cta" aria-label={t('Neem contact op voor Platform', 'Get in touch for Platform')}>{t('Neem contact op →', 'Get in touch →')}</Link>
               </div>
             </FadeUp>
 
@@ -201,7 +207,7 @@ export function PricingContent() {
               { price: 'v.a. €750 / maand', priceEn: 'from €750 / month', name: 'Eigen cloud / on-prem / sovereign deployment', nameEn: 'Own cloud / on-prem / sovereign deployment' },
               { price: 'Op aanvraag', priceEn: 'On request', name: 'Enterprise en SLA', nameEn: 'Enterprise and SLA' },
             ].map((addon, i) => (
-              <FadeUp key={i} delay={i * 0.05}>
+              <FadeUp key={addon.name} delay={i * 0.05}>
                 <div className="addon-card">
                   <div className="addon-price">{t(addon.price, addon.priceEn)}</div>
                   <div className="addon-name">{t(addon.name, addon.nameEn)}</div>
@@ -282,10 +288,8 @@ export function PricingContent() {
           <FadeUp>
             <h2>{t('Klein beginnen?', 'Start small?')}</h2>
             <p>
-              {t(
-                'We laten je in 2 tot 4 weken live gaan op één domein,\nmet echte data en een eerste koppeling.',
-                'We get you live in 2 to 4 weeks on one domain,\nwith real data and a first integration.'
-              )}
+              {t('We laten je in 2 tot 4 weken live gaan op één domein,', 'We get you live in 2 to 4 weeks on one domain,')}<br />
+              {t('met echte data en een eerste koppeling.', 'with real data and a first integration.')}
             </p>
             <div className="pricing-cta-btns">
               <Link href="/contact" className="btn btn-primary btn-arrow">
