@@ -42,6 +42,24 @@ export async function POST(request: Request) {
       return new Response(JSON.stringify({ error: 'No messages provided' }), { status: 400 })
     }
 
+    // Bound array length to prevent abuse
+    if (messages.length > 20) {
+      return new Response(JSON.stringify({ error: 'Too many messages' }), { status: 400 })
+    }
+
+    // Validate each message
+    for (const m of messages) {
+      if (!m || typeof m !== 'object') {
+        return new Response(JSON.stringify({ error: 'Invalid message format' }), { status: 400 })
+      }
+      if (m.role !== 'user' && m.role !== 'assistant') {
+        return new Response(JSON.stringify({ error: 'Invalid message role' }), { status: 400 })
+      }
+      if (typeof m.content !== 'string' || m.content.length > 4000) {
+        return new Response(JSON.stringify({ error: 'Invalid message content' }), { status: 400 })
+      }
+    }
+
     if (!process.env.ANTHROPIC_API_KEY) {
       return new Response(JSON.stringify({ error: 'API key not configured' }), { status: 500 })
     }

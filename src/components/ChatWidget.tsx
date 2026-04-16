@@ -5,6 +5,7 @@ import { MessageCircle, X, Send } from 'lucide-react'
 import Image from 'next/image'
 
 interface Message {
+  id: number
   role: 'user' | 'assistant'
   content: string
 }
@@ -22,6 +23,7 @@ export function ChatWidget() {
   const [loading, setLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const abortRef = useRef<AbortController | null>(null)
 
   const currentLang = lang === 'en' ? 'en' : 'nl'
 
@@ -31,14 +33,23 @@ export function ChatWidget() {
 
   useEffect(() => {
     if (open) {
-      setTimeout(() => inputRef.current?.focus(), 100)
+      const id = setTimeout(() => inputRef.current?.focus(), 100)
+      return () => clearTimeout(id)
     }
   }, [open])
+
+  useEffect(() => {
+    return () => { abortRef.current?.abort() }
+  }, [])
 
   async function sendMessage(text: string) {
     if (!text.trim() || loading) return
 
-    const userMessage: Message = { role: 'user', content: text.trim() }
+    if (abortRef.current) abortRef.current.abort()
+    const controller = new AbortController()
+    abortRef.current = controller
+
+    const userMessage: Message = { id: Date.now(), role: 'user', content: text.trim() }
     const updatedMessages = [...messages, userMessage]
     setMessages(updatedMessages)
     setInput('')
@@ -49,35 +60,43 @@ export function ChatWidget() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: updatedMessages, lang: currentLang }),
+        signal: controller.signal,
       })
 
       if (!response.ok) throw new Error('Chat request failed')
 
-      const reader = response.body!.getReader()
+      if (!response.body) throw new Error('No response body')
+      const reader = response.body.getReader()
       const decoder = new TextDecoder()
       let assistantContent = ''
+      let buffer = ''
 
-      setMessages(prev => [...prev, { role: 'assistant', content: '' }])
+      setMessages(prev => [...prev, { role: 'assistant', content: '', id: Date.now() + 1 }])
       setLoading(false)
 
       while (true) {
         const { done, value } = await reader.read()
         if (done) break
 
-        const chunk = decoder.decode(value)
-        const lines = chunk.split('\n')
+        buffer += decoder.decode(value, { stream: true })
+        const lines = buffer.split('\n')
+        buffer = lines.pop() ?? ''  // keep incomplete line in buffer
 
+        let finished = false
         for (const line of lines) {
           if (line.startsWith('data: ')) {
-            const data = line.slice(6)
-            if (data === '[DONE]') break
+            const data = line.slice(6).trim()
+            if (data === '[DONE]') {
+              finished = true
+              break
+            }
             try {
               const parsed = JSON.parse(data)
               if (parsed.text) {
                 assistantContent += parsed.text
                 setMessages(prev => [
                   ...prev.slice(0, -1),
-                  { role: 'assistant', content: assistantContent },
+                  { role: 'assistant', content: assistantContent, id: prev[prev.length - 1]?.id ?? Date.now() },
                 ])
               }
             } catch {
@@ -85,19 +104,29 @@ export function ChatWidget() {
             }
           }
         }
+        if (finished) break
       }
-    } catch {
+    } catch (err: unknown) {
+      // Ignore abort errors (user closed panel)
+      if (err instanceof Error && err.name === 'AbortError') return
       setLoading(false)
-      setMessages(prev => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: t(
-            'Er ging iets mis. Stuur een e-mail naar info@bep.expert.',
-            'Something went wrong. Send an email to info@bep.expert.'
-          ),
-        },
-      ])
+      setMessages(prev => {
+        // Remove stale empty assistant bubble if present
+        const filtered = prev[prev.length - 1]?.content === '' && prev[prev.length - 1]?.role === 'assistant'
+          ? prev.slice(0, -1)
+          : prev
+        return [
+          ...filtered,
+          {
+            id: Date.now(),
+            role: 'assistant',
+            content: t(
+              'Er ging iets mis. Stuur een e-mail naar info@bep.expert.',
+              'Something went wrong. Send an email to info@bep.expert.'
+            ),
+          },
+        ]
+      })
     }
   }
 
@@ -177,8 +206,8 @@ export function ChatWidget() {
               </div>
             )}
 
-            {messages.map((msg, i) => (
-              <div key={i} className={`chat-msg ${msg.role}`}>
+            {messages.map((msg) => (
+              <div key={msg.id} className={`chat-msg ${msg.role}`}>
                 <div className="chat-msg-bubble">
                   {msg.content}
                 </div>
