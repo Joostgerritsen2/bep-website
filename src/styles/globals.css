@@ -4703,7 +4703,7 @@ h4 { font-size: var(--fs-xl); }
   z-index: 140;
   width: 56px;
   height: 56px;
-  border-radius: 0;
+  border-radius: 50%;
   background: var(--orange);
   color: var(--white);
   border: none;
@@ -4735,7 +4735,7 @@ h4 { font-size: var(--fs-xl); }
 .chat-bubble-pulse {
   position: absolute;
   inset: -4px;
-  border-radius: 0;
+  border-radius: 50%;
   border: 2px solid var(--orange);
   animation: chat-pulse 2.5s ease-in-out infinite;
   pointer-events: none;
@@ -4752,8 +4752,8 @@ h4 { font-size: var(--fs-xl); }
   bottom: 24px;
   right: 24px;
   z-index: 141;
-  width: 380px;
-  max-height: 560px;
+  width: 360px;
+  max-height: 520px;
   background: var(--color-bg-primary);
   border: 1px solid var(--color-card-border);
   border-radius: 0;
@@ -4775,7 +4775,7 @@ h4 { font-size: var(--fs-xl); }
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background: var(--blue-dark);
+  background: var(--blue-darker);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
