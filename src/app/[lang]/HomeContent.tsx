@@ -552,6 +552,30 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </div>
       </section>
 
+      {/* ===== QUOTES ===== */}
+      <section className="quotes-section section section-gray">
+        <div className="container">
+          <FadeUp>
+            <span className="section-label">{t('Klanten aan het woord', 'Clients speak')}</span>
+          </FadeUp>
+          <div className="quotes-grid">
+            {cases.slice(0, 2).map((c, i) => (
+              c.quote && (
+                <FadeUp key={c.slug} delay={i * 0.1}>
+                  <blockquote className="quote-card">
+                    <span className="quote-mark" aria-hidden="true">"</span>
+                    <p className="quote-text">{t(c.quote.text.nl, c.quote.text.en)}</p>
+                    <footer className="quote-footer">
+                      <cite className="quote-author">{c.quote.author}</cite>
+                    </footer>
+                  </blockquote>
+                </FadeUp>
+              )
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== FAQ ===== */}
       <section className="section section-gray">
         <div className="container">

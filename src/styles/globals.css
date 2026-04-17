@@ -6189,3 +6189,71 @@ h4 { font-size: var(--fs-xl); }
     gap: 32px;
   }
 }
+
+/* ===== QUOTES ===== */
+.quotes-section {
+  padding: 56px 0;
+}
+
+.quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.quote-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.quote-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+
+.quote-card:hover::before {
+  transform: scaleX(1);
+}
+
+.quote-mark {
+  display: block;
+  font-size: 48px;
+  color: var(--orange);
+  font-weight: 900;
+  line-height: 0.7;
+  margin-bottom: 12px;
+}
+
+.quote-text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.65;
+  font-style: italic;
+  margin: 0 0 16px;
+}
+
+.quote-author {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+@media (max-width: 768px) {
+  .quotes-grid {
+    grid-template-columns: 1fr;
+  }
+}
