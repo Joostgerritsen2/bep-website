@@ -464,6 +464,94 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </div>
       </section>
 
+      {/* ===== DOMAIN TILES ===== */}
+      <section className="domain-tiles-section section section-white">
+        <div className="container">
+          <FadeUp>
+            <span className="section-label">{t('Sectoren', 'Sectors')}</span>
+            <h2>{t('BEP kent jouw domein', 'BEP knows your domain')}</h2>
+          </FadeUp>
+          <div className="domain-tiles-grid">
+            {[
+              { icon: '📋', nl: 'Aanbestedingen', en: 'Tenders', exNl: 'Tender Strateeg — 60% sneller', exEn: 'Tender Strateeg — 60% faster' },
+              { icon: '⚓', nl: 'Havens & Logistiek', en: 'Ports & Logistics', exNl: 'Groningen Seaports — 24/7', exEn: 'Groningen Seaports — 24/7' },
+              { icon: '📊', nl: 'Financieel Advies', en: 'Financial Advisory', exNl: 'SJB Advies — 4.2× ROI', exEn: 'SJB Advies — 4.2× ROI' },
+              { icon: '🏭', nl: 'Productie', en: 'Production', exNl: 'BPZ — 0 kennisincidenten', exEn: 'BPZ — 0 knowledge incidents' },
+              { icon: '🧠', nl: 'Jouw sector', en: 'Your sector', exNl: 'Overal waar kennis verspreid zit', exEn: 'Wherever knowledge is scattered' },
+            ].map((tile, i) => (
+              <FadeUp key={tile.nl} delay={i * 0.05}>
+                <div className="domain-tile">
+                  <span className="domain-tile-icon">{tile.icon}</span>
+                  <span className="domain-tile-name">{t(tile.nl, tile.en)}</span>
+                  <span className="domain-tile-ex">{t(tile.exNl, tile.exEn)}</span>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SOVEREIGNTY BLOCK ===== */}
+      <section className="sovereignty-section dark-glow">
+        <div className="container">
+          <div className="sovereignty-inner">
+            <FadeUp>
+              <div className="sovereignty-left">
+                <span className="section-label">{t('Waarom BEP anders is', 'Why BEP is different')}</span>
+                <h2>
+                  {t('Jouw organisatie leert.', 'Your organization learns.')}<br />
+                  <em>{t('Jouw data blijft van jou.', 'Your data stays yours.')}</em>
+                </h2>
+                <p>
+                  {t(
+                    'BEP is geen generieke copiloot. Het is een bedrijfsplatform dat jouw systemen verbindt, jouw context begrijpt en autonoom handelt — volledig in jouw eigen cloud.',
+                    'BEP is not a generic copilot. It is a business platform that connects your systems, understands your context and acts autonomously — entirely in your own cloud.'
+                  )}
+                </p>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <ul className="sovereignty-pillars">
+                {[
+                  {
+                    titleNl: 'Geen AI slop',
+                    titleEn: 'No AI slop',
+                    descNl: 'Antwoorden op jouw eigen bedrijfsdata, met bronvermelding. Niet op internet, niet gegenereerd uit het niets.',
+                    descEn: 'Answers from your own business data, with source citations. Not from the internet, not generated from nothing.',
+                  },
+                  {
+                    titleNl: 'Data soevereiniteit',
+                    titleEn: 'Data sovereignty',
+                    descNl: '100% on-prem of eigen cloud. Jouw data verlaat nooit jouw omgeving — GDPR-proof, EU AI Act-ready.',
+                    descEn: '100% on-prem or own cloud. Your data never leaves your environment — GDPR-proof, EU AI Act-ready.',
+                  },
+                  {
+                    titleNl: 'Open & uitbreidbaar',
+                    titleEn: 'Open & expandable',
+                    descNl: 'Niet gebonden aan één leverancier. Open-source AI-modellen, maandelijks uitbreidbaar zonder nieuw traject.',
+                    descEn: 'Not bound to one vendor. Open-source AI models, monthly expansion without new quotation process.',
+                  },
+                  {
+                    titleNl: 'Menselijke controle',
+                    titleEn: 'Human control',
+                    descNl: 'BEP handelt autonoom maar je behoudt altijd overzicht. Governed en accountable by design.',
+                    descEn: 'BEP acts autonomously but you always maintain oversight. Governed and accountable by design.',
+                  },
+                ].map((pillar) => (
+                  <li key={pillar.titleNl} className="sovereignty-pillar">
+                    <span className="sovereignty-dot" />
+                    <div>
+                      <span className="sovereignty-pillar-title">{t(pillar.titleNl, pillar.titleEn)}</span>
+                      <span className="sovereignty-pillar-desc">{t(pillar.descNl, pillar.descEn)}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
       {/* ===== FAQ ===== */}
       <section className="section section-gray">
         <div className="container">
