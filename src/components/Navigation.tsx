@@ -42,6 +42,12 @@ export function Navigation() {
             <span className="logo-text">BEP</span>
           </Link>
 
+          <nav className="nav-links">
+            <Link href="/cases">{t('Cases', 'Cases')}</Link>
+            <Link href="/toepassingen">{t('Toepassingen', 'Applications')}</Link>
+            <Link href="/pricing" className="nav-link--pricing">{t('Pricing', 'Pricing')}</Link>
+          </nav>
+
           <div className="header-right">
             <LanguageSwitcher />
             <Link href="/contact" className="header-cta">
@@ -65,6 +71,7 @@ export function Navigation() {
             <Link href="/cases" onClick={close}>Cases</Link>
             <Link href="/blog" onClick={close}>Blog</Link>
             <Link href="/team" onClick={close}>Team</Link>
+            <Link href="/pricing" onClick={close}>{t('Pricing', 'Pricing')}</Link>
             <Link href="/contact" onClick={close}>Contact</Link>
           </nav>
           <div className="menu-secondary">
