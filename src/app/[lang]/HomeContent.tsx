@@ -147,6 +147,57 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
 
       <MarqueeLogos />
 
+      {/* ===== CASE METRICS ===== */}
+      <section className="case-metrics-section">
+        <div className="container">
+          <FadeUp>
+            <span className="section-label">{t('Bewezen resultaten', 'Proven results')}</span>
+            <h2>{t('BEP werkt. In de praktijk.', 'BEP works. In practice.')}</h2>
+          </FadeUp>
+          <div className="case-metrics-grid">
+            <FadeUp delay={0.05}>
+              <Link href="/cases/tender-strateeg" className="metric-card">
+                <span className="metric-sector">{t('Consultancy · Aanbestedingen', 'Consultancy · Tenders')}</span>
+                <span className="metric-num">60%</span>
+                <p className="metric-desc">{t('Snellere voorbereiding per tender — 500+ documenten doorzoekbaar', 'Faster preparation per tender — 500+ documents searchable')}</p>
+                <span className="metric-client">Tender Strateeg</span>
+              </Link>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <Link href="/cases/groningen-seaports" className="metric-card metric-card--alt">
+                <span className="metric-sector">{t('Havenbeheer · Logistiek', 'Port management · Logistics')}</span>
+                <span className="metric-num">3.5×</span>
+                <p className="metric-desc">{t('ROI in jaar 1 — 24/7 operationele kennis voor 200+ gebruikers', 'ROI in year 1 — 24/7 operational knowledge for 200+ users')}</p>
+                <span className="metric-client">Groningen Seaports</span>
+              </Link>
+            </FadeUp>
+            <FadeUp delay={0.15}>
+              <Link href="/cases/sjb-advies" className="metric-card">
+                <span className="metric-sector">{t('Financieel Advies', 'Financial Advisory')}</span>
+                <span className="metric-num">4.2×</span>
+                <p className="metric-desc">{t('ROI — 10.000+ klantdossiers doorzoekbaar, dienstverlening 40% sneller', 'ROI — 10,000+ client files searchable, service delivery 40% faster')}</p>
+                <span className="metric-client">SJB Advies</span>
+              </Link>
+            </FadeUp>
+            <FadeUp delay={0.2}>
+              <Link href="/cases/bpz" className="metric-card metric-card--alt" aria-label={t('BPZ case study — nul kennisincidenten', 'BPZ case study — zero knowledge incidents')}>
+                <span className="metric-sector">{t('Productie · Manufacturing', 'Production · Manufacturing')}</span>
+                <span className="metric-num">0</span>
+                <p className="metric-desc">{t('Kennisincidenten — 80 jaar expertise geborgd in 2 weken', 'Knowledge incidents — 80 years of expertise secured in 2 weeks')}</p>
+                <span className="metric-client">BPZ</span>
+              </Link>
+            </FadeUp>
+          </div>
+          <FadeUp delay={0.25}>
+            <div className="case-metrics-footer">
+              <Link href="/cases" className="btn btn-outline btn-arrow">
+                {t('Alle cases bekijken', 'View all cases')}
+              </Link>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* ===== 4 LAYERS — Art direction concept ===== */}
       <section className="section section-gray bep-motif dark-glow">
         <div className="container">
