@@ -5897,3 +5897,54 @@ h4 { font-size: var(--fs-xl); }
     display: none;
   }
 }
+
+/* ===== HERO HIGHLIGHT ===== */
+.highlight-text {
+  color: var(--orange);
+  font-style: normal;
+}
+
+/* ===== ANTI-SLOP BAR ===== */
+.anti-slop-bar {
+  background: var(--blue-darker);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px 0;
+}
+
+.anti-slop-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.anti-slop-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.anti-slop-check {
+  color: var(--orange);
+}
+
+.anti-slop-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .anti-slop-items {
+    gap: 12px;
+  }
+
+  .anti-slop-divider {
+    display: none;
+  }
+}

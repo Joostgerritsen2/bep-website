@@ -28,16 +28,13 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <div className="hero-text">
               <FadeUp>
                 <h1>
-                  BEP{' '}
-                  <span className="gradient-text">
-                    {t('je nieuwe', 'your new')}{' '}
-                    <span className="typed-cursor">{t('bedrijfsexpert', 'business expert')}</span>
-                  </span>
+                  {t('Maak van jouw bedrijf een', 'Turn your company into a')}<br />
+                  <em className="highlight-text">{t('lerende organisatie.', 'learning organization.')}</em>
                 </h1>
                 <p className="subtitle">
                   {t(
-                    'BEP verbindt al je bedrijfsdata, signaleert kansen en risico\'s, en pakt taken proactief op. Volledig autonoom, volledig in je eigen cloud.',
-                    'BEP connects all your business data, flags opportunities and risks, and proactively handles tasks. Fully autonomous, fully in your own cloud.'
+                    'BEP verbindt jouw systemen, leert van jouw data en handelt autonoom — domein voor domein. 100% in jouw eigen cloud.',
+                    'BEP connects your systems, learns from your data and acts autonomously — domain by domain. 100% in your own cloud.'
                   )}
                 </p>
                 <div className="hero-buttons">
@@ -118,6 +115,33 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               </div>
             </div>
           </FadeUp>
+        </div>
+      </section>
+
+      {/* ===== ANTI-SLOP BANNER ===== */}
+      <section className="anti-slop-bar">
+        <div className="container">
+          <div className="anti-slop-items">
+            <div className="anti-slop-item">
+              <span className="anti-slop-check" aria-hidden="true">✓</span>
+              {t('Antwoorden op jouw data — niet op internet', 'Answers from your data — not the internet')}
+            </div>
+            <div className="anti-slop-divider" />
+            <div className="anti-slop-item">
+              <span className="anti-slop-check" aria-hidden="true">✓</span>
+              {t('Bronvermelding bij elk antwoord', 'Source citation with every answer')}
+            </div>
+            <div className="anti-slop-divider" />
+            <div className="anti-slop-item">
+              <span className="anti-slop-check" aria-hidden="true">✓</span>
+              {t('Geen AI slop — governed & accountable', 'No AI slop — governed & accountable')}
+            </div>
+            <div className="anti-slop-divider" />
+            <div className="anti-slop-item">
+              <span className="anti-slop-check" aria-hidden="true">✓</span>
+              {t('Nooit jouw data buiten jouw omgeving', 'Your data never leaves your environment')}
+            </div>
+          </div>
         </div>
       </section>
 
