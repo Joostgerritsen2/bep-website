@@ -126,7 +126,7 @@ export function ContactContent() {
                       'Build your personal BEP plan in 2 minutes.'
                     )}
                   </p>
-                  <a href="/contact" className="btn btn-primary" style={{ fontSize: '0.875rem', padding: '10px 20px' }}>
+                  <a href="/demo" className="btn btn-primary" style={{ fontSize: '0.875rem', padding: '10px 20px' }}>
                     {t('Plan een demo', 'Schedule a demo')} <ArrowRight size={14} />
                   </a>
                 </div>

@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bep.expert'
 
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const lang = params.lang as Locale
-  const title = lang === 'en' ? 'Contact — Get in Touch | BEP' : 'Contact — Neem Contact Op | BEP'
+  const title = lang === 'en' ? 'Contact: Get in Touch | BEP' : 'Contact: Neem Contact Op | BEP'
   const description = lang === 'en'
     ? 'Contact BEP. Request a demo, ask a question or schedule a meeting. Email: info@bep.expert.'
     : 'Neem contact op met BEP. Vraag een demo aan, stel een vraag of plan een gesprek. Email: info@bep.expert.'

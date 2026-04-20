@@ -12,7 +12,7 @@ export function CasesOverview() {
   return (
     <FadeUpContainer>
       {/* ===== HERO ===== */}
-      <section className="hero">
+      <section className="hero dark-glow">
         <div className="container">
           <FadeUp>
             <span className="section-label">{t('Resultaten', 'Results')}</span>
@@ -37,31 +37,49 @@ export function CasesOverview() {
             {cases.map((caseItem, i) => (
               <FadeUp key={caseItem.slug} delay={i * 0.1}>
                 <Link href={`/cases/${caseItem.slug}`} className="case-card case-card-link">
-                  <div className="case-card-top">
-                    <div className="case-card-sector">
-                      {t(caseItem.sector.nl, caseItem.sector.en)}
-                    </div>
-                    <Image
-                      className="case-card-logo"
-                      src={caseItem.logo}
-                      alt={caseItem.client}
-                      width={120}
-                      height={40}
-                    />
-                  </div>
-                  <h3>{caseItem.client}</h3>
-                  <p>{t(caseItem.tagline.nl, caseItem.tagline.en)}</p>
-                  <div className="case-card-stats">
-                    {caseItem.stats.slice(0, 2).map(stat => (
-                      <div className="case-card-stat" key={stat.value}>
-                        <div className="value">{stat.value}</div>
-                        <div className="label">{t(stat.label.nl, stat.label.en)}</div>
+                  {caseItem.coverImage && (
+                    <div className="case-card-cover">
+                      <Image
+                        src={caseItem.coverImage}
+                        alt={caseItem.client}
+                        width={600}
+                        height={320}
+                        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                      />
+                      <div className="case-card-sector-overlay">
+                        {t(caseItem.sector.nl, caseItem.sector.en)}
                       </div>
-                    ))}
+                    </div>
+                  )}
+                  <div className="case-card-body">
+                    <div className="case-card-top">
+                      {!caseItem.coverImage && (
+                        <div className="case-card-sector">
+                          {t(caseItem.sector.nl, caseItem.sector.en)}
+                        </div>
+                      )}
+                      <Image
+                        className="case-card-logo"
+                        src={caseItem.logo}
+                        alt={caseItem.client}
+                        width={120}
+                        height={40}
+                      />
+                    </div>
+                    <h3>{caseItem.client}</h3>
+                    <p>{t(caseItem.tagline.nl, caseItem.tagline.en)}</p>
+                    <div className="case-card-stats">
+                      {caseItem.stats.slice(0, 2).map(stat => (
+                        <div className="case-card-stat" key={stat.value}>
+                          <div className="value">{stat.value}</div>
+                          <div className="label">{t(stat.label.nl, stat.label.en)}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <span className="case-card-cta">
+                      {t('Bekijk case', 'View case')} <ArrowRight size={14} />
+                    </span>
                   </div>
-                  <span className="case-card-cta">
-                    {t('Bekijk case', 'View case')} <ArrowRight size={14} />
-                  </span>
                 </Link>
               </FadeUp>
             ))}
@@ -86,7 +104,7 @@ export function CasesOverview() {
               )}
             </p>
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-white btn-arrow">
+              <a href="/demo" className="btn btn-white btn-arrow">
                 {t('Plan een demo', 'Schedule a demo')}
               </a>
               <Link href="/contact" className="btn btn-ghost btn-arrow">

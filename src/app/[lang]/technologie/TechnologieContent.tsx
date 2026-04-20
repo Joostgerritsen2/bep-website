@@ -15,66 +15,51 @@ import {
 const blocks = [
   {
     icon: Brain,
-    color: '#F5861D',
     titleNl: 'Engine',
     titleEn: 'Engine',
-    descriptionNl: 'De kern van BEP — meerdere RAG-strategieën die samenwerken voor optimale resultaten.',
-    descriptionEn: 'The core of BEP — multiple RAG strategies working together for optimal results.',
-    items: ['RAG', 'GRAPH-RAG', 'Agentic RAG', 'Branched RAG'],
-  },
-  {
-    icon: Database,
-    color: '#4dabf7',
-    titleNl: 'Datastores',
-    titleEn: 'Datastores',
-    descriptionNl: 'Verbind elke databron zonder data te verplaatsen. BEP doorzoekt je bronnen waar ze staan.',
-    descriptionEn: 'Connect any data source without moving data. BEP searches your sources where they are.',
-    items: ['Documents', 'Databases', 'Websites', 'CRM', 'ERP'],
+    descNl: 'Meerdere RAG-strategieën die parallel draaien. BEP kiest altijd de strategie die past bij de vraag.',
+    descEn: 'Multiple RAG strategies running in parallel. BEP always picks the strategy that fits the question.',
+    tags: ['RAG', 'Graph-RAG', 'Agentic RAG', 'Branched RAG'],
   },
   {
     icon: Lightbulb,
-    color: '#da77f2',
-    titleNl: 'Intelligence',
+    titleNl: 'Intelligentie',
     titleEn: 'Intelligence',
-    descriptionNl: 'Agents die leren, plannen en zelfstandig taken uitvoeren. Niet alleen zoeken, maar begrijpen.',
-    descriptionEn: 'Agents that learn, plan and execute tasks autonomously. Not just searching, but understanding.',
-    items: ['Claims', 'Agents', 'Planning', 'Learnability'],
+    descNl: 'Agents die plannen, leren en zelfstandig taken uitvoeren. Niet wachten op een vraag, maar proactief handelen.',
+    descEn: 'Agents that plan, learn and execute tasks autonomously. Not waiting for a question, but acting proactively.',
+    tags: ['Autonome Agents', 'Planning', 'Claims', 'Learnability'],
   },
   {
     icon: Plug,
-    color: '#69db7c',
-    titleNl: 'Connectors',
+    titleNl: 'Connectoren',
     titleEn: 'Connectors',
-    descriptionNl: 'Kant-en-klare koppelingen met de tools die je al gebruikt. Plug & play, geen maatwerk nodig.',
-    descriptionEn: 'Ready-made connections to the tools you already use. Plug & play, no custom work needed.',
-    items: ['Notion', 'Google Drive', 'Azure', 'Confluence', 'SharePoint', 'Salesforce'],
+    descNl: 'Kant-en-klare koppelingen met de systemen die je al gebruikt. Geen migratie, geen maatwerk.',
+    descEn: 'Ready-made connections to the systems you already use. No migration, no custom work.',
+    tags: ['SharePoint', 'Salesforce', 'Google Drive', 'Confluence', 'Notion'],
+  },
+  {
+    icon: Database,
+    titleNl: 'Databronnen',
+    titleEn: 'Data sources',
+    descNl: 'Documenten, databases, e-mail, CRM, ERP: BEP doorzoekt ze waar ze staan, zonder data te verplaatsen.',
+    descEn: 'Documents, databases, email, CRM, ERP: BEP searches them where they live, without moving data.',
+    tags: ['Documenten', 'Databases', 'Websites', 'CRM', 'ERP', 'E-mail'],
   },
   {
     icon: Server,
-    color: '#ffd43b',
     titleNl: 'Infrastructuur',
     titleEn: 'Infrastructure',
-    descriptionNl: 'Draai BEP waar jij wilt — in je eigen cloud, on-premise, of hybride. Jouw keuze.',
-    descriptionEn: 'Run BEP wherever you want — in your own cloud, on-premise, or hybrid. Your choice.',
-    items: ['AWS', 'Azure', 'Google Cloud', 'On-Premise', 'Hybrid', 'Multi-Cloud'],
-  },
-  {
-    icon: Shield,
-    color: '#ff6b6b',
-    titleNl: 'Beveiliging',
-    titleEn: 'Security',
-    descriptionNl: 'Enterprise-grade beveiliging als fundament, niet als afterthought. Compliant vanaf dag één.',
-    descriptionEn: 'Enterprise-grade security as foundation, not an afterthought. Compliant from day one.',
-    items: ['End-to-end encryptie', 'Rol-gebaseerde toegang', 'Audit logging', 'Data isolatie', 'ISO 27001', 'GDPR compliant'],
+    descNl: 'BEP draait in jouw eigen omgeving. Jij bepaalt de cloud, wij zorgen dat het werkt.',
+    descEn: 'BEP runs in your own environment. You choose the cloud, we make it work.',
+    tags: ['AWS', 'Azure', 'Google Cloud', 'On-Premise', 'Hybrid'],
   },
   {
     icon: Globe,
-    color: '#74c0fc',
     titleNl: 'Integratie',
     titleEn: 'Integration',
-    descriptionNl: 'Benader BEP zoals jij wilt — via API, web interface, mobiel of in je favoriete tools.',
-    descriptionEn: 'Access BEP however you want — via API, web interface, mobile or in your favorite tools.',
-    items: ['REST API', 'gRPC', 'GraphQL', 'Web GUI', 'Mobile App', 'Slack / Teams'],
+    descNl: 'BEP sluit aan bij hoe jouw team werkt: via de web-interface, API, Slack of Teams.',
+    descEn: 'BEP fits how your team works: via web interface, API, Slack or Teams.',
+    tags: ['Web GUI', 'REST API', 'Slack / Teams', 'Mobile'],
   },
 ]
 
@@ -83,56 +68,62 @@ export function TechnologieContent() {
 
   return (
     <FadeUpContainer>
-      <section className="hero">
+      {/* ===== HERO ===== */}
+      <section className="hero dark-glow">
         <div className="container">
           <FadeUp>
             <span className="section-label">{t('Technologie', 'Technology')}</span>
             <h1>
-              {t('Onder de ', 'Under the ')}
-              <span className="highlight">{t('motorkap', 'hood')}</span>
+              {t('Zo is ', 'How ')}
+              <span className="highlight">BEP</span>
+              {t(' gebouwd', ' is built')}
             </h1>
             <p className="subtitle">
               {t(
-                'BEP is modulair opgebouwd. Elk onderdeel is uitwisselbaar, configureerbaar en draait in jouw omgeving. Mix & match precies wat jouw organisatie nodig heeft.',
-                'BEP is built modularly. Every component is interchangeable, configurable and runs in your environment. Mix & match exactly what your organization needs.'
+                'Modulaire architectuur. Wij richten het in op basis van jouw systemen en doelen en houden het draaiende.',
+                'Modular architecture. We set it up based on your systems and goals and keep it running.'
               )}
             </p>
           </FadeUp>
         </div>
       </section>
 
-      <section className="section section-white">
+      {/* ===== TECH BLOCKS ===== */}
+      <section className="section tech-dark-section">
         <div className="container">
           <FadeUp>
             <div className="section-header">
-              <span className="section-label">{t('Architectuur', 'Architecture')}</span>
-              <h2>{t('Modulaire bouwblokken', 'Modular building blocks')}</h2>
-              <p>
+              <span className="section-label" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                {t('Architectuur', 'Architecture')}
+              </span>
+              <h2 style={{ color: '#fff' }}>
+                {t('Zes bouwblokken. Eén platform.', 'Six building blocks. One platform.')}
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.5)' }}>
                 {t(
-                  'Elk blok staat op zichzelf en werkt naadloos samen. Configureer precies de stack die past bij jouw eisen.',
-                  'Each block stands on its own and works seamlessly together. Configure exactly the stack that fits your requirements.'
+                  'Elk onderdeel is uitwisselbaar. Nieuw AI-model? Andere cloud? Extra koppeling? We wisselen het uit zonder de rest aan te raken.',
+                  'Every component is interchangeable. New AI model? Different cloud? Extra integration? We swap it without touching the rest.'
                 )}
               </p>
             </div>
           </FadeUp>
-          <div className="tech-grid">
+
+          <div className="tech-blocks-grid">
             {blocks.map((block, i) => {
               const Icon = block.icon
               return (
-                <FadeUp key={i} delay={i * 0.08}>
-                  <div className="tech-card">
-                    <div className="tech-card-header">
-                      <div className="tech-card-icon" style={{ color: block.color, backgroundColor: `${block.color}15` }}>
-                        <Icon size={24} />
+                <FadeUp key={i} delay={i * 0.05}>
+                  <div className="tech-block">
+                    <div className="tech-block-top">
+                      <div className="tech-block-icon">
+                        <Icon size={22} />
                       </div>
                       <h3>{t(block.titleNl, block.titleEn)}</h3>
                     </div>
-                    <p className="tech-card-desc">{t(block.descriptionNl, block.descriptionEn)}</p>
-                    <div className="tech-card-items">
-                      {block.items.map((item, j) => (
-                        <span key={j} className="tech-tag" style={{ borderColor: `${block.color}30`, color: block.color }}>
-                          {item}
-                        </span>
+                    <p>{t(block.descNl, block.descEn)}</p>
+                    <div className="tech-block-tags">
+                      {block.tags.map((tag, j) => (
+                        <span key={j} className="tech-block-tag">{tag}</span>
                       ))}
                     </div>
                   </div>
@@ -140,57 +131,60 @@ export function TechnologieContent() {
               )
             })}
           </div>
+
+          {/* Security foundation bar */}
+          <FadeUp delay={0.5}>
+            <div className="tech-security-bar">
+              <div className="tech-security-bar-left">
+                <Shield size={20} />
+                <span>{t('Beveiliging', 'Security')}</span>
+              </div>
+              <p>{t('Enterprise-beveiliging loopt door alle lagen heen: end-to-end encryptie, RBAC, audit logging, GDPR-compliant en ISO 27001.', 'Enterprise security runs through all layers: end-to-end encryption, RBAC, audit logging, GDPR-compliant and ISO 27001.')}</p>
+              <div className="tech-block-tags">
+                {['End-to-end encryptie', 'RBAC', 'Audit logging', 'GDPR', 'ISO 27001'].map((tag, i) => (
+                  <span key={i} className="tech-block-tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
-      <section className="section section-gray">
+      {/* ===== PRINCIPLES ===== */}
+      <section className="section tech-dark-section">
         <div className="container">
-          <FadeUp>
-            <div className="section-header">
-              <span className="section-label">{t('Waarom dit ertoe doet', 'Why this matters')}</span>
-              <h2>{t('Geen black box, maar transparante architectuur', 'No black box, but transparent architecture')}</h2>
-            </div>
-          </FadeUp>
-          <div className="trust-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="tech-principles-grid">
             <FadeUp delay={0.1}>
-              <div className="trust-card">
-                <h3>{t('Volledige controle', 'Full control')}</h3>
-                <p>{t(
-                  'Elk onderdeel draait in jouw omgeving. Je bepaalt zelf welke modellen, datastores en connectoren je gebruikt.',
-                  'Every component runs in your environment. You decide which models, datastores and connectors you use.'
-                )}</p>
+              <div className="tech-principle-card">
+                <div className="tech-principle-num">01</div>
+                <h3>{t('Wij richten het in', 'We configure it')}</h3>
+                <p>{t('BEP is geen self-service tool. Wij bouwen de architectuur op basis van jouw systemen en doelen en houden die draaiende.', 'BEP is not a self-service tool. We build the architecture based on your systems and goals and keep it running.')}</p>
               </div>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <div className="trust-card">
+              <div className="tech-principle-card">
+                <div className="tech-principle-num">02</div>
                 <h3>{t('Toekomstbestendig', 'Future-proof')}</h3>
-                <p>{t(
-                  'Nieuwe AI-modellen? Andere cloud? Extra connectoren? Wissel elk blok uit zonder de rest te raken.',
-                  'New AI models? Different cloud? Extra connectors? Swap any block without affecting the rest.'
-                )}</p>
+                <p>{t('Elk blok is uitwisselbaar. Nieuw AI-model beschikbaar? Andere cloud? Extra koppeling? We wisselen het uit zonder de rest aan te raken.', 'Every block is interchangeable. New AI model available? Different cloud? Extra integration? We swap it without touching the rest.')}</p>
               </div>
             </FadeUp>
             <FadeUp delay={0.3}>
-              <div className="trust-card">
-                <h3>{t('Enterprise-ready', 'Enterprise-ready')}</h3>
-                <p>{t(
-                  'ISO 27001, GDPR, EU AI Act — compliance is geen checkbox maar het fundament van de architectuur.',
-                  'ISO 27001, GDPR, EU AI Act — compliance is not a checkbox but the foundation of the architecture.'
-                )}</p>
+              <div className="tech-principle-card">
+                <div className="tech-principle-num">03</div>
+                <h3>{t('Compliance als fundament', 'Compliance as foundation')}</h3>
+                <p>{t('ISO 27001, GDPR, EU AI Act: niet als checkbox achteraf, maar als ontwerpregel van dag één.', 'ISO 27001, GDPR, EU AI Act: not a checkbox afterthought, but a design rule from day one.')}</p>
               </div>
             </FadeUp>
           </div>
         </div>
       </section>
 
-      <section className="cta-section orange-glow">
+      {/* ===== CTA ===== */}
+      <section className="cta-section dark-glow">
         <div className="container">
           <FadeUp>
-            <h2>{t('Benieuwd naar de details?', 'Curious about the details?')}</h2>
-            <p>{t(
-              'We laten je graag zien hoe de architectuur eruitziet voor jouw situatie.',
-              'We\'d love to show you what the architecture looks like for your situation.'
-            )}</p>
+            <h2>{t('Benieuwd hoe dit eruitziet voor jouw situatie?', 'Curious what this looks like for your situation?')}</h2>
+            <p>{t('We lopen graag door de architectuur heen op basis van jouw systemen.', 'We\'d love to walk through the architecture based on your systems.')}</p>
             <div className="hero-buttons">
               <a href="/contact" className="btn btn-white btn-arrow">
                 {t('Plan een technisch gesprek', 'Schedule a technical call')}

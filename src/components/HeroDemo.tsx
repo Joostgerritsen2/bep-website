@@ -28,8 +28,8 @@ const scenarios: Scenario[] = [
       { name: 'Outlook', detail: '3 threads' },
     ],
     answer: {
-      nl: 'Order 4829 — in productie afd. B3, levering 15 maart. Klant: Technova BV, laatst gesproken 2 mrt.',
-      en: 'Order 4829 — in production dept. B3, delivery March 15. Client: Technova BV, last contact Mar 2.',
+      nl: 'Order 4829: in productie afd. B3, levering 15 maart. Klant: Technova BV, laatst gesproken 2 mrt.',
+      en: 'Order 4829: in production dept. B3, delivery March 15. Client: Technova BV, last contact Mar 2.',
     },
     actions: [
       { nl: 'Statusmail verstuurd → Technova BV', en: 'Status email sent → Technova BV', type: 'send' },
@@ -41,8 +41,8 @@ const scenarios: Scenario[] = [
     role: { nl: 'Operations', en: 'Operations' },
     initials: 'ML',
     question: {
-      nl: 'Machine P7 foutcode E-42 — hoe op te lossen?',
-      en: 'Machine P7 error code E-42 — how to fix?',
+      nl: 'Machine P7 foutcode E-42: hoe op te lossen?',
+      en: 'Machine P7 error code E-42: how to fix?',
     },
     systems: ['Kennisbank', 'Docs', 'Logs'],
     sources: [

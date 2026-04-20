@@ -3,6 +3,13 @@ import { useLang } from '@/lib/language'
 import { FadeUp, FadeUpContainer } from '@/components/FadeUp'
 import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
 
+function CompareCell({ value, highlight }: { value: string; highlight?: boolean }) {
+  if (value === 'yes')     return <span className={`cc cc-yes${highlight ? ' cc-highlight' : ''}`}>✓</span>
+  if (value === 'no')      return <span className="cc cc-no">✗</span>
+  if (value === 'partial') return <span className="cc cc-partial">~</span>
+  return null
+}
+
 export function PricingContent() {
   const { t } = useLang()
 
@@ -65,6 +72,7 @@ export function PricingContent() {
             {/* START */}
             <FadeUp delay={0.05}>
               <div className="np-card">
+                <div className="np-badge-slot" />
                 <div className="np-card-name">{t('Start', 'Start')}</div>
                 <div className="np-price">€595 <span>/{t('maand', 'month')}</span></div>
                 <div className="np-setup">+ €1.250 {t('eenmalige setup', 'one-time setup')}</div>
@@ -89,14 +97,14 @@ export function PricingContent() {
                   <li>{t('eerste team', 'first team')}</li>
                   <li>{t('snelle start op eigen data', 'fast start on own data')}</li>
                 </ul>
-                <Link href="/contact" className="np-cta" aria-label={t('Plan een demo voor Start', 'Schedule a demo for Start')}>{t('Plan een demo →', 'Schedule a demo →')}</Link>
+                <Link href="/demo" className="np-cta" aria-label={t('Plan een demo voor Start', 'Schedule a demo for Start')}>{t('Plan een demo →', 'Schedule a demo →')}</Link>
               </div>
             </FadeUp>
 
             {/* TEAM */}
             <FadeUp delay={0.1}>
               <div className="np-card featured">
-                <div className="np-badge">{t('Meest gekozen', 'Most popular')}</div>
+                <div className="np-badge-slot"><div className="np-badge">{t('Meest gekozen', 'Most popular')}</div></div>
                 <div className="np-card-name">{t('Team', 'Team')}</div>
                 <div className="np-price">€1.250 <span>/{t('maand', 'month')}</span></div>
                 <div className="np-setup">+ €1.500 {t('eenmalige uitbreiding', 'one-time expansion')}</div>
@@ -120,13 +128,14 @@ export function PricingContent() {
                   <li>{t('bredere kennisbasis', 'broader knowledge base')}</li>
                   <li>{t('eerste procesinrichting', 'first process setup')}</li>
                 </ul>
-                <Link href="/contact" className="np-cta" aria-label={t('Plan een demo voor Team', 'Schedule a demo for Team')}>{t('Plan een demo →', 'Schedule a demo →')}</Link>
+                <Link href="/demo" className="np-cta" aria-label={t('Plan een demo voor Team', 'Schedule a demo for Team')}>{t('Plan een demo →', 'Schedule a demo →')}</Link>
               </div>
             </FadeUp>
 
             {/* GROWTH */}
             <FadeUp delay={0.15}>
               <div className="np-card">
+                <div className="np-badge-slot" />
                 <div className="np-card-name">{t('Growth', 'Growth')}</div>
                 <div className="np-price">€2.500 <span>/{t('maand', 'month')}</span></div>
                 <div className="np-setup">+ €2.500 {t('eenmalige uitbreiding', 'one-time expansion')}</div>
@@ -151,13 +160,14 @@ export function PricingContent() {
                   <li>{t('structureel gebruik', 'structural use')}</li>
                   <li>{t('verdere opschaling', 'further scaling')}</li>
                 </ul>
-                <Link href="/contact" className="np-cta" aria-label={t('Plan een demo voor Growth', 'Schedule a demo for Growth')}>{t('Plan een demo →', 'Schedule a demo →')}</Link>
+                <Link href="/demo" className="np-cta" aria-label={t('Plan een demo voor Growth', 'Schedule a demo for Growth')}>{t('Plan een demo →', 'Schedule a demo →')}</Link>
               </div>
             </FadeUp>
 
             {/* PLATFORM */}
             <FadeUp delay={0.2}>
               <div className="np-card">
+                <div className="np-badge-slot" />
                 <div className="np-card-name">{t('Platform', 'Platform')}</div>
                 <div className="np-price" style={{ fontSize: '22px' }}>
                   {t('v.a. ', 'from ')}€4.500 <span>/maand</span>
@@ -250,33 +260,70 @@ export function PricingContent() {
           <FadeUp>
             <p className="compare-kicker">{t('Vergelijking', 'Comparison')}</p>
             <h2>{t('Geen generieke copiloot, maar een bedrijfsplatform', 'Not a generic copilot, but a business platform')}</h2>
-            <p>
+            <p className="compare-intro">
               {t(
-                'Copilots helpen individuele gebruikers productiever te werken. BEP gaat verder: het verbindt systemen, begrijpt de eigen context van je organisatie en maakt agents inzetbaar op echte processen en kennisdomeinen.',
-                'Copilots help individual users work more productively. BEP goes further: it connects systems, understands the context of your organization and makes agents deployable on real processes and knowledge domains.'
+                'Copilots helpen individuele gebruikers productiever te werken. BEP gaat verder: het verbindt systemen, begrijpt de eigen context van je organisatie en voert taken autonoom uit.',
+                'Copilots help individual users work more productively. BEP goes further: it connects systems, understands your organisation\'s context and executes tasks autonomously.'
               )}
             </p>
-            <div className="compare-grid">
-              <div className="compare-col">
-                <p className="compare-col-label">{t('Generieke copiloot', 'Generic copilot')}</p>
-                <h4>{t('Individueel productiviteitswerktuig', 'Individual productivity tool')}</h4>
-                <p>
-                  {t(
-                    'Helpt een medewerker sneller werken op basis van publieke kennis. Geen verbinding met jouw systemen of context.',
-                    'Helps an employee work faster based on public knowledge. No connection to your systems or context.'
-                  )}
-                </p>
-              </div>
-              <div className="compare-col bep-col">
-                <p className="compare-col-label">BEP</p>
-                <h4>{t('Bedrijfsplatform op eigen data', 'Business platform on own data')}</h4>
-                <p>
-                  {t(
-                    'Verbindt systemen, begrijpt de context van jouw organisatie en maakt agents inzetbaar op echte processen en kennisdomeinen.',
-                    'Connects systems, understands the context of your organization and makes agents deployable on real processes and knowledge domains.'
-                  )}
-                </p>
-              </div>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <div className="compare-table-wrap">
+              <table className="compare-table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>M365 Copilot</th>
+                    <th>Glean</th>
+                    <th>ChatGPT Enterprise</th>
+                    <th className="compare-bep-col">BEP</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      feature: t('Verbindt eigen bedrijfssystemen', 'Connects own business systems'),
+                      copilot: 'partial', glean: 'yes', chatgpt: 'no', bep: 'yes',
+                    },
+                    {
+                      feature: t('Voert taken autonoom uit', 'Executes tasks autonomously'),
+                      copilot: 'no', glean: 'no', chatgpt: 'no', bep: 'yes',
+                    },
+                    {
+                      feature: t('100% eigen cloud / on-prem', '100% own cloud / on-prem'),
+                      copilot: 'no', glean: 'no', chatgpt: 'no', bep: 'yes',
+                    },
+                    {
+                      feature: t('Open source AI-modellen', 'Open source AI models'),
+                      copilot: 'no', glean: 'no', chatgpt: 'no', bep: 'yes',
+                    },
+                    {
+                      feature: t('Geen vendor lock-in', 'No vendor lock-in'),
+                      copilot: 'no', glean: 'no', chatgpt: 'no', bep: 'yes',
+                    },
+                    {
+                      feature: t('Inzetbaar per afdeling / domein', 'Deployable per department / domain'),
+                      copilot: 'partial', glean: 'partial', chatgpt: 'no', bep: 'yes',
+                    },
+                    {
+                      feature: t('GDPR-compliant & EU AI Act-ready', 'GDPR-compliant & EU AI Act-ready'),
+                      copilot: 'partial', glean: 'partial', chatgpt: 'partial', bep: 'yes',
+                    },
+                    {
+                      feature: t('Live in 2–4 weken', 'Live in 2–4 weeks'),
+                      copilot: 'no', glean: 'no', chatgpt: 'no', bep: 'yes',
+                    },
+                  ].map((row, i) => (
+                    <tr key={i}>
+                      <td className="compare-feature">{row.feature}</td>
+                      <td><CompareCell value={row.copilot} /></td>
+                      <td><CompareCell value={row.glean} /></td>
+                      <td><CompareCell value={row.chatgpt} /></td>
+                      <td className="compare-bep-col"><CompareCell value={row.bep} highlight /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </FadeUp>
         </div>
@@ -292,7 +339,7 @@ export function PricingContent() {
               {t('met echte data en een eerste koppeling.', 'with real data and a first integration.')}
             </p>
             <div className="pricing-cta-btns">
-              <Link href="/contact" className="btn btn-primary btn-arrow">
+              <Link href="/demo" className="btn btn-primary btn-arrow">
                 {t('Plan een demo', 'Schedule a demo')}
               </Link>
               <Link href="/contact" className="btn btn-ghost btn-arrow">

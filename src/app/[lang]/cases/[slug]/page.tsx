@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: { lang: string; slu
   if (!caseStudy) return { title: 'Case | BEP' }
 
   const title = lang === 'en'
-    ? `${caseStudy.client} — ${caseStudy.tagline.en} | BEP`
-    : `${caseStudy.client} — ${caseStudy.tagline.nl} | BEP`
+    ? `${caseStudy.client}: ${caseStudy.tagline.en} | BEP`
+    : `${caseStudy.client}: ${caseStudy.tagline.nl} | BEP`
   const description = lang === 'en' ? caseStudy.description.en : caseStudy.description.nl
 
   return {

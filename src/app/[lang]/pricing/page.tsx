@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bep.expert'
 
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const lang = params.lang as Locale
-  const title = lang === 'en' ? 'Pricing — Simple, Transparent Plans | BEP' : 'Pricing — Eenvoudige, Transparante Pakketten | BEP'
+  const title = lang === 'en' ? 'Pricing: Simple, Transparent Plans | BEP' : 'Pricing. Eenvoudige, Transparante Pakketten | BEP'
   const description = lang === 'en'
     ? 'BEP pricing starts at €595/month. Choose Start, Team, Growth or Platform. Always 100% in your own cloud.'
     : 'BEP pricing begint bij €595/maand. Kies Start, Team, Growth of Platform. Altijd 100% in je eigen cloud.'
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: { lang: string } })
 const pricingJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: 'BEP — AI Business Expert',
+  name: 'BEP. AI Business Expert',
   description: 'AI business expert that connects all your business data, makes it queryable and executes tasks autonomously.',
   brand: { '@type': 'Organization', name: 'BEP' },
   offers: [

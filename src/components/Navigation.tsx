@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
 import { useLang } from '@/lib/language'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
@@ -8,9 +9,13 @@ import Image from 'next/image'
 
 export function Navigation() {
   const { t } = useLang()
+  const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [showFloating, setShowFloating] = useState(false)
+
+  const isActive = (href: string) => pathname?.includes(href) ?? false
+  const isLightPage = pathname?.includes('/demo') || pathname?.includes('/contact')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +34,7 @@ export function Navigation() {
 
   return (
     <>
-      <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
+      <header className={`header ${scrolled ? 'scrolled' : ''} ${isLightPage && !scrolled ? 'on-light' : ''}`} id="header">
         <div className="container header-inner">
           <Link href="/" className="logo">
             <Image
@@ -43,14 +48,16 @@ export function Navigation() {
           </Link>
 
           <nav className="nav-links">
-            <Link href="/cases">{t('Cases', 'Cases')}</Link>
-            <Link href="/toepassingen">{t('Toepassingen', 'Applications')}</Link>
-            <Link href="/pricing" className="nav-link--pricing">{t('Pricing', 'Pricing')}</Link>
+            <Link href="/waarom-bep" className={isActive('/waarom-bep') ? 'nav-active' : ''}>{t('Waarom BEP', 'Why BEP')}</Link>
+            <Link href="/cases" className={isActive('/cases') ? 'nav-active' : ''}>{t('Cases', 'Cases')}</Link>
+            <Link href="/toepassingen" className={isActive('/toepassingen') ? 'nav-active' : ''}>{t('Toepassingen', 'Applications')}</Link>
+            <Link href="/team" className={isActive('/team') ? 'nav-active' : ''}>{t('Team', 'Team')}</Link>
+            <Link href="/pricing" className={`nav-link--pricing${isActive('/pricing') ? ' nav-active' : ''}`}>{t('Pricing', 'Pricing')}</Link>
           </nav>
 
           <div className="header-right">
             <LanguageSwitcher />
-            <Link href="/contact" className="header-cta">
+            <Link href="/demo" className="header-cta">
               {t('Plan een demo', 'Schedule a demo')}
             </Link>
             <button className="menu-btn-round" onClick={() => setMenuOpen(true)} aria-label="Menu">
@@ -66,13 +73,13 @@ export function Navigation() {
         </button>
         <div className="menu-columns">
           <nav className="menu-main">
-            <Link href="/" onClick={close}>Home</Link>
-            <Link href="/waarom-bep" onClick={close}>{t('Waarom BEP', 'Why BEP')}</Link>
-            <Link href="/cases" onClick={close}>Cases</Link>
-            <Link href="/blog" onClick={close}>Blog</Link>
-            <Link href="/team" onClick={close}>Team</Link>
-            <Link href="/pricing" onClick={close}>{t('Pricing', 'Pricing')}</Link>
-            <Link href="/contact" onClick={close}>Contact</Link>
+            <Link href="/" onClick={close} className={pathname?.endsWith('/nl') || pathname?.endsWith('/en') ? 'nav-active' : ''}>Home</Link>
+            <Link href="/waarom-bep" onClick={close} className={isActive('/waarom-bep') ? 'nav-active' : ''}>{t('Waarom BEP', 'Why BEP')}</Link>
+            <Link href="/cases" onClick={close} className={isActive('/cases') ? 'nav-active' : ''}>Cases</Link>
+            <Link href="/blog" onClick={close} className={isActive('/blog') ? 'nav-active' : ''}>Blog</Link>
+            <Link href="/team" onClick={close} className={isActive('/team') ? 'nav-active' : ''}>Team</Link>
+            <Link href="/pricing" onClick={close} className={isActive('/pricing') ? 'nav-active' : ''}>{t('Pricing', 'Pricing')}</Link>
+            <Link href="/contact" onClick={close} className={isActive('/contact') ? 'nav-active' : ''}>Contact</Link>
           </nav>
           <div className="menu-secondary">
             <div className="menu-secondary-group">
@@ -92,7 +99,7 @@ export function Navigation() {
 
       {/* Floating mobile CTA */}
       <div className={`floating-cta ${showFloating ? 'visible' : ''}`}>
-        <Link href="/contact">
+        <Link href="/demo">
           {t('Plan een demo', 'Schedule a demo')}
         </Link>
       </div>

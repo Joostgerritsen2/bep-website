@@ -14,8 +14,8 @@ const defaultFaqs: FAQItem[] = [
   {
     questionNl: 'Wat is BEP precies?',
     questionEn: 'What exactly is BEP?',
-    answerNl: 'BEP is een AI-bedrijfsexpert die al je bedrijfsdata verbindt — van ERP en CRM tot e-mail en documenten. Je kunt in natuurlijke taal vragen stellen en BEP voert ook daadwerkelijk taken uit, zoals het opzoeken van orderstatus, het versturen van e-mails of het bijwerken van je CRM.',
-    answerEn: 'BEP is an AI business expert that connects all your business data — from ERP and CRM to email and documents. You can ask questions in natural language and BEP actually executes tasks, like looking up order status, sending emails or updating your CRM.',
+    answerNl: 'BEP is een AI-bedrijfsexpert die al je bedrijfsdata verbindt, van ERP en CRM tot e-mail en documenten. Je kunt in natuurlijke taal vragen stellen en BEP voert ook daadwerkelijk taken uit, zoals het opzoeken van orderstatus, het versturen van e-mails of het bijwerken van je CRM.',
+    answerEn: 'BEP is an AI business expert that connects all your business data, from ERP and CRM to email and documents. You can ask questions in natural language and BEP actually executes tasks, like looking up order status, sending emails or updating your CRM.',
   },
   {
     questionNl: 'Waar draait BEP? Is mijn data veilig?',
@@ -38,8 +38,8 @@ const defaultFaqs: FAQItem[] = [
   {
     questionNl: 'Wat kost BEP?',
     questionEn: 'What does BEP cost?',
-    answerNl: 'BEP is beschikbaar vanaf €499/maand voor het Starter-pakket. Bekijk onze pricing-pagina voor alle pakketten en mogelijkheden. We bieden ook een gratis Data Scan aan om je besparingspotentieel in kaart te brengen.',
-    answerEn: 'BEP is available from €499/month for the Starter plan. Check our pricing page for all plans and options. We also offer a free Data Scan to map your savings potential.',
+    answerNl: 'BEP is beschikbaar vanaf €595/maand voor het Start-pakket, inclusief onboarding en live in 2 tot 4 weken. Bekijk onze pricing-pagina voor alle pakketten en mogelijkheden.',
+    answerEn: 'BEP is available from €595/month for the Start plan, including onboarding and live in 2 to 4 weeks. Check our pricing page for all plans and options.',
   },
   {
     questionNl: 'Kan BEP ook daadwerkelijk taken uitvoeren?',

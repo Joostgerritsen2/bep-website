@@ -2,11 +2,11 @@
 import { useLang } from '@/lib/language'
 import { FadeUp, FadeUpContainer } from '@/components/FadeUp'
 import { LocaleLink as Link } from '@/lib/i18n/LocaleLink'
-import { Shield, CheckCircle, Database, GitBranch, Bot, Users, ArrowRight, Lock, Code, MessageSquare, Link2, Settings, Rocket } from 'lucide-react'
+import { Shield, Lock, Code, MessageSquare } from 'lucide-react'
 import { cases } from './cases/caseData'
 import Image from 'next/image'
 import { HeroAgent } from '@/components/HeroAgent'
-import { MarqueeLogos } from '@/components/MarqueeLogos'
+import { HeroDots } from '@/components/HeroDots'
 import dynamic from 'next/dynamic'
 
 
@@ -23,22 +23,23 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
       {/* ===== HERO ===== */}
       <section className="hero hero-new">
         <div className="hero-bg-mesh" />
+        <HeroDots />
         <div className="container">
           <div className="hero-split">
             <div className="hero-text">
               <FadeUp>
                 <h1>
-                  {t('Maak van jouw bedrijf een', 'Turn your company into a')}<br />
-                  <em className="highlight-text">{t('lerende organisatie.', 'learning organization.')}</em>
+                  {t('Het AI-platform met Agents', 'The AI platform with Agents')}<br />
+                  <em className="highlight-text">{t('voor je hele organisatie.', 'for your entire organisation.')}</em>
                 </h1>
                 <p className="subtitle">
                   {t(
-                    'BEP verbindt jouw systemen, leert van jouw data en handelt autonoom — domein voor domein. 100% in jouw eigen cloud.',
-                    'BEP connects your systems, learns from your data and acts autonomously — domain by domain. 100% in your own cloud.'
+                    'BEP helpt organisaties AI praktisch in te zetten in meerdere afdelingen. De Agents werken op basis van jullie data, systemen en processen en kunnen zelfstandig werk oppakken.',
+                    'BEP helps organisations use AI practically across multiple departments. The Agents work based on your data, systems and processes and can handle work autonomously.'
                   )}
                 </p>
                 <div className="hero-buttons">
-                  <a href="/contact" className="btn btn-primary btn-arrow">
+                  <a href="/demo" className="btn btn-primary btn-arrow">
                     {t('Plan een demo', 'Schedule a demo')}
                   </a>
                   <Link href="/cases" className="btn btn-ghost btn-arrow">
@@ -49,11 +50,11 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                 <div className="hero-stats">
                   <div className="hero-stat">
                     <span className="hero-stat-num orange">2–4</span>
-                    <span className="hero-stat-label">{t('weken live', 'weeks to live')}</span>
+                    <span className="hero-stat-label">{t('weken tot live', 'weeks to live')}</span>
                   </div>
                   <div className="hero-stat">
                     <span className="hero-stat-num">4</span>
-                    <span className="hero-stat-label">{t('live cases', 'live cases')}</span>
+                    <span className="hero-stat-label">{t('actieve cases', 'active cases')}</span>
                   </div>
                   <div className="hero-stat">
                     <span className="hero-stat-num orange">100%</span>
@@ -64,88 +65,38 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                     <span className="hero-stat-label">{t('data buiten je omgeving', 'data outside your env')}</span>
                   </div>
                 </div>
-                <div className="hero-team">
-                  <div className="hero-team-faces">
-                    {[
-                      { id: 2, name: 'Berco', role: 'AI Whisperer' },
-                      { id: 3, name: 'Sven', role: 'Knowledge Magician' },
-                      { id: 1, name: 'Sietse', role: 'Making Things Work' },
-                      { id: 4, name: 'Jeroen', role: 'Partner Intelligence Lead' },
-                      { id: 6, name: 'Jelle', role: 'Product Enchanter' },
-                    ].map((member, idx) => (
-                      <div key={member.id} className="hero-team-member" style={{ animationDelay: `${idx * 0.1}s` }}>
-                        <Image
-                          src={`/images/team-member-${member.id}.png`}
-                          alt={member.name}
-                          width={56}
-                          height={56}
-                          className="hero-team-photo"
-                          {...(idx < 3 ? { priority: true } : {})}
-                        />
-                        <div className="hero-team-info">
-                          <span className="hero-team-name">{member.name}</span>
-                          <span className="hero-team-role">{member.role}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="hero-team-tagline">
-                    {t('Gebouwd vanuit Groningen door mensen die het begrijpen', 'Built from Groningen by people who understand')}
-                  </p>
-                </div>
+                <p className="hero-built-by">
+                  {t('Gebouwd en ontwikkeld door', 'Built and developed by')}{' '}
+                  <a href="https://www.stekz.com" target="_blank" rel="noopener" className="hero-built-by-link">Stekz</a>
+                </p>
               </FadeUp>
             </div>
             <FadeUp delay={0.2}>
               <HeroAgent />
             </FadeUp>
           </div>
-          <FadeUp delay={0.4}>
-            <div className="hero-badges">
-              <div className="hero-badge">
-                <Shield size={16} /> {t('100% eigen cloud', '100% your own cloud')}
-              </div>
-              <div className="hero-badge">
-                <CheckCircle size={16} /> GDPR Compliant
-              </div>
-              <div className="hero-badge">
-                <CheckCircle size={16} /> EU AI Act Ready
-              </div>
-              <div className="hero-badge">
-                <CheckCircle size={16} /> Open-source AI
-              </div>
-            </div>
-          </FadeUp>
         </div>
       </section>
 
-      {/* ===== ANTI-SLOP BANNER ===== */}
-      <section className="anti-slop-bar">
+      {/* ===== VERTROUWENSBLOK ===== */}
+      <section className="trust-bar">
         <div className="container">
-          <div className="anti-slop-items">
-            <div className="anti-slop-item">
-              <span className="anti-slop-check" aria-hidden="true">✓</span>
-              {t('Antwoorden op jouw data — niet op internet', 'Answers from your data — not the internet')}
-            </div>
-            <div className="anti-slop-divider" />
-            <div className="anti-slop-item">
-              <span className="anti-slop-check" aria-hidden="true">✓</span>
-              {t('Bronvermelding bij elk antwoord', 'Source citation with every answer')}
-            </div>
-            <div className="anti-slop-divider" />
-            <div className="anti-slop-item">
-              <span className="anti-slop-check" aria-hidden="true">✓</span>
-              {t('Geen AI slop — governed & accountable', 'No AI slop — governed & accountable')}
-            </div>
-            <div className="anti-slop-divider" />
-            <div className="anti-slop-item">
-              <span className="anti-slop-check" aria-hidden="true">✓</span>
-              {t('Nooit jouw data buiten jouw omgeving', 'Your data never leaves your environment')}
-            </div>
+          <div className="trust-bar-items">
+            {[
+              { nl: 'Live in 2 tot 4 weken', en: 'Live in 2 to 4 weeks' },
+              { nl: 'Draait in je eigen cloud of on-premise', en: 'Runs in your own cloud or on-premise' },
+              { nl: 'Data blijft in je eigen omgeving', en: 'Data stays in your own environment' },
+              { nl: 'Werkt op basis van je eigen bronnen', en: 'Works based on your own sources' },
+              { nl: 'Antwoorden met bronvermelding', en: 'Answers with source references' },
+            ].map((item, i) => (
+              <div key={i} className="trust-bar-item">
+                <span className="trust-bar-check">✓</span>
+                {t(item.nl, item.en)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
-      <MarqueeLogos />
 
       {/* ===== CASE METRICS ===== */}
       <section className="case-metrics-section">
@@ -159,32 +110,36 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               <Link href="/cases/tender-strateeg" className="metric-card">
                 <span className="metric-sector">{t('Consultancy · Aanbestedingen', 'Consultancy · Tenders')}</span>
                 <span className="metric-num">60%</span>
-                <p className="metric-desc">{t('Snellere voorbereiding per tender — 500+ documenten doorzoekbaar', 'Faster preparation per tender — 500+ documents searchable')}</p>
-                <span className="metric-client">Tender Strateeg</span>
+                <span className="metric-result-label">{t('tijdsbesparing per tender', 'time saved per tender')}</span>
+                <p className="metric-desc">{t('500+ documenten doorzoekbaar. Minder handwerk, meer gewonnen aanbestedingen.', '500+ documents searchable. Less manual work, more tenders won.')}</p>
+                <span className="metric-client">Tender Strateeg →</span>
               </Link>
             </FadeUp>
             <FadeUp delay={0.1}>
               <Link href="/cases/groningen-seaports" className="metric-card metric-card--alt">
                 <span className="metric-sector">{t('Havenbeheer · Logistiek', 'Port management · Logistics')}</span>
                 <span className="metric-num">3.5×</span>
-                <p className="metric-desc">{t('ROI in jaar 1 — 24/7 operationele kennis voor 200+ gebruikers', 'ROI in year 1 — 24/7 operational knowledge for 200+ users')}</p>
-                <span className="metric-client">Groningen Seaports</span>
+                <span className="metric-result-label">{t('ROI in jaar 1', 'ROI in year 1')}</span>
+                <p className="metric-desc">{t('24/7 operationele kennis beschikbaar voor 200+ medewerkers en klanten.', '24/7 operational knowledge available for 200+ staff and clients.')}</p>
+                <span className="metric-client">Groningen Seaports →</span>
               </Link>
             </FadeUp>
             <FadeUp delay={0.15}>
               <Link href="/cases/sjb-advies" className="metric-card">
                 <span className="metric-sector">{t('Financieel Advies', 'Financial Advisory')}</span>
                 <span className="metric-num">4.2×</span>
-                <p className="metric-desc">{t('ROI — 10.000+ klantdossiers doorzoekbaar, dienstverlening 40% sneller', 'ROI — 10,000+ client files searchable, service delivery 40% faster')}</p>
-                <span className="metric-client">SJB Advies</span>
+                <span className="metric-result-label">{t('ROI op jaarbasis', 'ROI per year')}</span>
+                <p className="metric-desc">{t('10.000+ klantdossiers doorzoekbaar. Dienstverlening 40% sneller.', '10,000+ client files searchable. Service delivery 40% faster.')}</p>
+                <span className="metric-client">SJB Advies →</span>
               </Link>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <Link href="/cases/bpz" className="metric-card metric-card--alt" aria-label={t('BPZ case study — nul kennisincidenten', 'BPZ case study — zero knowledge incidents')}>
+              <Link href="/cases/bpz" className="metric-card metric-card--alt">
                 <span className="metric-sector">{t('Productie · Manufacturing', 'Production · Manufacturing')}</span>
                 <span className="metric-num">0</span>
-                <p className="metric-desc">{t('Kennisincidenten — 80 jaar expertise geborgd in 2 weken', 'Knowledge incidents — 80 years of expertise secured in 2 weeks')}</p>
-                <span className="metric-client">BPZ</span>
+                <span className="metric-result-label">{t('kennisincidenten na go-live', 'knowledge incidents after go-live')}</span>
+                <p className="metric-desc">{t('80 jaar vakkennis geborgd in 2 weken. Nooit meer kennis die verdwijnt met mensen.', '80 years of expertise secured in 2 weeks. Never lose knowledge when people leave.')}</p>
+                <span className="metric-client">BPZ →</span>
               </Link>
             </FadeUp>
           </div>
@@ -198,85 +153,83 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </div>
       </section>
 
-      {/* ===== 4 LAYERS — Art direction concept ===== */}
+      {/* ===== HOE BEP WERKT ===== */}
       <section className="section section-gray bep-motif dark-glow">
         <div className="container">
           <FadeUp>
             <div className="section-header">
               <span className="section-label">{t('Hoe BEP werkt', 'How BEP works')}</span>
-              <h2>{t('Denkt mee, handelt zelf', 'Thinks along, acts independently')}</h2>
+              <h2>{t('BEP pakt het op. Jij hoeft er niet aan te denken.', 'BEP picks it up. You don\'t have to think about it.')}</h2>
+              <p>{t(
+                'BEP monitort je processen continu en pakt taken op voordat jij eraan toe komt.',
+                'BEP continuously monitors your processes and picks up tasks before you get to them.'
+              )}</p>
             </div>
           </FadeUp>
-          <div className="capabilities-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+
+          <div className="bep-flow">
             <FadeUp delay={0.1}>
-              <div className="capability-card">
-                <div className="icon"><Database size={24} /></div>
-                <h3>{t('Systemen & Data', 'Systems & Data')}</h3>
-                <p>
-                  {t(
-                    'CRM, ERP, e-mail, support, documenten, agenda\'s, interne kennis en externe databronnen — alles verbonden in één laag.',
-                    'CRM, ERP, email, support, documents, calendars, internal knowledge and external data sources — all connected in one layer.'
-                  )}
-                </p>
-                <ul>
-                  <li>{t('Automatisch geïndexeerd', 'Automatically indexed')}</li>
-                  <li>{t('Real-time synchronisatie', 'Real-time sync')}</li>
-                  <li>{t('Altijd actueel', 'Always up to date')}</li>
-                </ul>
+              <div className="bep-flow-step">
+                <div className="bep-flow-num">01</div>
+                <h3>{t('Koppelen', 'Connect')}</h3>
+                <p>{t(
+                  'BEP sluit aan op je CRM, ERP, e-mail, documenten en agenda\'s. Jouw data blijft waar hij staat. BEP leest mee.',
+                  'BEP connects to your CRM, ERP, email, documents and calendars. Your data stays where it is. BEP reads along.'
+                )}</p>
               </div>
             </FadeUp>
+            <div className="bep-flow-arrow" aria-hidden="true">→</div>
             <FadeUp delay={0.2}>
-              <div className="capability-card">
-                <div className="icon"><GitBranch size={24} /></div>
-                <h3>{t('Operationele Processen', 'Operational Processes')}</h3>
-                <p>
-                  {t(
-                    'Sales, onboarding, finance, customer support, operations — taken bewegen door je organisatie. Dossiers veranderen van status, approvals lopen door.',
-                    'Sales, onboarding, finance, customer support, operations — tasks move through your organization. Cases change status, approvals flow through.'
-                  )}
-                </p>
-                <ul>
-                  <li>{t('Werkstromen geautomatiseerd', 'Workflows automated')}</li>
-                  <li>{t('Cross-afdeling zichtbaarheid', 'Cross-department visibility')}</li>
-                  <li>{t('Status tracking', 'Status tracking')}</li>
-                </ul>
+              <div className="bep-flow-step">
+                <div className="bep-flow-num">02</div>
+                <h3>{t('Signaleren', 'Detect')}</h3>
+                <p>{t(
+                  'BEP bewaakt je processen continu. Stille prospect, openstaande factuur, aflopend contract: BEP ziet het voordat jij er aan toe komt.',
+                  'BEP continuously monitors your processes. Silent prospect, outstanding invoice, expiring contract: BEP sees it before you get to it.'
+                )}</p>
               </div>
             </FadeUp>
+            <div className="bep-flow-arrow" aria-hidden="true">→</div>
             <FadeUp delay={0.3}>
-              <div className="capability-card">
-                <div className="icon"><Bot size={24} /></div>
-                <h3>{t('Proactieve AI Agents', 'Proactive AI Agents')}</h3>
-                <p>
-                  {t(
-                    'Agents die niet wachten op instructies. Ze signaleren dat een klant al weken stil is, pakken een openstaande factuur op, of bereiden een voorstel voor — voordat jij eraan denkt.',
-                    'Agents that don\'t wait for instructions. They flag that a client has gone quiet for weeks, pick up an overdue invoice, or prepare a proposal — before you even think of it.'
-                  )}
-                </p>
-                <ul>
-                  <li>{t('Signaleert kansen en risico\'s', 'Flags opportunities and risks')}</li>
-                  <li>{t('Pakt taken op zonder dat je het vraagt', 'Picks up tasks without being asked')}</li>
-                  <li>{t('Houdt je team op de hoogte', 'Keeps your team informed')}</li>
-                </ul>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.4}>
-              <div className="capability-card">
-                <div className="icon"><Users size={24} /></div>
-                <h3>{t('Mensen in controle', 'Humans in control')}</h3>
-                <p>
-                  {t(
-                    'Medewerkers reviewen, beslissen en sturen bij. Niet boven de AI als manager, maar naast de agents als collega\'s. AI vergroot je capaciteit, vervangt niet je organisatie.',
-                    'Employees review, decide and adjust. Not above AI as managers, but alongside agents as colleagues. AI amplifies your capacity, doesn\'t replace your organization.'
-                  )}
-                </p>
-                <ul>
-                  <li>{t('Escalaties en uitzonderingen', 'Escalations and exceptions')}</li>
-                  <li>{t('Voortgang en overzicht', 'Progress and oversight')}</li>
-                  <li>{t('Menselijk oordeel waar nodig', 'Human judgment where needed')}</li>
-                </ul>
+              <div className="bep-flow-step">
+                <div className="bep-flow-num">03</div>
+                <h3>{t('Handelen', 'Act')}</h3>
+                <p>{t(
+                  'BEP stelt een actie voor of voert hem direct uit. Follow-up verstuurd, CRM bijgewerkt, deadline ingepland. Jij beslist of het automatisch gaat.',
+                  'BEP proposes an action or executes it directly. Follow-up sent, CRM updated, deadline scheduled. You decide or it runs automatically.'
+                )}</p>
               </div>
             </FadeUp>
           </div>
+
+          <FadeUp delay={0.4}>
+            <div className="bep-scenario">
+              <div className="bep-scenario-label">{t('Zo ziet dat eruit', 'What that looks like')}</div>
+              <div className="bep-scenario-messages">
+                <div className="bep-scenario-msg bep-scenario-msg--agent">
+                  <span className="bep-scenario-dot" />
+                  <div className="bep-scenario-bubble">
+                    {t(
+                      'Goedemorgen. Prospect Bakker B.V. heeft je voorstel 4× bekeken maar niet gereageerd. Ik heb een follow-up mail opgesteld.',
+                      'Good morning. Prospect Bakker B.V. has viewed your proposal 4× but hasn\'t responded. I\'ve drafted a follow-up email.'
+                    )}
+                  </div>
+                </div>
+                <div className="bep-scenario-msg bep-scenario-msg--user">
+                  <div className="bep-scenario-bubble">{t('Stuur maar.', 'Send it.')}</div>
+                </div>
+                <div className="bep-scenario-msg bep-scenario-msg--agent">
+                  <span className="bep-scenario-dot" />
+                  <div className="bep-scenario-bubble">
+                    {t(
+                      'Verstuurd. Ik plan over 3 dagen een herinnering in als er geen reactie is.',
+                      'Sent. I\'ll schedule a reminder in 3 days if there\'s no response.'
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -328,45 +281,6 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </div>
       </section>
 
-      {/* ===== CASES ===== */}
-      <section className="section section-gray">
-        <div className="container">
-          <FadeUp>
-            <div className="section-header">
-              <span className="section-label">{t('Resultaten', 'Results')}</span>
-              <h2>{t('BEP in de praktijk', 'BEP in practice')}</h2>
-            </div>
-          </FadeUp>
-          <div className="home-cases-grid">
-            {cases.map((caseItem, i) => (
-              <FadeUp key={caseItem.slug} delay={i * 0.1}>
-                <Link href={`/cases/${caseItem.slug}`} className="home-case-card">
-                  <div className="home-case-img">
-                    {caseItem.coverImage ? (
-                      <Image src={caseItem.coverImage} alt={caseItem.client} width={600} height={400} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    ) : (
-                      <div className="home-case-placeholder">
-                        <Image src={caseItem.logo} alt={caseItem.client} width={100} height={32} style={{ objectFit: 'contain', opacity: 0.7 }} />
-                      </div>
-                    )}
-                  </div>
-                  <div className="home-case-body">
-                    <h3>{caseItem.client}</h3>
-                    <p>{t(caseItem.tagline.nl, caseItem.tagline.en)}</p>
-                  </div>
-                </Link>
-              </FadeUp>
-            ))}
-          </div>
-          <FadeUp delay={0.5}>
-            <div style={{ textAlign: 'center', marginTop: 32 }}>
-              <Link href="/cases" className="btn btn-outline btn-arrow">
-                {t('Bekijk alle cases', 'View all cases')}
-              </Link>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
 
       {/* ===== BLOG / INZICHTEN ===== */}
       {latestPosts.length > 0 && (
@@ -375,7 +289,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
             <FadeUp>
               <div className="section-header">
                 <span className="section-label">{t('Inzichten', 'Insights')}</span>
-                <h2>{t('Thought leadership', 'Thought leadership')}</h2>
+                <h2>{t('Onze visie', 'Our vision')}</h2>
                 <p>{t('Onze visie op AI, data-soevereiniteit en de toekomst van bedrijfsintelligentie.', 'Our vision on AI, data sovereignty and the future of business intelligence.')}</p>
               </div>
             </FadeUp>
@@ -417,77 +331,127 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
       )}
 
 
-      {/* ===== ZO WERKT HET ===== */}
-      <section className="section section-white">
+
+      {/* Autoriteit / Ecosysteem */}
+      <section className="authority-section">
         <div className="container">
           <FadeUp>
-            <div className="section-header">
-              <span className="section-label">{t('Zo werkt het', 'How it works')}</span>
-              <h2>{t('In 4 stappen live', 'Live in 4 steps')}</h2>
-              <p>{t('Van kennismaking tot volledig operationeel in gemiddeld 2 weken.', 'From first meeting to fully operational in an average of 2 weeks.')}</p>
+            <div className="section-header" style={{ textAlign: 'center' }}>
+              <h2>{t('Niet zomaar een AI-tool.', 'Not just another AI tool.')}</h2>
+              <p style={{ maxWidth: '560px', margin: '0 auto' }}>
+                {t(
+                  'BEP is gebouwd door het team achter de grootste tech-community events van Noord-Nederland.',
+                  'BEP is built by the team behind the largest tech community events in the Northern Netherlands.'
+                )}
+              </p>
             </div>
           </FadeUp>
-          <div className="steps-grid">
-            <FadeUp delay={0.1}>
-              <div className="step-card">
-                <div className="step-number">01</div>
-                <div className="step-icon"><MessageSquare size={24} /></div>
-                <h3>{t('Kennismakingsgesprek', 'Discovery call')}</h3>
-                <p>{t('We analyseren je systemen, processen en waar de meeste tijd verloren gaat. Geen verkooppraatje, maar een eerlijke scan.', 'We analyze your systems, processes and where the most time is lost. No sales pitch, just an honest scan.')}</p>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.2}>
-              <div className="step-card">
-                <div className="step-number">02</div>
-                <div className="step-icon"><Link2 size={24} /></div>
-                <h3>{t('Systemen koppelen', 'Connect systems')}</h3>
-                <p>{t('We verbinden je CRM, ERP, e-mail, documenten en andere databronnen. Alles wordt geïndexeerd en doorzoekbaar.', 'We connect your CRM, ERP, email, documents and other data sources. Everything gets indexed and searchable.')}</p>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.3}>
-              <div className="step-card">
-                <div className="step-number">03</div>
-                <div className="step-icon"><Settings size={24} /></div>
-                <h3>{t('Agents inrichten', 'Configure agents')}</h3>
-                <p>{t('We configureren specialistische agents voor jouw workflows. Sales, finance, support — afgestemd op hoe jouw organisatie werkt.', 'We configure specialized agents for your workflows. Sales, finance, support — tailored to how your organization works.')}</p>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.4}>
-              <div className="step-card">
-                <div className="step-number">04</div>
-                <div className="step-icon"><Rocket size={24} /></div>
-                <h3>{t('Live in 2 weken', 'Live in 2 weeks')}</h3>
-                <p>{t('Je team werkt direct met BEP. Wij monitoren, optimaliseren en schalen op basis van gebruik en feedback.', 'Your team works directly with BEP. We monitor, optimize and scale based on usage and feedback.')}</p>
-              </div>
-            </FadeUp>
-          </div>
-        </div>
-      </section>
 
-      {/* ===== DOMAIN TILES ===== */}
-      <section className="domain-tiles-section section section-white">
-        <div className="container">
-          <FadeUp>
-            <span className="section-label">{t('Sectoren', 'Sectors')}</span>
-            <h2>{t('BEP kent jouw domein', 'BEP knows your domain')}</h2>
-          </FadeUp>
-          <div className="domain-tiles-grid">
-            {[
-              { icon: '📋', nl: 'Aanbestedingen', en: 'Tenders', exNl: 'Tender Strateeg — 60% sneller', exEn: 'Tender Strateeg — 60% faster' },
-              { icon: '⚓', nl: 'Havens & Logistiek', en: 'Ports & Logistics', exNl: 'Groningen Seaports — 24/7', exEn: 'Groningen Seaports — 24/7' },
-              { icon: '📊', nl: 'Financieel Advies', en: 'Financial Advisory', exNl: 'SJB Advies — 4.2× ROI', exEn: 'SJB Advies — 4.2× ROI' },
-              { icon: '🏭', nl: 'Productie', en: 'Production', exNl: 'BPZ — 0 kennisincidenten', exEn: 'BPZ — 0 knowledge incidents' },
-              { icon: '🧠', nl: 'Jouw sector', en: 'Your sector', exNl: 'Overal waar kennis verspreid zit', exEn: 'Wherever knowledge is scattered' },
-            ].map((tile, i) => (
-              <FadeUp key={tile.nl} delay={i * 0.05}>
-                <div className="domain-tile">
-                  <span className="domain-tile-icon">{tile.icon}</span>
-                  <span className="domain-tile-name">{t(tile.nl, tile.en)}</span>
-                  <span className="domain-tile-ex">{t(tile.exNl, tile.exEn)}</span>
+          <div className="authority-grid">
+            <FadeUp delay={0.1}>
+              <a
+                href="https://www.stekz.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="authority-card"
+              >
+                <div className="authority-card-logo">
+                  <Image
+                    src="https://www.stekz.com/images/logo.svg"
+                    alt="Stekz"
+                    width={120}
+                    height={32}
+                    style={{ objectFit: 'contain' }}
+                  />
                 </div>
-              </FadeUp>
-            ))}
+                <div className="authority-card-name">Stekz</div>
+                <div className="authority-card-desc">
+                  {t('Het IT bedrijf van Noord-Nederland', 'The IT company of Northern Netherlands')}
+                </div>
+              </a>
+            </FadeUp>
+
+            <FadeUp delay={0.2}>
+              <a
+                href="https://aigrunn.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="authority-card"
+              >
+                <div className="authority-card-logo">
+                  <Image
+                    src="https://aigrunn.org/wp-content/uploads/2023/10/cropped-robot-1280.png"
+                    alt="AIGrunn"
+                    width={40}
+                    height={40}
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
+                <div className="authority-card-name">AIGrunn</div>
+                <div className="authority-card-desc">
+                  {t('AI Tech Event voor software professionals', 'AI Tech Event for software professionals')}
+                </div>
+              </a>
+            </FadeUp>
+
+            <FadeUp delay={0.3}>
+              <a
+                href="https://pygrunn.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="authority-card"
+              >
+                <div className="authority-card-logo authority-card-logo--text">
+                  <span className="pygrunn-badge">PyGrunn</span>
+                </div>
+                <div className="authority-card-name">PyGrunn</div>
+                <div className="authority-card-desc">
+                  {t('Python & friends conference', 'Python & friends conference')}
+                </div>
+              </a>
+            </FadeUp>
           </div>
+
+          <FadeUp delay={0.4}>
+            <div className="authority-events">
+              <div className="authority-events-label">{t('Upcoming events', 'Upcoming events')}</div>
+              <div className="authority-events-list">
+                <a href="https://aigrunn.org" target="_blank" rel="noopener noreferrer" className="authority-event-item">
+                  <div className="authority-event-date">
+                    <span className="authority-event-day">14</span>
+                    <span className="authority-event-month">{t('NOV', 'NOV')}</span>
+                  </div>
+                  <div className="authority-event-info">
+                    <div className="authority-event-name">AIGrunn 2025</div>
+                    <div className="authority-event-meta">{t('Groningen · AI Tech Conference voor developers', 'Groningen · AI Tech Conference for developers')}</div>
+                  </div>
+                  <div className="authority-event-badge">{t('Open', 'Open')}</div>
+                </a>
+                <a href="https://pygrunn.org" target="_blank" rel="noopener noreferrer" className="authority-event-item">
+                  <div className="authority-event-date">
+                    <span className="authority-event-day">16</span>
+                    <span className="authority-event-month">{t('MEI', 'MAY')}</span>
+                  </div>
+                  <div className="authority-event-info">
+                    <div className="authority-event-name">PyGrunn 2025</div>
+                    <div className="authority-event-meta">{t('Groningen · Python & friends conference', 'Groningen · Python & friends conference')}</div>
+                  </div>
+                  <div className="authority-event-badge authority-event-badge--full">{t('Vol', 'Full')}</div>
+                </a>
+                <a href="https://www.stekz.com" target="_blank" rel="noopener noreferrer" className="authority-event-item">
+                  <div className="authority-event-date">
+                    <span className="authority-event-day">Q1</span>
+                    <span className="authority-event-month">{t("'26", "'26")}</span>
+                  </div>
+                  <div className="authority-event-info">
+                    <div className="authority-event-name">{t('Workshop AI voor CEO\'s & DGA\'s', 'Workshop AI for CEOs')}</div>
+                    <div className="authority-event-meta">{t('Noord-Nederland · Stekz Academy', 'Northern Netherlands · Stekz Academy')}</div>
+                  </div>
+                  <div className="authority-event-badge">{t('Binnenkort', 'Soon')}</div>
+                </a>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -504,8 +468,8 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                 </h2>
                 <p>
                   {t(
-                    'BEP is geen generieke copiloot. Het is een bedrijfsplatform dat jouw systemen verbindt, jouw context begrijpt en autonoom handelt — volledig in jouw eigen cloud.',
-                    'BEP is not a generic copilot. It is a business platform that connects your systems, understands your context and acts autonomously — entirely in your own cloud.'
+                    'BEP is geen generieke copiloot. Het is een bedrijfsplatform dat jouw systemen verbindt, jouw context begrijpt en autonoom handelt, volledig in jouw eigen cloud.',
+                    'BEP is not a generic copilot. It is a business platform that connects your systems, understands your context and acts autonomously, entirely in your own cloud.'
                   )}
                 </p>
               </div>
@@ -514,16 +478,16 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               <ul className="sovereignty-pillars">
                 {[
                   {
-                    titleNl: 'Geen AI slop',
-                    titleEn: 'No AI slop',
+                    titleNl: 'Geen AI-onzin',
+                    titleEn: 'No AI hallucinations',
                     descNl: 'Antwoorden op jouw eigen bedrijfsdata, met bronvermelding. Niet op internet, niet gegenereerd uit het niets.',
                     descEn: 'Answers from your own business data, with source citations. Not from the internet, not generated from nothing.',
                   },
                   {
                     titleNl: 'Data soevereiniteit',
                     titleEn: 'Data sovereignty',
-                    descNl: '100% on-prem of eigen cloud. Jouw data verlaat nooit jouw omgeving — GDPR-proof, EU AI Act-ready.',
-                    descEn: '100% on-prem or own cloud. Your data never leaves your environment — GDPR-proof, EU AI Act-ready.',
+                    descNl: '100% on-prem of eigen cloud. Jouw data verlaat nooit jouw omgeving. GDPR-proof, EU AI Act-ready.',
+                    descEn: '100% on-prem or own cloud. Your data never leaves your environment. GDPR-proof, EU AI Act-ready.',
                   },
                   {
                     titleNl: 'Open & uitbreidbaar',
@@ -534,8 +498,8 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
                   {
                     titleNl: 'Menselijke controle',
                     titleEn: 'Human control',
-                    descNl: 'BEP handelt autonoom maar je behoudt altijd overzicht. Governed en accountable by design.',
-                    descEn: 'BEP acts autonomously but you always maintain oversight. Governed and accountable by design.',
+                    descNl: 'BEP handelt autonoom maar je behoudt altijd overzicht. Alles is traceerbaar en controleerbaar ingericht.',
+                    descEn: 'BEP acts autonomously but you always maintain oversight. Everything is designed to be traceable and controllable.',
                   },
                 ].map((pillar) => (
                   <li key={pillar.titleNl} className="sovereignty-pillar">
@@ -591,6 +555,65 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
         </div>
       </section>
 
+      {/* ===== HOE KOM IK LIVE ===== */}
+      <section className="section section-white">
+        <div className="container">
+          <FadeUp>
+            <div className="section-header" style={{ textAlign: 'center' }}>
+              <span className="section-label">{t('Implementatie', 'Implementation')}</span>
+              <h2>{t('Live in 4 weken.', 'Live in 4 weeks.')}</h2>
+              <p style={{ maxWidth: '480px', margin: '0 auto' }}>
+                {t(
+                  'Geen jarenlange trajecten. Geen IT-afdeling nodig. BEP draait binnen een maand in jouw eigen cloud.',
+                  'No years-long projects. No IT department needed. BEP runs in your own cloud within a month.'
+                )}
+              </p>
+            </div>
+          </FadeUp>
+          <div className="onboarding-timeline">
+            {[
+              {
+                week: '01',
+                titleNl: 'Kickoff & koppelingen', titleEn: 'Kickoff & connections',
+                descNl: 'We inventariseren jouw systemen en domeinen. Koppelingen met ERP, CRM, e-mail en documenten worden opgezet.',
+                descEn: 'We map your systems and domains. Connections to ERP, CRM, email and documents are set up.',
+              },
+              {
+                week: '02',
+                titleNl: 'Data indexering', titleEn: 'Data indexing',
+                descNl: 'BEP verwerkt en indexeert jouw bedrijfsdata. De kennisbank wordt opgebouwd en doorzoekbaar gemaakt.',
+                descEn: 'BEP processes and indexes your business data. The knowledge base is built and made searchable.',
+              },
+              {
+                week: '03',
+                titleNl: 'Eerste agents live', titleEn: 'First agents live',
+                descNl: 'De eerste autonome agents gaan live. Ze bewaken deadlines, signaleren kansen en stellen acties voor.',
+                descEn: 'The first autonomous agents go live. They monitor deadlines, flag opportunities and suggest actions.',
+              },
+              {
+                week: '04',
+                titleNl: 'Team aan boord', titleEn: 'Team on board',
+                descNl: 'Jouw team werkt met BEP. Onboarding sessie, eerste resultaten zichtbaar, feedback verwerkt.',
+                descEn: 'Your team works with BEP. Onboarding session, first results visible, feedback processed.',
+              },
+            ].map((step, i) => (
+              <FadeUp key={i} delay={i * 0.1}>
+                <div className="onboarding-step">
+                  <div className="onboarding-week">
+                    {t(`Week ${step.week}`, `Week ${step.week}`)}
+                  </div>
+                  {i < 3 && <div className="onboarding-connector" />}
+                  <div className="onboarding-content">
+                    <div className="onboarding-title">{t(step.titleNl, step.titleEn)}</div>
+                    <div className="onboarding-desc">{t(step.descNl, step.descEn)}</div>
+                  </div>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== CTA ===== */}
       <section className="cta-section orange-glow dark-glow">
         <div className="container">
@@ -603,7 +626,7 @@ export function HomeContent({ latestPosts = [] }: { latestPosts?: any[] }) {
               )}
             </p>
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-white btn-arrow">
+              <a href="/demo" className="btn btn-white btn-arrow">
                 {t('Plan een demo', 'Schedule a demo')}
               </a>
               <Link href="/contact" className="btn btn-ghost btn-arrow">

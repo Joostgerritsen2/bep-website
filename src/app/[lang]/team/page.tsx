@@ -6,10 +6,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bep.expert'
 
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const lang = params.lang as Locale
-  const title = lang === 'en' ? 'Team — The People Behind BEP' : 'Team — De Mensen Achter BEP'
+  const title = lang === 'en' ? 'Team: The People Behind BEP' : 'Team: De Mensen Achter BEP'
   const description = lang === 'en'
-    ? 'Meet the BEP team. From Groningen, we build the future of business intelligence with data engineers, AI specialists and business consultants.'
-    : 'Maak kennis met het BEP team. Vanuit Groningen bouwen we aan de toekomst van bedrijfsintelligentie met data-engineers, AI-specialisten en business consultants.'
+    ? 'Meet the team behind BEP — AI specialists, engineers and business consultants building the future of business intelligence.'
+    : 'Maak kennis met het team achter BEP — AI-specialisten, engineers en business consultants die bouwen aan de toekomst van bedrijfsintelligentie.'
   const path = '/team'
 
   return {

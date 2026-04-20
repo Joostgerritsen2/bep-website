@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
-import { WhyBepContent } from './WhyBepContent'
+import { DemoContent } from './DemoContent'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bep.expert'
 
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const lang = params.lang as Locale
-  const title = lang === 'en' ? 'Why BEP: Stop Using 10 AI Tools | BEP' : 'Waarom BEP: Stop met 10 AI Tools | BEP'
+  const title = lang === 'en' ? 'Schedule a Demo — BEP' : 'Plan een demo — BEP'
   const description = lang === 'en'
-    ? 'BEP vs Microsoft Copilot, Glean & others. 100% own cloud, connects ALL data, executes tasks. Compare features, pricing and compliance.'
-    : 'BEP vs Microsoft Copilot, Glean & anderen. 100% eigen cloud, verbindt ALLE data, voert taken uit. Vergelijk features, pricing en compliance.'
-  const path = '/waarom-bep'
+    ? 'Schedule a 30-minute demo and see what BEP can do for your organisation.'
+    : 'Plan een demo van 30 minuten en ontdek wat BEP voor jouw organisatie kan doen.'
+  const path = '/demo'
 
   return {
     title,
@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: { params: { lang: string } })
     alternates: {
       canonical: `${siteUrl}/${lang}${path}`,
       languages: {
-        'nl': `${siteUrl}/nl${path}`,
-        'en': `${siteUrl}/en${path}`,
+        nl: `${siteUrl}/nl${path}`,
+        en: `${siteUrl}/en${path}`,
         'x-default': `${siteUrl}/nl${path}`,
       },
     },
@@ -34,6 +34,6 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   }
 }
 
-export default function WhyBepPage() {
-  return <WhyBepContent />
+export default function DemoPage() {
+  return <DemoContent />
 }

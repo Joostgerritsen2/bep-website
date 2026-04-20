@@ -84,10 +84,10 @@ const questions: Question[] = [
     nl: 'Wat gebeurt er als een senior medewerker vertrekt?',
     en: 'What happens when a senior employee leaves?',
     options: [
-      { nl: 'Geen probleem — alles is gedocumenteerd', en: 'No problem — everything is documented', points: 1 },
+      { nl: 'Geen probleem: alles is gedocumenteerd', en: 'No problem: everything is documented', points: 1 },
       { nl: 'Enig kennisverlies', en: 'Some knowledge loss', points: 2 },
       { nl: 'Significant kennisverlies', en: 'Significant knowledge loss', points: 3 },
-      { nl: 'Kritiek — jarenlange kennis gaat verloren', en: 'Critical — years of knowledge is lost', points: 4 },
+      { nl: 'Kritiek: jarenlange kennis gaat verloren', en: 'Critical: years of knowledge is lost', points: 4 },
     ],
   },
   {
@@ -98,7 +98,7 @@ const questions: Question[] = [
       { nl: 'Volledig automatisch', en: 'Fully automated', points: 1 },
       { nl: 'Gedeeltelijk automatisch', en: 'Partially automated', points: 2 },
       { nl: 'Handmatig (copy-paste, e-mail)', en: 'Manual (copy-paste, email)', points: 3 },
-      { nl: 'Nauwelijks — ieder team werkt apart', en: 'Barely — each team works separately', points: 4 },
+      { nl: 'Nauwelijks: ieder team werkt apart', en: 'Barely: each team works separately', points: 4 },
     ],
   },
   {
@@ -516,7 +516,7 @@ export function IntegrationShowcase() {
         </div>
       )}
 
-      {/* Step 4: Lead capture — Plan een gratis gesprek */}
+      {/* Step 4: Lead capture: Plan een gratis gesprek */}
       {showScore && allAnswered && (
         <div className="showcase-step">
           <div className="showcase-step-num">4</div>

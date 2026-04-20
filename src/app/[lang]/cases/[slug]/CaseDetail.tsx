@@ -119,7 +119,7 @@ export function CaseDetail({ caseStudy }: { caseStudy: CaseStudy }) {
                 &ldquo;{t(caseStudy.quote.text.nl, caseStudy.quote.text.en)}&rdquo;
               </blockquote>
               <cite className="case-detail-quote-author">
-                — {caseStudy.quote.author}
+                {caseStudy.quote.author}
               </cite>
             </FadeUp>
           </div>
@@ -143,7 +143,7 @@ export function CaseDetail({ caseStudy }: { caseStudy: CaseStudy }) {
               )}
             </p>
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-white btn-arrow">
+              <a href="/demo" className="btn btn-white btn-arrow">
                 {t('Plan een demo', 'Schedule a demo')}
               </a>
               <Link href="/contact" className="btn btn-ghost btn-arrow">

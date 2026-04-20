@@ -190,7 +190,7 @@ export function BlogOverview({ posts }: { posts: any[] }) {
             <h2>{t('Klaar om je bedrijfsdata te ontsluiten?', 'Ready to unlock your business data?')}</h2>
             <p>{t('Ontdek in 2 minuten wat BEP voor jouw organisatie kan betekenen.', 'Discover in 2 minutes what BEP can do for your organization.')}</p>
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-white">
+              <a href="/demo" className="btn btn-white">
                 {t('Plan een demo', 'Schedule a demo')} <ArrowRight size={18} />
               </a>
               <Link href="/contact" className="btn btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>

@@ -28,6 +28,7 @@ export const cases: CaseStudy[] = [
       en: 'Tender Strateeg guides organizations through complex procurement processes. With hundreds of tender documents, guidelines and best practices spread across different systems, finding the right information was a time-consuming task.',
     },
     logo: '/images/client-tender-strateeg.png',
+    coverImage: '/images/case-tender-strateeg.png',
     stats: [
       { value: '60%', label: { nl: 'Snellere voorbereiding', en: 'Faster preparation' } },
       { value: '500+', label: { nl: 'Documenten ontsloten', en: 'Documents unlocked' } },
@@ -96,6 +97,7 @@ export const cases: CaseStudy[] = [
       en: 'Groningen Seaports manages two seaports and an extensive industrial area. Operational knowledge was scattered across Excel sheets, emails and the minds of experienced employees.',
     },
     logo: '/images/client-groningen-seaports.png',
+    coverImage: 'https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=900&q=80',
     stats: [
       { value: '80%', label: { nl: 'Minder zoektijd', en: 'Less search time' } },
       { value: '3.5x', label: { nl: 'ROI in jaar 1', en: 'ROI in year 1' } },
@@ -164,6 +166,7 @@ export const cases: CaseStudy[] = [
       en: 'SJB Advies is a growing financial advisory firm with over 150 users. Due to rapid growth, it became increasingly difficult to quickly find client dossiers, regulations and advice.',
     },
     logo: '/images/client-sjb-advies.png',
+    coverImage: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&q=80',
     stats: [
       { value: '4.2x', label: { nl: 'ROI', en: 'ROI' } },
       { value: '150+', label: { nl: 'Dagelijkse gebruikers', en: 'Daily users' } },
@@ -274,8 +277,8 @@ export const cases: CaseStudy[] = [
             en: 'All critical knowledge has been captured and remains available, even after the senior employees\' departure. Onboarding time for new production workers has been cut in half.',
           },
           {
-            nl: 'Sinds de implementatie zijn er nul kennisincidenten geweest — situaties waarbij productie stilstond omdat niemand wist hoe een probleem opgelost moest worden. BEP fungeert als het collectieve geheugen van de fabriek.',
-            en: 'Since implementation, there have been zero knowledge incidents — situations where production stood still because nobody knew how to solve a problem. BEP functions as the collective memory of the factory.',
+            nl: 'Sinds de implementatie zijn er nul kennisincidenten geweest: situaties waarbij productie stilstond omdat niemand wist hoe een probleem opgelost moest worden. BEP fungeert als het collectieve geheugen van de fabriek.',
+            en: 'Since implementation, there have been zero knowledge incidents: situations where production stood still because nobody knew how to solve a problem. BEP functions as the collective memory of the factory.',
           },
         ],
       },

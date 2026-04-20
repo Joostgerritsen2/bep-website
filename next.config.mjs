@@ -6,6 +6,9 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'cdn.sanity.io' },
       { protocol: 'https', hostname: 'bep.expert' },
+      { protocol: 'https', hostname: 'www.stekz.com' },
+      { protocol: 'https', hostname: 'aigrunn.org' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
   async headers() {

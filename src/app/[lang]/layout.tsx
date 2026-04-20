@@ -24,14 +24,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const lang = params.lang as Locale
   return {
-    title: { default: 'BEP — De Nieuwe Bedrijfsexpert', template: '%s | BEP' },
+    title: { default: 'BEP: De Nieuwe Bedrijfsexpert', template: '%s | BEP' },
     description: lang === 'en'
       ? 'BEP connects all your business data, makes it queryable and executes tasks autonomously. 100% in your own cloud, open-source AI.'
       : 'BEP verbindt al je bedrijfsdata, maakt het doorzoekbaar en voert taken autonoom uit. 100% in je eigen cloud, open-source AI.',
     openGraph: {
       title: lang === 'en'
-        ? 'BEP — The New Business Expert | AI that finds and acts'
-        : 'BEP — De Nieuwe Bedrijfsexpert | AI die vindt én doet',
+        ? 'BEP: The New Business Expert | AI that finds and acts'
+        : 'BEP: De Nieuwe Bedrijfsexpert | AI die vindt én doet',
       description: lang === 'en'
         ? 'BEP connects all your business data, makes it queryable and executes tasks autonomously. 100% in your own cloud, open-source AI.'
         : 'BEP verbindt al je bedrijfsdata, maakt het doorzoekbaar en voert taken autonoom uit. 100% in je eigen cloud, open-source AI.',
@@ -88,7 +88,7 @@ export default async function LangLayout({ children, params }: { children: React
         "@id": "https://bep.expert/#software",
         name: "BEP",
         applicationCategory: "BusinessApplication",
-        description: "AI Business Expert — connects business data, enables smart querying, and executes tasks autonomously",
+        description: "AI Business Expert: connects business data, enables smart querying, and executes tasks autonomously",
         operatingSystem: "Cloud-based",
         offers: {
           "@type": "AggregateOffer",
@@ -104,7 +104,7 @@ export default async function LangLayout({ children, params }: { children: React
         "@type": "WebSite",
         "@id": "https://bep.expert/#website",
         url: "https://bep.expert",
-        name: "BEP — De Nieuwe Bedrijfsexpert",
+        name: "BEP: De Nieuwe Bedrijfsexpert",
         description: "AI die vindt én doet. 100% in je eigen cloud.",
         publisher: { "@id": "https://bep.expert/#organization" },
         inLanguage: ["nl", "en"],

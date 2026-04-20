@@ -244,7 +244,7 @@ export function FilosofieContent() {
               )}
             </p>
             <div className="hero-buttons">
-              <a href="/contact" className="btn btn-white btn-arrow">
+              <a href="/demo" className="btn btn-white btn-arrow">
                 {t('Plan een demo', 'Schedule a demo')}
               </a>
               <Link href="/contact" className="btn btn-ghost btn-arrow">

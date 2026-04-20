@@ -1,4 +1,4 @@
-// Local blog posts — used as fallback when Sanity is not connected
+// Local blog posts. used as fallback when Sanity is not connected
 // Format matches Sanity blogPost schema so BlogDetail/BlogOverview work seamlessly
 
 export interface LocalBlogPost {
@@ -65,8 +65,9 @@ export const localBlogPosts: LocalBlogPost[] = [
     author: 'BEP',
     publishedAt: '2025-03-10T09:00:00Z',
     category: 'business',
-    excerpt: 'Hoe bedrijfsdata van passief archief naar actieve bedrijfsexpert gaat. Data die je niet kunt gebruiken, is geen bedrijfskapitaal — het is digitale rommel met een duur prijskaartje.',
-    excerptEn: 'How business data goes from passive archive to active business expert. Data you can\'t use isn\'t business capital — it\'s digital clutter with an expensive price tag.',
+    coverUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80',
+    excerpt: 'Hoe bedrijfsdata van passief archief naar actieve bedrijfsexpert gaat. Data die je niet kunt gebruiken, is geen bedrijfskapitaal. Het is digitale rommel met een duur prijskaartje.',
+    excerptEn: 'How business data goes from passive archive to active business expert. Data you can\'t use isn\'t business capital. It\'s digital clutter with an expensive price tag.',
     body: [
       p('Hoe bedrijfsdata van passief archief naar actieve bedrijfsexpert gaat.', ['em']),
 
@@ -133,7 +134,7 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('Companies invest years in systems. ERP implementations, CRM projects, document management, email archiving. All that investment produces data. But that data is passive. It\'s locked in separate systems that don\'t talk to each other, in formats people can\'t search through, in folders nobody remembers.'),
 
-      p('The result: employees search. They call the colleague who probably knows. They open five systems to answer one question. They reinvent the wheel over and over, because the knowledge exists — it\'s just not accessible.'),
+      p('The result: employees search. They call the colleague who probably knows. They open five systems to answer one question. They reinvent the wheel over and over, because the knowledge exists. It\'s just not accessible.'),
 
       p('Data you can\'t use is not business capital. It\'s digital clutter with an expensive price tag.'),
 
@@ -163,7 +164,7 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('And the more you feed BEP, the smarter the business expert becomes. The knowledge that\'s currently scattered across systems and minds grows into one place the entire organization can consult and build upon.'),
 
-      p('How to implement that in a way that actually works — that\'s a separate conversation. But it starts here: with the data you already have.'),
+      p('How to implement that in a way that actually works is a separate conversation. But it starts here: with the data you already have.'),
 
       richBlock(
         [
@@ -184,10 +185,11 @@ export const localBlogPosts: LocalBlogPost[] = [
     author: 'Berco Beute',
     publishedAt: '2025-04-02T09:00:00Z',
     category: 'business',
-    excerpt: 'De keuze tussen gemak en soevereiniteit is een valse tegenstelling. Open-source AI in je eigen cloud is niet het compromis — het is de betere aanpak.',
-    excerptEn: 'The choice between convenience and sovereignty is a false dichotomy. Open-source AI in your own cloud isn\'t the compromise — it\'s the better approach.',
+    coverUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&q=80',
+    excerpt: 'De keuze tussen gemak en soevereiniteit is een valse tegenstelling. Open-source AI in je eigen cloud is niet het compromis, maar de betere aanpak.',
+    excerptEn: 'The choice between convenience and sovereignty is a false dichotomy. Open-source AI in your own cloud isn\'t the compromise. It\'s the better approach.',
     body: [
-      p('Elke AI-leverancier wil je data. Microsoft, Google, OpenAI — ze hebben allemaal je bedrijfsdata nodig om betere modellen te trainen. Dat is hún businessmodel. Het jouwe zou niet moeten zijn om het te voeden.'),
+      p('Elke AI-leverancier wil je data. Microsoft, Google, OpenAI: ze hebben allemaal je bedrijfsdata nodig om betere modellen te trainen. Dat is hún businessmodel. Het jouwe zou niet moeten zijn om het te voeden.'),
 
       p('We leven in een tijd waarin AI-tools uit de grond schieten als paddenstoelen. Elke week een nieuwe integratie, een nieuwe copiloot, een nieuw platform dat belooft je organisatie slimmer te maken. Maar achter die beloftes schuilt een fundamentele vraag die te weinig bestuurders stellen: waar gaat mijn data naartoe?'),
 
@@ -195,15 +197,15 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('Wanneer je ChatGPT Enterprise of Microsoft Copilot gebruikt, stromen je prompts, je documenten en je klantgegevens door infrastructuur die je niet beheert. Ja, ze beloven: "we trainen niet op jouw data." Maar je hebt geen enkele manier om dat te verifiëren. Je neemt het op goed vertrouwen aan van een Amerikaans techbedrijf dat kwartaalcijfers moet halen.'),
 
-      p('En het gaat verder dan vertrouwen alleen. De EU AI Act — die nu gefaseerd in werking treedt — eist dat organisaties kunnen aantonen waar hun data verwerkt wordt, hoe AI-beslissingen tot stand komen, en welke waarborgen er zijn. "De cloud van Microsoft" is geen antwoord dat standhoudt in een audit.'),
+      p('En het gaat verder dan vertrouwen alleen. De EU AI Act, die nu gefaseerd in werking treedt. eist dat organisaties kunnen aantonen waar hun data verwerkt wordt, hoe AI-beslissingen tot stand komen, en welke waarborgen er zijn. "De cloud van Microsoft" is geen antwoord dat standhoudt in een audit.'),
 
       p('Ondertussen verzamelen deze platforms metadata die minstens zo waardevol is als de data zelf. Welke vragen stellen je medewerkers? Welke documenten raadplegen ze? Welke bedrijfsprocessen lopen vast? Dat is competitieve informatie die je weigert te delen met je concurrent, maar wél routinematig deelt met je AI-leverancier.'),
 
-      p('De ironie is dat bedrijven miljoenen investeren in cybersecurity, firewalls en dataverschleuteling — om vervolgens hun meest gevoelige bedrijfsinformatie vrijwillig door te sluizen naar servers in Virginia.'),
+      p('De ironie is dat bedrijven miljoenen investeren in cybersecurity, firewalls en dataverschleuteling. om vervolgens hun meest gevoelige bedrijfsinformatie vrijwillig door te sluizen naar servers in Virginia.'),
 
       h2('Open-source is geen plan B'),
 
-      p('Er leeft een hardnekkig misverstand dat open-source AI-modellen inferieur zijn. Dat was misschien waar in 2022. Het is aantoonbaar onwaar in 2025. Modellen als Llama, Mistral en Qwen presteren op veel zakelijke taken op hetzelfde niveau als hun gesloten tegenhangers. Voor specifieke, domeingerichte taken presteren ze vaak beter — omdat ze gefinetuned kunnen worden op jouw data, in jouw omgeving.'),
+      p('Er leeft een hardnekkig misverstand dat open-source AI-modellen inferieur zijn. Dat was misschien waar in 2022. Het is aantoonbaar onwaar in 2025. Modellen als Llama, Mistral en Qwen presteren op veel zakelijke taken op hetzelfde niveau als hun gesloten tegenhangers. Voor specifieke, domeingerichte taken presteren ze vaak beter. omdat ze gefinetuned kunnen worden op jouw data, in jouw omgeving.'),
 
       p('De sleutel is RAG-architectuur: Retrieval-Augmented Generation. In plaats van het grootste model ter wereld nodig te hebben, heb je het juiste model nodig met toegang tot de juiste data. Een kleiner, gespecialiseerd model dat jouw ERP, CRM en documentatie kan doorzoeken geeft betere antwoorden dan GPT-4 zonder context.'),
 
@@ -215,15 +217,15 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('EU-compliance by design. Niet als een extra laag bovenop, maar als architecturele eigenschap. De data blijft in de EU, verwerking is transparant, en je kunt elke stap auditten.'),
 
-      p('Geen vendor lock-in. Je bent niet afhankelijk van de prijsstrategie, de roadmap of de continuïteit van één leverancier. Open-source betekent keuzevrijheid — vandaag, morgen, en over vijf jaar.'),
+      p('Geen vendor lock-in. Je bent niet afhankelijk van de prijsstrategie, de roadmap of de continuïteit van één leverancier. Open-source betekent keuzevrijheid. vandaag, morgen, en over vijf jaar.'),
 
       h2('Wat dit in de praktijk betekent'),
 
       p('Stel: een productiebedrijf met SAP als ERP, duizenden orders per maand, gevoelige klantdata en leveranciersovereenkomsten. Ze willen dat medewerkers in natuurlijke taal vragen kunnen stellen over orderstatus, levertijden en voorraadbeheer.'),
 
-      p('De gangbare route: Microsoft Copilot of een ChatGPT-integratie. Resultaat: alle SAP-data stroomt naar externe servers. Elke vraag die een medewerker stelt — "Hoe staat het met de order van Klant X?" — gaat met context en al door Amerikaanse infrastructuur.'),
+      p('De gangbare route: Microsoft Copilot of een ChatGPT-integratie. Resultaat: alle SAP-data stroomt naar externe servers. Elke vraag die een medewerker stelt. "Hoe staat het met de order van Klant X?". gaat met context en al door Amerikaanse infrastructuur.'),
 
-      p('De BEP-route: het AI-model draait IN hun eigen Azure- of AWS-omgeving. De data verlaat nooit het bedrijfsnetwerk. Het model is open-source en auditeerbaar — de klant kan letterlijk de broncode inzien. EU AI Act-compliance is ingebouwd, niet erop geplakt als afterthought.'),
+      p('De BEP-route: het AI-model draait IN hun eigen Azure- of AWS-omgeving. De data verlaat nooit het bedrijfsnetwerk. Het model is open-source en auditeerbaar. de klant kan letterlijk de broncode inzien. EU AI Act-compliance is ingebouwd, niet erop geplakt als afterthought.'),
 
       p('Het verschil is niet subtiel. Het is architectureel. En architecturele keuzes zijn de keuzes die je vijf jaar later nog voelt.'),
 
@@ -237,7 +239,7 @@ export const localBlogPosts: LocalBlogPost[] = [
       ),
     ],
     bodyEn: [
-      p('Every AI vendor wants your data. Microsoft, Google, OpenAI — they all need your business data to train better models. That\'s their business model. Yours shouldn\'t be feeding it.'),
+      p('Every AI vendor wants your data. Microsoft, Google, OpenAI. they all need your business data to train better models. That\'s their business model. Yours shouldn\'t be feeding it.'),
 
       p('We live in a time when AI tools are popping up everywhere. Every week brings a new integration, a new copilot, a new platform promising to make your organization smarter. But behind those promises lies a fundamental question too few executives are asking: where does my data actually go?'),
 
@@ -245,15 +247,15 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('When you use ChatGPT Enterprise or Microsoft Copilot, your prompts, your documents, and your client data flow through infrastructure you don\'t control. Yes, they promise: "we don\'t train on your data." But you have no way to verify that. You\'re taking it on faith from an American tech company that needs to hit quarterly earnings.'),
 
-      p('And it goes beyond trust. The EU AI Act — now being phased into effect — requires organizations to demonstrate where their data is processed, how AI decisions are made, and what safeguards exist. "Microsoft\'s cloud" is not an answer that holds up in an audit.'),
+      p('And it goes beyond trust. The EU AI Act, now being phased into effect. requires organizations to demonstrate where their data is processed, how AI decisions are made, and what safeguards exist. "Microsoft\'s cloud" is not an answer that holds up in an audit.'),
 
       p('Meanwhile, these platforms collect metadata that\'s at least as valuable as the data itself. What questions do your employees ask? What documents do they consult? Which business processes get stuck? That\'s competitive intelligence you\'d refuse to share with a competitor, yet routinely share with your AI vendor.'),
 
-      p('The irony is that companies invest millions in cybersecurity, firewalls, and data encryption — only to voluntarily funnel their most sensitive business information through servers in Virginia.'),
+      p('The irony is that companies invest millions in cybersecurity, firewalls, and data encryption. only to voluntarily funnel their most sensitive business information through servers in Virginia.'),
 
       h2('Open-source is not plan B'),
 
-      p('There\'s a persistent misconception that open-source AI models are inferior. That might have been true in 2022. It\'s demonstrably false in 2025. Models like Llama, Mistral, and Qwen perform at the same level as their closed counterparts on many business tasks. For specific, domain-focused tasks, they often perform better — because they can be fine-tuned on your data, in your environment.'),
+      p('There\'s a persistent misconception that open-source AI models are inferior. That might have been true in 2022. It\'s demonstrably false in 2025. Models like Llama, Mistral, and Qwen perform at the same level as their closed counterparts on many business tasks. For specific, domain-focused tasks, they often perform better. because they can be fine-tuned on your data, in your environment.'),
 
       p('The key is RAG architecture: Retrieval-Augmented Generation. Instead of needing the biggest model in the world, you need the right model with access to the right data. A smaller, specialized model that can search through your ERP, CRM, and documentation gives better answers than GPT-4 without context.'),
 
@@ -265,15 +267,15 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('EU compliance by design. Not as an extra layer on top, but as an architectural property. Data stays in the EU, processing is transparent, and you can audit every step.'),
 
-      p('No vendor lock-in. You\'re not dependent on the pricing strategy, roadmap, or continuity of a single vendor. Open-source means freedom of choice — today, tomorrow, and five years from now.'),
+      p('No vendor lock-in. You\'re not dependent on the pricing strategy, roadmap, or continuity of a single vendor. Open-source means freedom of choice. today, tomorrow, and five years from now.'),
 
       h2('What this means in practice'),
 
       p('Consider: a manufacturing company running SAP as their ERP, processing thousands of orders monthly, handling sensitive client data and supplier agreements. They want employees to ask natural-language questions about order status, delivery times, and inventory management.'),
 
-      p('The conventional route: Microsoft Copilot or a ChatGPT integration. Result: all SAP data flows to external servers. Every question an employee asks — "What\'s the status of Client X\'s order?" — travels with full context through American infrastructure.'),
+      p('The conventional route: Microsoft Copilot or a ChatGPT integration. Result: all SAP data flows to external servers. Every question an employee asks. "What\'s the status of Client X\'s order?". travels with full context through American infrastructure.'),
 
-      p('The BEP route: the AI model runs IN their own Azure or AWS environment. The data never leaves the company network. The model is open-source and auditable — the client can literally inspect the source code. EU AI Act compliance is built in, not bolted on as an afterthought.'),
+      p('The BEP route: the AI model runs IN their own Azure or AWS environment. The data never leaves the company network. The model is open-source and auditable. the client can literally inspect the source code. EU AI Act compliance is built in, not bolted on as an afterthought.'),
 
       p('The difference isn\'t subtle. It\'s architectural. And architectural choices are the ones you still feel five years later.'),
 
@@ -297,6 +299,7 @@ export const localBlogPosts: LocalBlogPost[] = [
     author: 'Sven Hulstein',
     publishedAt: '2025-04-18T09:00:00Z',
     category: 'business',
+    coverUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80',
     excerpt: 'In 2030 gaat 30% van de beroepsbevolking met pensioen. Hun kennis gaat mee. De meeste bedrijven hebben geen plan.',
     excerptEn: 'By 2030, 30% of the workforce will retire. Their knowledge goes with them. Most companies have no plan.',
     body: [
@@ -304,13 +307,13 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('Dit is geen hypothetisch scenario. Dit is de realiteit in vrijwel elk productiebedrijf, elke logistieke organisatie, elk ingenieursbureau in Nederland. De mensen die de organisatie draaiende houden, zijn dezelfde mensen die over drie tot vijf jaar vertrekken. En hun kennis vertrekt met ze.'),
 
-      p('We noemen het de vergrijzing. We hebben het over arbeidsmarktkrapte en pensioenleeftijden. Maar over het echte probleem — het verdampen van decennia aan opgebouwde bedrijfskennis — hebben we het nauwelijks.'),
+      p('We noemen het de vergrijzing. We hebben het over arbeidsmarktkrapte en pensioenleeftijden. Maar over het echte probleem. het verdampen van decennia aan opgebouwde bedrijfskennis. hebben we het nauwelijks.'),
 
       h2('Het stille vertrek van kennis'),
 
       p('Elke organisatie heeft ze. De mensen die iedereen belt als er iets misgaat. De operator die aan het geluid van een machine hoort of de lagers versleten zijn. De projectleider die precies weet welk subcontract bij welk type project problemen oplevert. De accountmanager die de ongeschreven regels van de top-20 klanten kent.'),
 
-      p('Hun kennis zit niet in het ERP. Niet in de documentatie. Niet in de procedures. Het zit in hun hoofd — in patronen die ze in tientallen jaren hebben ontwikkeld, in relaties tussen informatie die ze intuïtief leggen, in uitzonderingen die ze kennen omdat ze ze hebben meegemaakt.'),
+      p('Hun kennis zit niet in het ERP. Niet in de documentatie. Niet in de procedures. Het zit in hun hoofd. in patronen die ze in tientallen jaren hebben ontwikkeld, in relaties tussen informatie die ze intuïtief leggen, in uitzonderingen die ze kennen omdat ze ze hebben meegemaakt.'),
 
       p('Wanneer zo iemand vertrekt, vertrekt dat allemaal mee. De opvolger begint op nul. Maakt dezelfde fouten. Ontdekt dezelfde uitzonderingen. Leergeld dat de organisatie al een keer heeft betaald, wordt opnieuw betaald. En opnieuw. En opnieuw.'),
 
@@ -328,17 +331,17 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       h2('Kennis activeren, niet archiveren'),
 
-      p('BEP kiest voor een fundamenteel andere benadering. In plaats van mensen te dwingen hun kennis op te schrijven — een proces dat altijd faalt — leert BEP van hoe mensen werken.'),
+      p('BEP kiest voor een fundamenteel andere benadering. In plaats van mensen te dwingen hun kennis op te schrijven, een proces dat altijd faalt. leert BEP van hoe mensen werken.'),
 
-      p('BEP indexeert e-mails, documenten, beslissingen, gespreksnotities — uiteraard met toestemming en binnen de kaders van privacywetgeving. Het maakt niet één document. Het creëert een levende kennisbasis die groeit terwijl mensen gewoon hun werk doen. Geen apart project. Geen extra administratie. Kennis die zich organisch opbouwt.'),
+      p('BEP indexeert e-mails, documenten, beslissingen, gespreksnotities. uiteraard met toestemming en binnen de kaders van privacywetgeving. Het maakt niet één document. Het creëert een levende kennisbasis die groeit terwijl mensen gewoon hun werk doen. Geen apart project. Geen extra administratie. Kennis die zich organisch opbouwt.'),
 
-      p('Wanneer een nieuwe medewerker een vraag stelt die de vertrokken senior in twee seconden had beantwoord, geeft BEP datzelfde antwoord — met de context, de nuance en de bronnen erbij. Niet omdat iemand het heeft opgeschreven, maar omdat BEP het heeft geleerd uit jaren aan data en interacties.'),
+      p('Wanneer een nieuwe medewerker een vraag stelt die de vertrokken senior in twee seconden had beantwoord, geeft BEP datzelfde antwoord. met de context, de nuance en de bronnen erbij. Niet omdat iemand het heeft opgeschreven, maar omdat BEP het heeft geleerd uit jaren aan data en interacties.'),
 
       p('Het verschil met traditionele kennismanagementsystemen is fundamenteel. Die systemen verwachten dat mensen hun werkwijze aanpassen om het systeem te voeden. BEP past zich aan de werkwijze van mensen aan en leert terwijl zij werken.'),
 
       h2('De urgentie is nu'),
 
-      p('De demografische cijfers liegen niet. In Nederland gaat de komende tien jaar bijna een derde van de beroepsbevolking met pensioen. In technische sectoren als productie, engineering en logistiek is dat percentage nog hoger. De vervanging komt er niet — althans niet in dezelfde aantallen.'),
+      p('De demografische cijfers liegen niet. In Nederland gaat de komende tien jaar bijna een derde van de beroepsbevolking met pensioen. In technische sectoren als productie, engineering en logistiek is dat percentage nog hoger. De vervanging komt er niet, althans niet in dezelfde aantallen.'),
 
       p('Bedrijven die nu beginnen met het activeren van hun bedrijfskennis hebben drie tot vijf jaar om de kennisbasis op te bouwen. Dat klinkt als veel tijd, maar het is dat niet. Een AI-systeem dat bedrijfskennis moet absorberen heeft tijd nodig om te leren, te trainen en betrouwbaar te worden. Hoe eerder je begint, hoe rijker de kennisbasis wanneer de pensioneringsgolf piekt.'),
 
@@ -357,13 +360,13 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('This isn\'t a hypothetical scenario. This is the reality in virtually every manufacturing company, every logistics organization, every engineering firm in the Netherlands. The people who keep the organization running are the same people leaving in three to five years. And their knowledge leaves with them.'),
 
-      p('We call it the aging workforce. We talk about labor shortages and retirement ages. But about the real problem — the evaporation of decades of accumulated business knowledge — we barely speak.'),
+      p('We call it the aging workforce. We talk about labor shortages and retirement ages. But about the real problem. the evaporation of decades of accumulated business knowledge. we barely speak.'),
 
       h2('The silent departure of knowledge'),
 
       p('Every organization has them. The people everyone calls when something goes wrong. The operator who can hear from the sound of a machine whether the bearings are worn. The project manager who knows exactly which subcontractor causes problems with which type of project. The account manager who knows the unwritten rules of the top 20 clients.'),
 
-      p('Their knowledge isn\'t in the ERP. Not in the documentation. Not in the procedures. It\'s in their heads — in patterns they\'ve developed over decades, in relationships between information they draw intuitively, in exceptions they know because they\'ve lived through them.'),
+      p('Their knowledge isn\'t in the ERP. Not in the documentation. Not in the procedures. It\'s in their heads. in patterns they\'ve developed over decades, in relationships between information they draw intuitively, in exceptions they know because they\'ve lived through them.'),
 
       p('When someone like that leaves, all of it leaves too. The successor starts from zero. Makes the same mistakes. Discovers the same exceptions. Tuition the organization already paid once gets paid again. And again. And again.'),
 
@@ -381,17 +384,17 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       h2('Activating knowledge, not archiving it'),
 
-      p('BEP takes a fundamentally different approach. Instead of forcing people to write down their knowledge — a process that always fails — BEP learns from how people work.'),
+      p('BEP takes a fundamentally different approach. Instead of forcing people to write down their knowledge, a process that always fails. BEP learns from how people work.'),
 
-      p('BEP indexes emails, documents, decisions, conversation notes — with permission and within privacy regulations, of course. It doesn\'t create one document. It builds a living knowledge base that grows while people simply do their jobs. No separate project. No extra administration. Knowledge that builds organically.'),
+      p('BEP indexes emails, documents, decisions, conversation notes. with permission and within privacy regulations, of course. It doesn\'t create one document. It builds a living knowledge base that grows while people simply do their jobs. No separate project. No extra administration. Knowledge that builds organically.'),
 
-      p('When a new employee asks a question the departed senior would have answered in two seconds, BEP gives that same answer — with the context, the nuance, and the sources. Not because someone wrote it down, but because BEP learned it from years of data and interactions.'),
+      p('When a new employee asks a question the departed senior would have answered in two seconds, BEP gives that same answer. with the context, the nuance, and the sources. Not because someone wrote it down, but because BEP learned it from years of data and interactions.'),
 
       p('The difference from traditional knowledge management systems is fundamental. Those systems expect people to change their way of working to feed the system. BEP adapts to how people work and learns while they do.'),
 
       h2('The urgency is now'),
 
-      p('The demographics don\'t lie. In the Netherlands, nearly a third of the workforce will retire in the next ten years. In technical sectors like manufacturing, engineering, and logistics, that percentage is even higher. The replacements aren\'t coming — at least not in the same numbers.'),
+      p('The demographics don\'t lie. In the Netherlands, nearly a third of the workforce will retire in the next ten years. In technical sectors like manufacturing, engineering, and logistics, that percentage is even higher. The replacements aren\'t coming, at least not in the same numbers.'),
 
       p('Companies that start activating their business knowledge now have three to five years to build the knowledge base. That sounds like a lot of time, but it isn\'t. An AI system that needs to absorb business knowledge takes time to learn, train, and become reliable. The sooner you start, the richer the knowledge base when the retirement wave peaks.'),
 
@@ -416,8 +419,9 @@ export const localBlogPosts: LocalBlogPost[] = [
     author: 'Berco Beute',
     publishedAt: '2025-05-06T09:00:00Z',
     category: 'ai',
-    excerpt: 'Elke organisatie wil AI. Bijna niemand heeft de datafundering om er iets zinvols mee te doen. Het probleem is niet de technologie — het is de data-chaos eronder.',
-    excerptEn: 'Every organization wants AI. Almost nobody has the data foundation to do anything meaningful with it. The problem isn\'t the technology — it\'s the data chaos underneath.',
+    coverUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80',
+    excerpt: 'Elke organisatie wil AI. Bijna niemand heeft de datafundering om er iets zinvols mee te doen. Het probleem is niet de technologie. het is de data-chaos eronder.',
+    excerptEn: 'Every organization wants AI. Almost nobody has the data foundation to do anything meaningful with it. The problem isn\'t the technology. it\'s the data chaos underneath.',
     body: [
       p('In elke bestuurskamer in Nederland vraagt iemand: "Wat doen wij met AI?" Het eerlijke antwoord voor de meeste bedrijven: tools kopen die niemand gebruikt, omdat het onderliggende probleem niet is opgelost.'),
 
@@ -425,11 +429,11 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       h2('Het AI-hype probleem'),
 
-      p('Bedrijven adopteren ChatGPT, Copilot, Gemini. Medewerkers gebruiken het voor e-mail en samenvattingen. Handig, zeker. Maar de échte bedrijfsvragen — "Hoe staat het met de order van Van der Berg?", "Welke leverancier gaf ons vorig jaar de beste prijzen?", "Hoeveel openstaande offertes hebben we boven de 100K?" — blijven onbeantwoord.'),
+      p('Bedrijven adopteren ChatGPT, Copilot, Gemini. Medewerkers gebruiken het voor e-mail en samenvattingen. Handig, zeker. Maar de échte bedrijfsvragen. "Hoe staat het met de order van Van der Berg?", "Welke leverancier gaf ons vorig jaar de beste prijzen?", "Hoeveel openstaande offertes hebben we boven de 100K?". blijven onbeantwoord.'),
 
       p('Omdat de AI geen toegang heeft tot de data.'),
 
-      p('Dat is het punt dat in vrijwel elke AI-strategie gemist wordt. Het probleem is niet het model. GPT-4, Claude, Gemini — ze zijn allemaal indrukwekkend intelligent. Het probleem is dat ze blind zijn. Ze hebben geen idee wat er in jouw ERP staat, wat er in je CRM leeft, welke afspraken er in mailthreads begraven liggen. Ze zijn briljante experts in een donkere kamer.'),
+      p('Dat is het punt dat in vrijwel elke AI-strategie gemist wordt. Het probleem is niet het model. GPT-4, Claude, Gemini. ze zijn allemaal indrukwekkend intelligent. Het probleem is dat ze blind zijn. Ze hebben geen idee wat er in jouw ERP staat, wat er in je CRM leeft, welke afspraken er in mailthreads begraven liggen. Ze zijn briljante experts in een donkere kamer.'),
 
       p('De tools die bedrijven nu kopen, zijn in essentie dure autoaanvulling. Ze maken tekst mooier, ze vatten vergaderingen samen, ze genereren presentatieslides. Nuttig? Ja. Transformatief? Nee. Want de fundamentele bedrijfsvragen blijven handwerk.'),
 
@@ -439,25 +443,25 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('Het ERP weet alles over orders en voorraden, maar niets over klantrelaties. Het CRM kent de klanthistorie, maar ziet geen financiële data. De projecttool beheert uren en deadlines, maar weet niets over de bijbehorende contracten. De documenten staan op SharePoint, de afspraken in Outlook, de kennisdocumenten op een gedeelde schijf die drie mensen kennen.'),
 
-      p('Elke bron op zich bevat waardevolle informatie. Maar de echte waarde zit in de verbindingen — en die bestaan niet. Een medewerker die wil weten of een klant een goede kandidaat is voor upselling, moet het CRM checken voor contacthistorie, het ERP voor ordervolume, de inbox voor recente communicatie, en het hoofd van de accountmanager voor het sentiment. Vier bronnen, nul integratie.'),
+      p('Elke bron op zich bevat waardevolle informatie. Maar de echte waarde zit in de verbindingen. en die bestaan niet. Een medewerker die wil weten of een klant een goede kandidaat is voor upselling, moet het CRM checken voor contacthistorie, het ERP voor ordervolume, de inbox voor recente communicatie, en het hoofd van de accountmanager voor het sentiment. Vier bronnen, nul integratie.'),
 
       p('Geen enkel AI-model, hoe geavanceerd ook, lost dat op. Je kunt het slimste brein ter wereld in een bibliotheek zetten, maar als alle boeken in kluizen liggen waar het de code niet van kent, krijg je geen antwoorden.'),
 
       h2('Eerst verbinden, dan verslimmen'),
 
-      p('De echte revolutie is niet AI — het is dataverbinding. RAG-architectuur (Retrieval-Augmented Generation) werkt door eerst alle databronnen te verbinden en dan AI daaroverheen te laten bevragen. Het AI-model is bijna secundair. Wat er écht toe doet is het dataweefsel eronder.'),
+      p('De echte revolutie is niet AI. het is dataverbinding. RAG-architectuur (Retrieval-Augmented Generation) werkt door eerst alle databronnen te verbinden en dan AI daaroverheen te laten bevragen. Het AI-model is bijna secundair. Wat er écht toe doet is het dataweefsel eronder.'),
 
       p('Dit is een ongemakkelijke boodschap voor bedrijven die net een AI-strategie hebben gepresenteerd. Maar het is de waarheid. Zonder verbonden data is je AI-investering een motor zonder brandstof. Indrukwekkende specificaties, nul kilometers.'),
 
       p('BEP begint daarom niet bij het model. BEP begint bij de data. Welke bronnen heb je? Hoe zijn ze gestructureerd? Waar zitten de overlappingen en de gaten? Welke verbindingen moeten er gelegd worden om echte bedrijfsvragen te beantwoorden?'),
 
-      p('Pas als dat dataweefsel staat — pas als de informatie uit ERP, CRM, e-mail, documenten en databases als één geheel bevraagbaar is — wordt AI transformatief. Dan gaat het niet meer om tekst genereren. Dan gaat het om bedrijfsintelligentie.'),
+      p('Pas als dat dataweefsel staat. pas als de informatie uit ERP, CRM, e-mail, documenten en databases als één geheel bevraagbaar is. wordt AI transformatief. Dan gaat het niet meer om tekst genereren. Dan gaat het om bedrijfsintelligentie.'),
 
       h2('Wat dit er anders uitziet'),
 
       p('Een bedrijf met verbonden data vraagt: "Toon me alle klanten in de bouwsector met openstaande orders boven de 50.000 euro en een betalingshistorie langer dan 90 dagen." En krijgt binnen seconden een antwoord.'),
 
-      p('Niet omdat de AI slimmer is. Maar omdat het toegang heeft tot alle relevante data. Het ERP levert de orderinformatie. Het CRM levert de sectorclassificatie. De financiële administratie levert de betalingshistorie. De AI combineert, analyseert en presenteert — maar het dataweefsel maakt het mogelijk.'),
+      p('Niet omdat de AI slimmer is. Maar omdat het toegang heeft tot alle relevante data. Het ERP levert de orderinformatie. Het CRM levert de sectorclassificatie. De financiële administratie levert de betalingshistorie. De AI combineert, analyseert en presenteert. maar het dataweefsel maakt het mogelijk.'),
 
       p('Vergelijk dat met de huidige realiteit in de meeste bedrijven: iemand van sales mailt finance om een overzicht, finance exporteert een Excel uit het ERP, sales filtert handmatig, en twee dagen later heb je een antwoord dat al verouderd is op het moment dat je het krijgt. Dat is geen efficiëntieprobleem. Dat is een dataprobleem.'),
 
@@ -478,11 +482,11 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       h2('The AI hype problem'),
 
-      p('Companies adopt ChatGPT, Copilot, Gemini. Employees use them for email and summaries. Useful, certainly. But the real business questions — "What\'s the status of the Van der Berg order?", "Which supplier gave us the best prices last year?", "How many open proposals do we have above 100K?" — remain unanswered.'),
+      p('Companies adopt ChatGPT, Copilot, Gemini. Employees use them for email and summaries. Useful, certainly. But the real business questions. "What\'s the status of the Van der Berg order?", "Which supplier gave us the best prices last year?", "How many open proposals do we have above 100K?". remain unanswered.'),
 
       p('Because the AI doesn\'t have access to the data.'),
 
-      p('That\'s the point missed in virtually every AI strategy. The problem isn\'t the model. GPT-4, Claude, Gemini — they\'re all impressively intelligent. The problem is that they\'re blind. They have no idea what\'s in your ERP, what lives in your CRM, what agreements are buried in email threads. They\'re brilliant experts in a dark room.'),
+      p('That\'s the point missed in virtually every AI strategy. The problem isn\'t the model. GPT-4, Claude, Gemini. they\'re all impressively intelligent. The problem is that they\'re blind. They have no idea what\'s in your ERP, what lives in your CRM, what agreements are buried in email threads. They\'re brilliant experts in a dark room.'),
 
       p('The tools companies are buying now are essentially expensive autocomplete. They make text prettier, they summarize meetings, they generate presentation slides. Useful? Yes. Transformative? No. Because the fundamental business questions remain manual work.'),
 
@@ -492,25 +496,25 @@ export const localBlogPosts: LocalBlogPost[] = [
 
       p('The ERP knows everything about orders and inventory but nothing about customer relationships. The CRM knows the client history but can\'t see financial data. The project tool manages hours and deadlines but knows nothing about the associated contracts. Documents live on SharePoint, appointments in Outlook, knowledge documents on a shared drive that three people know about.'),
 
-      p('Each source contains valuable information on its own. But the real value lies in the connections — and those don\'t exist. An employee who wants to know if a client is a good candidate for upselling needs to check the CRM for contact history, the ERP for order volume, the inbox for recent communication, and the account manager\'s head for sentiment. Four sources, zero integration.'),
+      p('Each source contains valuable information on its own. But the real value lies in the connections. and those don\'t exist. An employee who wants to know if a client is a good candidate for upselling needs to check the CRM for contact history, the ERP for order volume, the inbox for recent communication, and the account manager\'s head for sentiment. Four sources, zero integration.'),
 
       p('No AI model, however advanced, solves that. You can put the smartest brain in the world in a library, but if all the books are locked in safes it doesn\'t have the codes to, you won\'t get answers.'),
 
       h2('Connect first, then get smart'),
 
-      p('The real revolution isn\'t AI — it\'s data connection. RAG architecture (Retrieval-Augmented Generation) works by first connecting all data sources, then letting AI query across them. The AI model is almost secondary. What truly matters is the data fabric underneath.'),
+      p('The real revolution isn\'t AI. it\'s data connection. RAG architecture (Retrieval-Augmented Generation) works by first connecting all data sources, then letting AI query across them. The AI model is almost secondary. What truly matters is the data fabric underneath.'),
 
       p('This is an uncomfortable message for companies that just presented an AI strategy. But it\'s the truth. Without connected data, your AI investment is an engine without fuel. Impressive specifications, zero mileage.'),
 
       p('That\'s why BEP doesn\'t start with the model. BEP starts with the data. What sources do you have? How are they structured? Where are the overlaps and gaps? What connections need to be made to answer real business questions?'),
 
-      p('Only when that data fabric is in place — only when information from ERP, CRM, email, documents, and databases can be queried as one whole — does AI become transformative. Then it\'s no longer about generating text. It\'s about business intelligence.'),
+      p('Only when that data fabric is in place. only when information from ERP, CRM, email, documents, and databases can be queried as one whole. does AI become transformative. Then it\'s no longer about generating text. It\'s about business intelligence.'),
 
       h2('What this looks like in practice'),
 
       p('A company with connected data asks: "Show me all clients in the construction sector with open orders above 50,000 euros and a payment history longer than 90 days." And gets an answer within seconds.'),
 
-      p('Not because the AI is smarter. But because it has access to all the relevant data. The ERP provides order information. The CRM provides sector classification. The financial administration provides payment history. The AI combines, analyzes, and presents — but the data fabric makes it possible.'),
+      p('Not because the AI is smarter. But because it has access to all the relevant data. The ERP provides order information. The CRM provides sector classification. The financial administration provides payment history. The AI combines, analyzes, and presents. but the data fabric makes it possible.'),
 
       p('Compare that to the current reality in most companies: someone from sales emails finance for an overview, finance exports an Excel from the ERP, sales filters manually, and two days later you have an answer that\'s already outdated the moment you receive it. That\'s not an efficiency problem. That\'s a data problem.'),
 

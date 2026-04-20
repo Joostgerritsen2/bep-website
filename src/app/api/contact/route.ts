@@ -3,13 +3,13 @@ import { NextResponse } from 'next/server'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, company, message, source, systems, challenge, plan, score, phone, preference } = body
+    const { name, email, company, message, source, systems, challenge, plan, score, phone, preference, date, time } = body
 
     // Showcase/score leads only require name + email (no message)
     if (!name || !email) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
-    if (source !== 'integration-showcase' && source !== 'data-silo-score' && source !== 'chat-widget' && !message) {
+    if (source !== 'integration-showcase' && source !== 'data-silo-score' && source !== 'chat-widget' && source !== 'demo-booking' && !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
@@ -66,22 +66,76 @@ export async function POST(request: Request) {
           `,
         })
       } else if (source === 'chat-widget') {
-        // Chat widget message
+        // Format transcript lines with colour coding
+        const transcriptHtml = (message || '')
+          .split('\n\n')
+          .map((line: string) => {
+            if (line.startsWith('👤 Bezoeker:')) {
+              const text = line.replace('👤 Bezoeker:', '').trim()
+              return `<div style="margin-bottom:12px;">
+                <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;margin-bottom:4px;">👤 Bezoeker</div>
+                <div style="background:#fff;border:1px solid #e5e7eb;padding:10px 14px;color:#111;">${text}</div>
+              </div>`
+            }
+            if (line.startsWith('🤖 BEP:')) {
+              const text = line.replace('🤖 BEP:', '').trim()
+              return `<div style="margin-bottom:12px;">
+                <div style="font-size:11px;font-weight:700;color:#F5861D;text-transform:uppercase;margin-bottom:4px;">🤖 BEP</div>
+                <div style="background:#FEF3E7;border:1px solid #F5861D33;padding:10px 14px;color:#333;">${text}</div>
+              </div>`
+            }
+            return `<div style="color:#666;padding:8px 0;">${line}</div>`
+          })
+          .join('')
+
         await resend.emails.send({
           from: 'BEP Website <noreply@bep.expert>',
           to: contactEmail,
-          subject: `💬 Chat bericht: ${name}`,
+          subject: `💬 Nieuwe chat-lead: ${name} (${email})`,
           html: `
-            <h2>Nieuw chatbericht via bep.expert</h2>
-            <div style="background:#F5861D;color:white;padding:16px 24px;border-radius:8px;margin-bottom:24px;">
-              <div style="font-size:14px;font-weight:bold;">💬 Live Chat</div>
+            <div style="font-family:sans-serif;max-width:600px;margin:0 auto;">
+              <div style="background:#0f1d2f;color:white;padding:20px 24px;margin-bottom:24px;">
+                <div style="font-size:18px;font-weight:bold;">💬 Nieuwe lead via BEP chat</div>
+              </div>
+
+              <div style="background:#F5861D;color:white;padding:16px 24px;margin-bottom:24px;">
+                <div style="font-size:22px;font-weight:bold;">${name}</div>
+                <div style="font-size:15px;margin-top:4px;opacity:0.9;">${email}</div>
+              </div>
+
+              <h3 style="color:#0f1d2f;margin:0 0 16px;font-size:14px;text-transform:uppercase;letter-spacing:0.05em;">Volledig gesprek</h3>
+              <div style="border:1px solid #e5e7eb;padding:16px;">
+                ${transcriptHtml || '<p style="color:#888;">Geen gesprekshistorie beschikbaar.</p>'}
+              </div>
+
+              <p style="color:#888;font-size:12px;margin-top:24px;">
+                Beantwoord direct via <a href="mailto:${email}" style="color:#F5861D;">${email}</a>
+              </p>
             </div>
-            <p><strong>Naam:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Bericht:</strong></p>
-            <div style="background:#f5f5f5;padding:16px;border-radius:8px;white-space:pre-wrap;color:#333;">${message}</div>
-            <br>
-            <p style="color:#666;font-size:13px;">Beantwoord direct via e-mail of WhatsApp.</p>
+          `,
+        })
+      } else if (source === 'demo-booking') {
+        await resend.emails.send({
+          from: 'BEP Website <noreply@bep.expert>',
+          to: contactEmail,
+          subject: `📅 Demo aanvraag: ${name}${company ? ` (${company})` : ''} — ${date} om ${time}`,
+          html: `
+            <div style="font-family:sans-serif;max-width:600px;margin:0 auto;">
+              <div style="background:#0f1d2f;color:white;padding:20px 24px;margin-bottom:24px;">
+                <div style="font-size:18px;font-weight:bold;">📅 Nieuwe demo aanvraag</div>
+              </div>
+
+              <div style="background:#F5861D;color:white;padding:20px 24px;margin-bottom:24px;text-align:center;">
+                <div style="font-size:32px;font-weight:bold;">${date}</div>
+                <div style="font-size:20px;margin-top:4px;opacity:0.9;">om ${time}</div>
+              </div>
+
+              <p><strong>Naam:</strong> ${name}</p>
+              <p><strong>Email:</strong> <a href="mailto:${email}" style="color:#F5861D;">${email}</a></p>
+              ${phone ? `<p><strong>Telefoon:</strong> ${phone}</p>` : ''}
+              ${company ? `<p><strong>Bedrijf:</strong> ${company}</p>` : ''}
+              ${message ? `<hr><h3>Toelichting</h3><p style="white-space:pre-wrap;">${message}</p>` : ''}
+            </div>
           `,
         })
       } else {

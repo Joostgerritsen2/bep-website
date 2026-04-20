@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bep.expert'
 
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const lang = params.lang as Locale
-  const title = lang === 'en' ? 'Applications — BEP for every department | BEP' : 'Toepassingen — BEP voor elke afdeling | BEP'
+  const title = lang === 'en' ? 'Applications: BEP for every department | BEP' : 'Toepassingen: BEP voor elke afdeling | BEP'
   const description = lang === 'en'
     ? 'Discover how BEP proactively supports your Sales, Finance, Support and Knowledge teams with AI agents that think along and act independently.'
     : 'Ontdek hoe BEP proactief je Sales, Finance, Support en Kennis teams ondersteunt met AI agents die meedenken en zelfstandig handelen.'

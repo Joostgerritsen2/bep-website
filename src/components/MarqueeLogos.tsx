@@ -14,7 +14,6 @@ export function MarqueeLogos() {
 
   return (
     <section className="marquee-wrap">
-      <span className="marquee-label">{t('Vertrouwd door', 'Trusted by')}</span>
       <div className="marquee-track">
         {/* Twee keer voor naadloze loop */}
         {[...logos, ...logos].map((logo, i) => (
